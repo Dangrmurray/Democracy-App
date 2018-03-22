@@ -1,17 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add
+  /usr/local/bin/node /usr/local/bin/yarn add
 
 PATH: 
-  C:\Users\fvald\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\fvald\bin;C:\Users\fvald\introcs\java\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Ruby24-x64\bin;C:\Users\fvald\introcs\j3d\bin;C:\Users\fvald\introcs\bin;C:\Users\fvald\introcs\java\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Users\fvald\AppData\Local\atom\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\fvald\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  /bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/sbin:~/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  9.3.0
+  6.11.3
 
 Platform: 
-  win32 x64
+  darwin x64
 
 npm manifest: 
   {
@@ -47,13 +47,13 @@ Lockfile:
 
 Trace: 
   Error: Missing list of packages to add to your project.
-      at new MessageError (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at Object.<anonymous> (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:40587:13)
-      at Generator.next (<anonymous>)
-      at step (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
-      at C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:116:14
-      at new Promise (<anonymous>)
-      at new F (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:23451:28)
-      at Object.<anonymous> (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:95:12)
-      at Object.run (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:40599:19)
-      at run (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:89113:20)
+      at MessageError.Error (native)
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at Object.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:40587:13)
+      at next (native)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:116:14
+      at Promise.F (/usr/local/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at Object.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:95:12)
+      at Object.run (/usr/local/lib/node_modules/yarn/lib/cli.js:40599:19)
+      at run (/usr/local/lib/node_modules/yarn/lib/cli.js:89113:20)
