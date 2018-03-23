@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Bills from "./components/pages/Bills";
-import DemoForm from "./components/DemoForm";
+//import DemoForm from "./components/DemoForm";
 import "./App.css";
 
 
