@@ -17,12 +17,12 @@ const DemoForm = (props) => (
               <label for="age">Select Your Age Range from the List Below</label>
               <input className="form-control" id="age-input" type="text" list="hosting-plan" placeholder="Your Age" />
               <datalist id="hosting-plan">
-		          <option value="16 - 20"></option>
-		          <option value="21 - 30"></option>
-		          <option value="31 - 40"></option>
-		          <option value="41 - 50"></option>
-		          <option value="51 - 60"></option>
-		          <option value="61 and Older"></option>  
+		          <option value="16 - 22"></option>
+		          <option value="22 - 34"></option>
+		          <option value="35 - 44"></option>
+		          <option value="45 - 54"></option>
+		          <option value="55 - 64"></option>
+		          <option value="65 and Older"></option>  
 		          <option value="Prefer Not To Say"></option>               
 		       </datalist>
             </div>
@@ -76,12 +76,13 @@ const DemoForm = (props) => (
        			<label for="income">Select Your Income Range from the List Below</label>
          		<input type="text" className="form-control" id="fan-team" list="age-plan" placeholder="Your Income Level" />
         		<datalist id="age-plan">
-		          <option value="Under $14,999"></option>
-		          <option value="$15,000 - $24,999"></option>
-		          <option value="$25,000 - $49,999"></option>
-		          <option value="41 - 50"></option>
-		          <option value="51 - 60"></option>
-		          <option value="61 and Older"></option>  
+		          <option value="0 - $9,524"></option>
+		          <option value="$9,525 - $38,699"></option>
+		          <option value="$38,700 - $82,499"></option>
+		          <option value="$82,500 - $157,499"></option>
+		          <option value="$157,500 - $199,999"></option>
+		          <option value="$200,000 to $499,999"></option>  
+		          <option value="Over $500,000"></option>
 		          <option value="Prefer Not To Say"></option>               
         		</datalist>
       		</div>
