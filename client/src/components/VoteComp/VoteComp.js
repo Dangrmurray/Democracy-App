@@ -1,1 +1,0 @@
-VoteComp.js

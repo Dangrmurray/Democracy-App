@@ -4,11 +4,13 @@ Arguments:
 PATH: 
   C:\Users\fvald\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\fvald\bin;C:\Users\fvald\introcs\java\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\fvald\AppData\Local\Programs\Python\Python35\Scripts;C:\Users\fvald\AppData\Local\Programs\Python\Python35;C:\Ruby24-x64\bin;C:\Users\fvald\introcs\j3d\bin;C:\Users\fvald\introcs\bin;C:\Users\fvald\introcs\java\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Users\fvald\AppData\Local\atom\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\fvald\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
+
 Yarn version: 
   1.5.1
 
 Node version: 
   9.3.0
+
 
 Platform: 
   win32 x64
@@ -35,7 +37,8 @@ npm manifest:
       "nodemon": "^1.11.0"
     },
     "dependencies": {
-      "express": "^4.15.4"
+      "express": "^4.15.4",
+      "react-bootstrap-dropdown-menu": "^1.1.14"
     }
   }
 
@@ -2158,3 +2161,4 @@ Trace:
       at Object.<anonymous> (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:95:12)
       at Object.run (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:40599:19)
       at run (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:89113:20)
+
