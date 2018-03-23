@@ -12,12 +12,7 @@ import "./App.css";
 const App = () => (
   <Router>
     <div>
-      <div className="testHeader">( Test Header used for Routing )  
       <Header />
-        <a href="/">|||||||  Home  </a>
-        <a href="/bills">||  Bills </a>
-        <a href="/about">||  About</a>
-      </div>
       <Route exact path="/" component={Welcome} />
       <Route exact path="/about" component={About} />
       <Route exact path="/bills" component={Bills} />

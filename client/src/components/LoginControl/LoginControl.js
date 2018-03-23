@@ -18,6 +18,7 @@ function LoginButton(props) {
     );
   }
 
+// Login Control Component
 class LoginControl extends React.Component {
     constructor(props) {
       super(props);
@@ -44,7 +45,6 @@ class LoginControl extends React.Component {
   
       return (
         <div>
-          <div isLoggedIn={isLoggedIn}></div>
           {button}
         </div>
       );

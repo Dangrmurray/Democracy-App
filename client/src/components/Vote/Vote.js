@@ -46,7 +46,6 @@ class Vote extends React.Component {
   
       return (
         <div>
-          <div isLoggedIn={isLoggedIn}></div>
           {button}
         </div>
       );
