@@ -4,15 +4,13 @@ import './DemoForm.css';
 
 const DemoForm = (props) => (
 
-{// Demographics Container}
+ 
 	<div className="container">
 		<div className="panel panel-success">
 			<div className="panel-heading">
 				<h3 className="panel-title"><strong>Demographics</strong></h3>
 			</div>
-
-		{// Dropdown Menu}
-		{// Age Dropdown}
+ 
 		<div className="panel-body">          
           <form>
             <div className="form-group">
@@ -29,7 +27,7 @@ const DemoForm = (props) => (
 		       </datalist>
             </div>
 
-            {// -- Education Dropdown --}
+            
             <div className="form-group">
        			<label for="education">Select Your Education Level from the List Below</label>
          		<input type="text" className="form-control" id="education-team" list="education-plan" placeholder="Education Level" />
@@ -45,21 +43,22 @@ const DemoForm = (props) => (
         		</datalist>
       		</div>
 
-      		 {//-- Race Dropdown --}
+      		 
       		 <div className="form-group">
         		<label for="race">Select Your Ethnicity from the List Below</label>
          		<input type="text" className="form-control" id="race-team" list="race-plan" placeholder="Your Race" />
         		<datalist id="race-plan">
-		          <option value="African American"></option>
-		          <option value="Asian or Pacific Islander"></option>
-		          <option value="Native American"></option>
-		          <option value="Hispanic"></option>
-		          <option value="Caucasian"></option> 
+		          <option value="American Indian or Alaska Native"></option>
+		          <option value="Asian"></option>
+		          <option value="Black or African American"></option>
+		          <option value="Hispanic or Latino"></option>
+		          <option value="White"></option> 
+		          <option value="Native American or Other Pacific Islander"></option>
 		          <option value="Prefer Not To Say"></option>       
         		</datalist>
       		</div>
 
-      		{//-- Gender Dropdown --}
+      	 
       		<div className="form-group">
         		<label for="gender">Select Your Gender from the List Below</label>
          		<input type="text" className="form-control" id="fan-team" list="gender-plan" placeholder="Your Gender" />
@@ -72,7 +71,7 @@ const DemoForm = (props) => (
         		</datalist>
       		</div>
 
-      		{//-- Income Dropdown --}
+      		 
       		<div className="form-group">
        			<label for="income">Select Your Income Range from the List Below</label>
          		<input type="text" className="form-control" id="fan-team" list="age-plan" placeholder="Your Income Level" />
@@ -87,7 +86,7 @@ const DemoForm = (props) => (
         		</datalist>
       		</div>
 
-      		{//-- State Dropdown --}
+      	 
             <div className="form-group">
         		<label for="state">Select Your State from the List Below</label>
          		<input type="text" className="form-control" id="fan-team" list="state-plan" placeholder="Choose Your Favorite Team" />
