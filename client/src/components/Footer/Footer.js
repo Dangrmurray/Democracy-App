@@ -2,6 +2,6 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = (props) => (
-  <div>Hello Footer</div>
+  <div className="bg-light">Hello Footer</div>
 ) 
 export default Footer;
