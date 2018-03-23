@@ -1,8 +1,8 @@
 import React from 'react';
-import './LoginControl.css';
+import './Vote.css';
 
 
-function LoginButton(props) {
+function LoginToVote(props) {
     return (
       <button className="btn btn-primary" onClick={props.onClick}>
         Login
@@ -10,7 +10,15 @@ function LoginButton(props) {
     );
   }
   
-  function LogoutButton(props) {
+  function Vote(props) {
+    return (
+      <button className="btn btn-primary" onClick={props.onClick}>
+        Logout
+      </button>
+    );
+  }
+  
+  function Voted(props) {
     return (
       <button className="btn btn-primary" onClick={props.onClick}>
         Logout
@@ -18,14 +26,7 @@ function LoginButton(props) {
     );
   }
 
-// Login Control Component
-class LoginControl extends React.Component {
-    constructor(props) {
-      super(props);
-      this.handleLoginClick = this.handleLoginClick.bind(this);
-      this.handleLogoutClick = this.handleLogoutClick.bind(this);
-      this.state = {isLoggedIn: false};
-    }
+class Vote extends React.Component {
   
     handleLoginClick() {
       this.setState({isLoggedIn: true});
@@ -51,4 +52,4 @@ class LoginControl extends React.Component {
     }
   }
   
-  export default LoginControl;
+  export default Vote;
