@@ -39,6 +39,7 @@ const BillBlock = (props) => (
                     </div>
                 </div>
             </div>
+
         </div>
         <div className="container">
             <div className="row">
