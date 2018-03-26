@@ -3,6 +3,7 @@ import './Region.css';
 import Wrapper from "../../Wrapper";
 
 const Region = (props) => (
+	<Wrapper>
 	<div className="container">
 		<div className="row-justify-content-md-center border">
 			<div className="col-md-1">
@@ -26,5 +27,6 @@ const Region = (props) => (
                 </div>
             </div>
         </div>
+     </Wrapper>
 ) 
 export default Region;
