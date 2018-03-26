@@ -38,11 +38,13 @@ const BillBlock = (props) => (
                     </div>
                 </div>
             </div>
+
         </div>
         <div className="container">
             <div className="row">
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
+
                 </div>
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>

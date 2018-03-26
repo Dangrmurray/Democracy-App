@@ -9,5 +9,5 @@ const Bills = (props) => (
 		<h2>{this.props.match.params.id}</h2>
 		<BillBlock />
 	</Wrapper>
-) 
+)
 export default Bills;
