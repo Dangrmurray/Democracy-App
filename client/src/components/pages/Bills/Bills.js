@@ -3,6 +3,7 @@ import './Bills.css';
 import Wrapper from "../../Wrapper";
 import BillBlock from "../../BillBlock";
 
+
 const Bills = (props) => (
 	<Wrapper>
 		<h1>Bills</h1>
