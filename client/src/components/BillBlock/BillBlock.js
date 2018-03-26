@@ -38,36 +38,13 @@ const BillBlock = (props) => (
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            
-                <div className="container">
 
-                    <div className="col-2"></div>
-
-                    <div className="row">
-                        <div className="col-1"></div>
-                        <div className="col-10">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-4 border">
-                                        <div className="bill">BILL NAME</div>
-                                    </div>
-                                   
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-=======
         </div>
         <div className="container">
             <div className="row">
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
->>>>>>> 5d33b4b02749f0435533d7e12700e76b19a4f0c3
+
                 </div>
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
