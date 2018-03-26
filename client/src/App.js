@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { GoogleAPI, GoogleLogin, GoogleLogout } from "react-google-oauth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
@@ -7,6 +8,10 @@ import About from "./components/pages/About";
 import Region from "./components/pages/Region";
 import Bills from "./components/pages/Bills";
 import "./App.css";
+
+    const responseGoogle = (response) => {
+      console.log(response);
+    }
 
 class App extends Component {
 
@@ -47,6 +52,17 @@ class App extends Component {
           isLoggedIn={this.state.isLoggedIn}
           button={this.state.button}
           />
+
+        <GoogleAPI 
+        clientId="470848001164-2l4g92q85okvv703tf7ptnllvtci31km.apps.googleusercontent.com"
+        fetch_basic_profile="true" >
+        <div>
+            <GoogleLogin
+            onSuccess={responseGoogle} />
+            <GoogleLogout />
+          </div>
+        </GoogleAPI>
+
           <Route exact path="/" component={Welcome} />
           <Route exact path="/about" component={About} />
           <Route exact path="/region" component={Region} />

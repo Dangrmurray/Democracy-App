@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "express": "^4.15.4",
-    "react-bootstrap-dropdown-menu": "^1.1.14"
+    "react-bootstrap-dropdown-menu": "^1.1.14",
+    "react-google-oauth": "^1.0.0"
   }
 }
