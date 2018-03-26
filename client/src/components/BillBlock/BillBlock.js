@@ -12,82 +12,46 @@ const BillBlock = (props) => (
                 </div>
             </div>
         </div>
-        
-            <div className="container">
-                <div className="row justify-content-md-center">
-                    <div className="col-5">
-                        <input type="text" className="form-control" id="bill-type" list="bill-plan" placeholder="Select Bill Topic" />
-                        <datalist id="bill-plan">
-                            <option value="Armed Forces and National Security"></option>
-                            <option value="Commerce"></option>
-                            <option value="Energy"></option>
-                            <option value="Finance and Financial Sector"></option>
-                            <option value="Government Operations and Politics"></option>
-                            <option value="International Affairs"></option>
-                            <option value="Labor and Employment"></option>
-                        </datalist>
-                    </div>
-                    <div className="col-3">
-                        <div className="form-group">
-                            <input type="text" className="form-control" id="filter-team" list="filter-plan" placeholder="Bill Filter" />
-                            <datalist id="filter-plan">
-                                <option value="Upcoming"></option>
-                                <option value="Old"></option>
-                                <option value="Passed"></option>
-                                <option value="Fail"></option>
-                            </datalist>
-                        </div>
-                    </div>
-
+        <div className="container">
+            <div className="row justify-content-md-center">
+                <div className="col-5">
+                    <select>
+                        <option>Select Topic</option>
+                        <option value="Armed Forces and National Security">Armed Forces and National Security</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Energy">Energy</option>
+                        <option value="Finance and Financial Sector">Finance and Financial Sector</option>
+                        <option value="Government Operations and Politics">Government Operations and Politics</option>
+                        <option value="International Affairs">International Affairs</option>
+                        <option value="Labor and Employment">Labor and Employment</option>
+                    </select>
                 </div>
-
+                <div className="col-3">
+                    <div className="form-group">
+                        <select id="filter-plan">
+                            <option>Select Type</option>
+                            <option value="Upcoming">Upcoming</option>
+                            <option value="Old">Old</option>
+                            <option value="Passed">Passed</option>
+                            <option value="Fail">Fail</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            
-                <div className="container">
-
-                    <div className="col-2"></div>
-
-                    <div className="row">
-                        <div className="col-1"></div>
-                        <div className="col-10">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100px;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-                                    <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
+        </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-4">
+                    <div className="card bill">BILL NAME</div>
                 </div>
+                <div className="col-4">
+                    <div className="card bill">BILL NAME</div>
+                </div>
+                <div className="col-4">
+                    <div className="card bill">BILL NAME</div>
+                </div>
+            </div>
+        </div>
     </div>
 );
 
