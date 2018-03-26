@@ -20,17 +20,22 @@ class App extends Component {
 
     handleLoginClick() {
       this.setState({isLoggedIn: true});
-      console.log(this.state.isLoggedIn);
       this.findUser();
+      console.log(this.state.isLoggedIn);
     }
   
     handleLogoutClick() {
       this.setState({isLoggedIn: false});
+      this.initLogout();
       console.log(this.state.isLoggedIn);
     }
 
     findUser() {
       console.log("finding user...");
+    }
+
+    initLogout() {
+      console.log("logging user out...");
     }
 
   render() {
