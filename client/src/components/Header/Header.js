@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import LoginControl from "../LoginControl";
 
 
 const Header = (props) => (
@@ -12,7 +13,12 @@ const Header = (props) => (
         <ul className="navbar-nav ml-auto">
           <li className="nav-item"><a className="nav-link" href="/bills">Bills</a></li>
           <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
-          <li>{props.children}</li>
+          <LoginControl 
+          handleLoginClick={props.handleLoginClick}
+          handleLogoutClick={props.handleLogoutClick}
+          isLoggedIn={props.isLoggedIn}
+          button={props.button}
+          />
         </ul>
       </div>
   </nav>

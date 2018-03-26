@@ -15,19 +15,17 @@ class App extends Component {
       this.handleLoginClick = this.handleLoginClick.bind(this);
       this.handleLogoutClick = this.handleLogoutClick.bind(this);
       this.findUser = this.findUser.bind(this);
-      this.state = {isLoggedIn: false};
+      this.state = {isLoggedIn: false, button: "Login"};
     }
 
     handleLoginClick() {
-      this.setState({isLoggedIn: true});
+      this.setState({isLoggedIn: true, button: "Logout"});
       this.findUser();
-      console.log(this.state.isLoggedIn);
     }
   
     handleLogoutClick() {
-      this.setState({isLoggedIn: false});
+      this.setState({isLoggedIn: false, button: "Login"});
       this.initLogout();
-      console.log(this.state.isLoggedIn);
     }
 
     findUser() {
@@ -39,21 +37,16 @@ class App extends Component {
     }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
-    const button = isLoggedIn ? ( 
-      <button className="btn btn-primary" onClick={this.handleLogoutClick}>
-      Logout
-      </button>
-    ) : (
-      <button className="btn btn-primary" onClick={this.handleLoginClick}>
-      Login
-      </button>
-    );
 
     return (
       <Router>
         <div>
-          <Header>{button}</Header>
+          <Header 
+          handleLoginClick={this.handleLoginClick}
+          handleLogoutClick={this.handleLogoutClick}
+          isLoggedIn={this.state.isLoggedIn}
+          button={this.state.button}
+          />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/about" component={About} />
           <Route exact path="/region" component={Region} />

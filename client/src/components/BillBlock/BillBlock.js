@@ -53,31 +53,31 @@ const BillBlock = (props) => (
                             <div className="container">
                                 <div className="row">
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100px;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
                                     <div className="col-4 border">
-                                        <div style="width: 100%; height: 100%;  background-color: gray; text-align:center">BILL NAME</div>
+                                        <div>BILL NAME</div>
                                     </div>
 
                                 </div>
