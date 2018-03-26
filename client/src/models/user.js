@@ -1,27 +1,11 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-// Create (save) reference ot schema constructor
-var Schema = mongoose.Schema;
-
-// Uses Schema constructor to create new UserSchema object
-var UserSchema = new Schema({
-	name: {
-		type: String,
-		unique: true
-	},
-
-	// notes array to store ObjectIds
-	notes: [
-	{
-		type: Schema.Types.ObjectId,
-
-		ref: "Note"
-	}
-	]
+const userSchema = new Schema({
+    username: String,
+    googleId: String
 });
 
-// Creates model for schema using Mongoose
-var User = mongoose.model("User", UserSchema);
+const User = mongoose.model('user', userSchema);
 
-// export User Model
-module.exports = User; 
+module.exports = User;
