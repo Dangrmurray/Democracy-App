@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Link } from "react-router-dom";
-import Bills from "../Bills";
+import { Link } from "react-router-dom";
 import './Region.css';
 import Wrapper from "../../Wrapper";
 
