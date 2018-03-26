@@ -6,6 +6,7 @@ import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
 import Bills from "./components/pages/Bills";
+import BillDetail from "./components/pages/BillDetail";
 import "./App.css";
 
 class App extends Component {
@@ -51,14 +52,12 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
-          <Route exact path="/region/bills/:id" component={Bills} />
-          <Footer />
+          <Route exact path="/billdetail" component={BillDetail} />
         </div>
       </Router>
     )
   }
 }
-
 
 
 export default App;
