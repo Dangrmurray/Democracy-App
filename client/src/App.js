@@ -20,10 +20,13 @@ class App extends Component {
 
     handleLoginClick() {
       this.setState({isLoggedIn: true});
+      console.log(this.state.isLoggedIn);
+      this.findUser();
     }
   
     handleLogoutClick() {
       this.setState({isLoggedIn: false});
+      console.log(this.state.isLoggedIn);
     }
 
     findUser() {
@@ -37,7 +40,7 @@ class App extends Component {
       Logout
       </button>
     ) : (
-      <button className="btn btn-primary" onClick={this.handleLoginClick, this.findUser}>
+      <button className="btn btn-primary" onClick={this.handleLoginClick}>
       Login
       </button>
     );
