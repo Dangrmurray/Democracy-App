@@ -9,10 +9,6 @@ import Region from "./components/pages/Region";
 import Bills from "./components/pages/Bills";
 import "./App.css";
 
-    const responseGoogle = (response) => {
-      console.log(response);
-    }
-
 class App extends Component {
 
     constructor(props) {
@@ -33,12 +29,14 @@ class App extends Component {
       this.initLogout();
     }
 
-    findUser() {
-      console.log("finding user...");
+    findUser(response) {
+      console.log("finding user..." + response.getId());
+      const userId = response.getId;
+      this.state = { userId }
     }
 
-    initLogout() {
-      console.log("logging user out...");
+    initLogout(response) {
+      console.log("logging user out, ID: " +  response);
     }
 
   render() {
@@ -56,15 +54,16 @@ class App extends Component {
         <GoogleAPI 
         clientId="470848001164-2l4g92q85okvv703tf7ptnllvtci31km.apps.googleusercontent.com"
         fetch_basic_profile="true" >
-        <div>
-            <GoogleLogin
-            onSuccess={responseGoogle} />
-            <GoogleLogout />
+          <div>
+              <GoogleLogin
+              onLoginSuccess={this.findUser} />
+              <GoogleLogout
+              onLogoutSuccess={this.initLogout} />
           </div>
         </GoogleAPI>
 
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/about" component={About } />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
           <Route exact path="/region/bills/:id" component={Bills} />
