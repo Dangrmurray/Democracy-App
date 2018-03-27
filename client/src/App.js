@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
@@ -43,10 +43,10 @@ class App extends Component {
       <Router>
         <div>
           <Header 
-          handleLoginClick={this.handleLoginClick}
-          handleLogoutClick={this.handleLogoutClick}
-          isLoggedIn={this.state.isLoggedIn}
-          button={this.state.button}
+            handleLoginClick={this.handleLoginClick}
+            handleLogoutClick={this.handleLogoutClick}
+            isLoggedIn={this.state.isLoggedIn}
+            button={this.state.button}
           />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/about" component={About} />

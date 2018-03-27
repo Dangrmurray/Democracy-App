@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const BillBlock = (props) => (
-
-    <div className="container">
+    <div>
         <div className="container">
             <div className="row justify-content-md-center border">
                 <div className="col md-1">
@@ -39,7 +38,6 @@ const BillBlock = (props) => (
                     </div>
                 </div>
             </div>
-
         </div>
         <div className="container">
             <div className="row">
