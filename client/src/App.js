@@ -18,7 +18,8 @@ class App extends Component {
     this.initLogout = this.initLogout.bind(this);
     this.state = { isLoggedIn: false, userId: "" };
   }
-
+  
+// <<<<<handle change in state, state controls which button is displayed>>>>>
   handleLoginClick(response) {
     this.setState({ isLoggedIn: true });
     console.log("Logged in? " + this.state.isLoggedIn);
@@ -30,15 +31,19 @@ class App extends Component {
     console.log("Logged in? " + this.state.isLoggedIn);
     this.initLogout(response);
   }
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
   initLogin(response) {
     console.log("finding user, ID: " + response.getId());
     const userId = response.getId();
     this.setState({ userId });
+    // <<<<<<Search for user in DB...>>>>>>
   }
 
   initLogout(response) {
     console.log("logging user out, ID: " +  this.state.userId);
+    // <<<<Should chain to any logout functions...>>>>
   }
 
   render() {
