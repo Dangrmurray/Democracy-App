@@ -1,5 +1,6 @@
 import React from 'react';
-import './DemoForm.css';
+import './Demographics.css';
+import { Link } from "react-router-dom";
 
 
 const DemoForm = (props) => (
@@ -154,5 +155,5 @@ const DemoForm = (props) => (
 
 
 	); 
-export default DemoForm;
+export default Demographics;
 
