@@ -1,5 +1,6 @@
 import React from "react";
 import './BillBlock.css';
+import { Link } from "react-router-dom";
 
 
 const BillBlock = (props) => (
@@ -44,7 +45,7 @@ const BillBlock = (props) => (
             <div className="row">
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
-
+                    <Link to='/pages/billdetail' ClassName="active">Bill Detail</Link>
                 </div>
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
