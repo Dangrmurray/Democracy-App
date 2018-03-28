@@ -24,7 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     let bool = (window.sessionStorage.getItem("loggedIn"));
-    console.log(bool.valueOf());
+    //console.log(bool.valueOf());
    if (JSON.parse(bool) === true) {
       this.setState({ isLoggedIn: true });
       this.handleLoginClick();
