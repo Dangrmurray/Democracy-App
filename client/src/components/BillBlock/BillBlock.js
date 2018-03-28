@@ -8,8 +8,10 @@ const BillBlock = (props) => (
         <div className="card bill">
             <h5 className="card-title">{props.title}</h5>
             <p className="card-text">{props.short_summary}</p>
-            <strong>{props.bill_id}</strong>
-            <Link to='/pages/billdetail' className="active">Bill Detail</Link>
+            <strong>Bill ID: {props.id}</strong>
+            <p>Introduced Date: {props.introduced_date}</p>
+            <p>Last Action Date: {props.latest_major_action_date}</p>
+            <Link to='/pages/billdetail' className="btn btn-primary">Bill Detail</Link>
         </div>
     </div>
 );
