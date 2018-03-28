@@ -1,14 +1,25 @@
 Arguments: 
+<<<<<<< HEAD
   C:\Program Files\nodejs\node.exe C:\Users\jason\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
   C:\Users\jason\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jason\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\jason\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\jason\AppData\Local\Programs\Python\Python36-32;C:\Users\jason\AppData\Local\Microsoft\WindowsApps;C:\Users\jason\AppData\Roaming\npm;.;C:\Program Files\Sublime Text 3";C:\Program Files\Heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+=======
+  C:\Program Files\nodejs\node.exe C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+
+PATH: 
+  C:\Users\fvald\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\fvald\bin;C:\Users\fvald\introcs\java\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Ruby25-x64\bin;C:\Users\fvald\AppData\Local\Programs\Python\Python35\Scripts;C:\Users\fvald\AppData\Local\Programs\Python\Python35;C:\Ruby24-x64\bin;C:\Users\fvald\introcs\j3d\bin;C:\Users\fvald\introcs\bin;C:\Users\fvald\introcs\java\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Users\fvald\AppData\Local\atom\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\fvald\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+>>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
 
 Yarn version: 
   1.5.1
 
 Node version: 
+<<<<<<< HEAD
   8.9.1
+=======
+  9.3.0
+>>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
 
 Platform: 
   win32 x64
@@ -37,7 +48,9 @@ npm manifest:
     "dependencies": {
       "axios": "^0.18.0",
       "express": "^4.15.4",
-      "react-bootstrap-dropdown-menu": "^1.1.14"
+      "jquery": "^3.3.1",
+      "react-bootstrap-dropdown-menu": "^1.1.14",
+      "react-google-oauth": "^1.0.0"
     }
   }
 
@@ -132,6 +145,10 @@ Lockfile:
   array-unique@^0.3.2:
     version "0.3.2"
     resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
+  
+  asap@~2.0.3:
+    version "2.0.6"
+    resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   
   asn1@~0.2.3:
     version "0.2.3"
@@ -435,6 +452,10 @@ Lockfile:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   
+  core-js@^1.0.0:
+    version "1.2.7"
+    resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+  
   core-util-is@1.0.2, core-util-is@~1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -444,6 +465,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
     dependencies:
       capture-stack-trace "^1.0.0"
+  
+  create-react-class@^15.6.0:
+    version "15.6.3"
+    resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
+    dependencies:
+      fbjs "^0.8.9"
+      loose-envify "^1.3.1"
+      object-assign "^4.1.1"
   
   cross-spawn@^5.0.1:
     version "5.1.0"
@@ -563,6 +592,12 @@ Lockfile:
   encodeurl@~1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
+  
+  encoding@^0.1.11:
+    version "0.1.12"
+    resolved "https://registry.yarnpkg.com/encoding/-/encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb"
+    dependencies:
+      iconv-lite "~0.4.13"
   
   escape-html@~1.0.3:
     version "1.0.3"
@@ -684,6 +719,18 @@ Lockfile:
   extsprintf@^1.2.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
+  
+  fbjs@^0.8.16, fbjs@^0.8.9:
+    version "0.8.16"
+    resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
+    dependencies:
+      core-js "^1.0.0"
+      isomorphic-fetch "^2.1.1"
+      loose-envify "^1.0.0"
+      object-assign "^4.1.0"
+      promise "^7.1.1"
+      setimmediate "^1.0.5"
+      ua-parser-js "^0.7.9"
   
   fill-range@^4.0.0:
     version "4.0.0"
@@ -931,7 +978,7 @@ Lockfile:
       jsprim "^1.2.2"
       sshpk "^1.7.0"
   
-  iconv-lite@0.4.19:
+  iconv-lite@0.4.19, iconv-lite@~0.4.13:
     version "0.4.19"
     resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
   
@@ -1103,7 +1150,7 @@ Lockfile:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
   
-  is-stream@^1.0.0, is-stream@^1.1.0:
+  is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   
@@ -1133,9 +1180,24 @@ Lockfile:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   
+  isomorphic-fetch@^2.1.1:
+    version "2.2.1"
+    resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
+    dependencies:
+      node-fetch "^1.0.1"
+      whatwg-fetch ">=0.10.0"
+  
   isstream@~0.1.2:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+  
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  
+  js-tokens@^3.0.0:
+    version "3.0.2"
+    resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
   
   jsbn@~0.1.0:
     version "0.1.1"
@@ -1197,6 +1259,12 @@ Lockfile:
   lodash@^4.5.1:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
+  
+  loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
+    version "1.3.1"
+    resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
+    dependencies:
+      js-tokens "^3.0.0"
   
   lowercase-keys@^1.0.0:
     version "1.0.0"
@@ -1329,6 +1397,13 @@ Lockfile:
     version "0.6.1"
     resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
   
+  node-fetch@^1.0.1:
+    version "1.7.3"
+    resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
+    dependencies:
+      encoding "^0.1.11"
+      is-stream "^1.0.1"
+  
   node-pre-gyp@^0.6.39:
     version "0.6.39"
     resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.39.tgz#c00e96860b23c0e1420ac7befc5044e1d78d8649"
@@ -1402,7 +1477,7 @@ Lockfile:
     version "0.8.2"
     resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
   
-  object-assign@^4.1.0:
+  object-assign@^4.1.0, object-assign@^4.1.1:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   
@@ -1520,6 +1595,20 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
   
+  promise@^7.1.1:
+    version "7.3.1"
+    resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
+    dependencies:
+      asap "~2.0.3"
+  
+  prop-types@^15.5.10:
+    version "15.6.1"
+    resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
+    dependencies:
+      fbjs "^0.8.16"
+      loose-envify "^1.3.1"
+      object-assign "^4.1.1"
+  
   proxy-addr@~2.0.3:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.3.tgz#355f262505a621646b3130a728eb647e22055341"
@@ -1581,6 +1670,26 @@ Lockfile:
     version "1.1.14"
     resolved "https://registry.yarnpkg.com/react-bootstrap-dropdown-menu/-/react-bootstrap-dropdown-menu-1.1.14.tgz#c3210d2e7a8351d9ae085e8f7b3bdaf33706d815"
   
+<<<<<<< HEAD
+=======
+  react-google-oauth@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/react-google-oauth/-/react-google-oauth-1.0.0.tgz#da65f41a4568cc69e44abc0b58fe0b4a97ab228e"
+    dependencies:
+      prop-types "^15.5.10"
+      react "^15.6.1"
+  
+  react@^15.6.1:
+    version "15.6.2"
+    resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
+    dependencies:
+      create-react-class "^15.6.0"
+      fbjs "^0.8.9"
+      loose-envify "^1.1.0"
+      object-assign "^4.1.0"
+      prop-types "^15.5.10"
+  
+>>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
   readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4:
     version "2.3.5"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
@@ -1751,6 +1860,10 @@ Lockfile:
       is-extendable "^0.1.1"
       is-plain-object "^2.0.3"
       split-string "^3.0.1"
+  
+  setimmediate@^1.0.5:
+    version "1.0.5"
+    resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   
   setprototypeof@1.0.3:
     version "1.0.3"
@@ -2029,6 +2142,10 @@ Lockfile:
       media-typer "0.3.0"
       mime-types "~2.1.18"
   
+  ua-parser-js@^0.7.9:
+    version "0.7.17"
+    resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
+  
   uid-number@^0.0.6:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
@@ -2127,6 +2244,10 @@ Lockfile:
       core-util-is "1.0.2"
       extsprintf "^1.2.0"
   
+  whatwg-fetch@>=0.10.0:
+    version "2.0.3"
+    resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
+  
   which@^1.2.9:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
@@ -2170,6 +2291,7 @@ Trace:
   Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c .\node_modules\.bin\concurrently "./node_modules/.bin/nodemon" "npm run client"
+<<<<<<< HEAD
   Directory: C:\Users\jason\My Documents\CODING BOOTCAMP\Democracy-App
   Output:
   
@@ -2180,3 +2302,14 @@ Trace:
       at ChildProcess.emit (events.js:214:7)
       at maybeClose (internal/child_process.js:925:16)
       at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+=======
+  Directory: C:\Users\fvald\Desktop\fvaldez421.github.io\Democracy-App
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at ChildProcess.emit (events.js:159:13)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+>>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
