@@ -84,7 +84,7 @@ class App extends Component {
           <Route exact path="/about" component={About } />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
-          <Route exact path="/billdetail" component={BillDetail} />
+          <Route path="/billdetail/" component={BillDetail} />
         </div>
       </Router>
     )
