@@ -43,7 +43,7 @@ const BillBlock = (props) => (
             <div className="row">
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
-                    <Link to='/pages/billdetail' ClassName="active">Bill Detail</Link>
+                    <Link to='/pages/billdetail' className="active">Bill Detail</Link>
                 </div>
                 <div className="col-4">
                     <div className="card bill">BILL NAME</div>
