@@ -11,8 +11,7 @@ var UserSchema = new Schema({
 		required: true
 
 	},
-	userName: [
-	{
+	userName: {
 		type: String,
 		unique: true,
 		required: true
@@ -46,9 +45,7 @@ var UserSchema = new Schema({
 		type: String,
 		unique: true,
 		required: false
-	},
-
-	]
+	}
 });
 
 // Creates model for schema using Mongoose

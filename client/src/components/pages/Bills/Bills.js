@@ -78,4 +78,5 @@ class Bills extends Component {
 			)
 		}
 	}
+
 export default Bills;

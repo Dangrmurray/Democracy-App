@@ -1,12 +1,43 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+
+const authRoutes = require('./routes/auth-routes');
+const profileRoutes = require('./routes/profile-routes');
+
+const passportSetup = require('./config/passport-setup');
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+const cookieSession = require('cookie-session');
+
+
+
 const PORT = process.env.PORT || 3001;
+
+
 const app = express();
 const axios = require('axios');
 const routes = require ('./routes');
 const keys = require('./config/keys');
 const mongoose = require('mongoose');
+
+app.use(cookieSession({
+	maxAge: 24*60*60*1000,
+	keys: [keys.session.cookieKey]
+}));
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () =>{
+	console.log('connected to mongodb');
+});
+
+//set up routes
+app.use('/auth', authRoutes);
+app.use('/profile', profileRoutes);
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
