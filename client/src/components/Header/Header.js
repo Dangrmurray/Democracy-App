@@ -17,7 +17,6 @@ const Header = (props) => (
           handleLoginClick={props.handleLoginClick}
           handleLogoutClick={props.handleLogoutClick}
           isLoggedIn={props.isLoggedIn}
-          button={props.button}
           />
         </ul>
       </div>

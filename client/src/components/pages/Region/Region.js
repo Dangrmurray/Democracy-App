@@ -26,4 +26,5 @@ const Region = (props) => (
 		</div>
 	</Wrapper>
 );
+
 export default Region;
