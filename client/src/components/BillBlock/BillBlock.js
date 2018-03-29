@@ -12,7 +12,7 @@ const BillBlock = (props) => (
             <p>Introduced Date: {props.introduced_date}</p>
             <p>Last Action Date: {props.latest_major_action_date}</p>
             <button 
-            onClick={() => props.saveBill(props.id)}
+            onClick={() => props.saveBills(props.id)}
             >Save for later</button>
             <Link to={'/billdetail/' + props.id} className="btn btn-primary">Bill Detail</Link>
         </div>

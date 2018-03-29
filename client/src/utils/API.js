@@ -6,6 +6,12 @@ export default {
   //   return axios.get("/api/bills");
   // },
   // Deletes the book with the given id
+  logBills: function(bills) {
+    return axios.post("/api/bill", bills)
+    .then(function(bills){
+      //console.log(billData)
+    })
+  },
   deleteBill: function(id) {
     return axios.delete("/api/bills/" + id);
   },

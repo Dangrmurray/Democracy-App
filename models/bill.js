@@ -9,7 +9,7 @@ var BillSchema = new Schema({
 		type: String,
 		unique: true
 	},
-	id: {
+	key: {
 		type: String,
 		unique: true
 	},
@@ -41,7 +41,7 @@ var BillSchema = new Schema({
 		type: String,
 		unique: true
 	},
-	short_summary: {
+	summary_short: {
 		type: String,
 		unique: true
 	},
@@ -63,8 +63,16 @@ var BillSchema = new Schema({
 	latest_major_action_date: {
 		type: String,
 		unique: true
+	},
+	votes_yes: {
+		type: Array
+	},
+	votes_no: {
+		type: Array
+	},
+	votes_undecided: {
+		type: Array
 	}
-	
 	
 });
 
