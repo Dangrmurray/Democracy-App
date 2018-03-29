@@ -8,13 +8,13 @@ import API from "../../../utils/API.js";
 class Bills extends Component {
 
 	state = {
-    bills: []
-  };
+		bills: []
+	};
 
 	// When Page loads, get bills
-  componentDidMount() {
-    this.findBills();
-  }
+	componentDidMount() {
+		this.findBills();
+	}
 	
 	// Load Bills
 	findBills = () => {
@@ -26,6 +26,17 @@ class Bills extends Component {
 			)
 		.catch(err => console.log(err));
 	};
+
+
+	// Finds bill in DB by id, changes "saved" key to true
+	saveBill = (billId) => {
+		console.log("Bill_id to save for later: " + billId);
+		// API.saveBill(billId)
+		// .then(res =>
+		// 	console.log(res))
+		// .catch(err => console.log(err));
+	};
+
 
 		render() {
 			console.log(this.state)
@@ -71,6 +82,7 @@ class Bills extends Component {
 							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}
 							latest_major_action_date={bill.latest_major_action_date}
+							saveBill={this.saveBill}
 						>
 						</BillBlock>
 					)

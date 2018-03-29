@@ -10,8 +10,8 @@ const BillInfo = (props) => (
 		<h6>Sponsor Name</h6>
 		<button>View Bill Stats</button>
 		<p>Bill Lorem ipsum shiot.</p>
-		<Link to='/pages/billdetail'>View Bill</Link>
-		<Link to='/pages/billdetail'>View PDF</Link>
+		<Link to='props.sample'>View Bill</Link>
+		<Link to='props.sample'>View PDF</Link>
 	</div>
 )
 
