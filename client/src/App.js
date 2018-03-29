@@ -18,13 +18,11 @@ class App extends Component {
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.initLogin = this.initLogin.bind(this);
     this.initLogout = this.initLogout.bind(this);
-    // this.ajax = this.ajax.bind(this);
     this.state = { isLoggedIn: false, userId: "" };
   }
 
   componentDidMount() {
     let bool = (window.sessionStorage.getItem("loggedIn"));
-    //console.log(bool.valueOf());
    if (JSON.parse(bool) === true) {
       this.setState({ isLoggedIn: true });
       this.handleLoginClick();
@@ -40,11 +38,9 @@ class App extends Component {
     this.setState({ isLoggedIn: true });
     window.sessionStorage.setItem("loggedIn", true);
     if(response) {
-      // console.log(response);
       console.log("Logged in? " + this.state.isLoggedIn);
       this.initLogin(response);
     }
-    // this.ajax();
   }
   
   handleLogoutClick() {
@@ -84,7 +80,7 @@ class App extends Component {
           <Route exact path="/about" component={About } />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
-          <Route path="/billdetail/" component={BillDetail} />
+          <Route path="/billdetail/:bill_id" component={BillDetail} />
         </div>
       </Router>
     )
