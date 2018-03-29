@@ -29,7 +29,7 @@ var BillSchema = new Schema({
 		type: String,
 		unique: false
 	},
-	sponsor_uri: {
+	sponsor_url: {
 		type: String,
 		unique: false
 	},

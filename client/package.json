@@ -4,7 +4,9 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "chart.js": "^2.7.2",
     "react": "^16.0.0",
+    "react-chartjs-2": "^2.7.0",
     "react-bootstrap-dropdown-menu": "^1.1.14",
     "react-dom": "^16.0.0",
     "react-google-oauth": "^1.0.0",

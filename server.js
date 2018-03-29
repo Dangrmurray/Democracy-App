@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const axios = require('axios');
 const routes = require ('./routes');
-const bodyParser = require ('body-parser')
+const bodyParser = require ('body-parser');
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -23,6 +23,9 @@ mongoose.connect(
 );
 // Routage
 app.use(routes);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Send every request to the React app
 // Define any API routes before this runs
