@@ -245,7 +245,7 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
+              9997594,
               181045,
               153060,
               106519,
@@ -386,7 +386,7 @@ class App extends Component {
     // Ajax calls here
     this.setState({
       chartDataRace:{
-        labels: ['Asain', 'Black/African American', 'Hispanic/Latino', 'White', 'PHD', 'Vocational/Trade School', ],
+        labels: ['Asain', 'Black/African American', 'Hispanic/Latino', 'White', 'Native Am/Pac Isl', 'Am. Indian/AK Native', ],
         datasets:[
           {
             label:'Yes',
@@ -459,7 +459,7 @@ class App extends Component {
     // Ajax calls here
     this.setState({
       chartDataRegion:{
-        labels: ['Western', 'Mid-Western', 'Southern', 'Eastern', 'PHD', 'Vocational/Trade School', ],
+        labels: ['Western', 'Mid-Western', 'Southern', 'North-Eastern', 'South-Eastern' ],
         datasets:[
           {
             label:'Yes',
@@ -468,11 +468,9 @@ class App extends Component {
               181045,
               153060,
               106519,
-              105162,
-              95072
+              879832
             ],
             backgroundColor:[
-              'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
@@ -489,11 +487,9 @@ class App extends Component {
               231045,
               313060,
               106519,
-              105162,
-              95072
+              283779
             ],
             backgroundColor:[
-              'rgba(238, 38, 37, 1)',
               'rgba(238, 38, 37, 1)',
               'rgba(238, 38, 37, 1)',
               'rgba(238, 38, 37, 1)',
@@ -510,11 +506,9 @@ class App extends Component {
               181045,
               153060,
               106519,
-              105162,
-              95072
+              467838
             ],
             backgroundColor:[
-              'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
