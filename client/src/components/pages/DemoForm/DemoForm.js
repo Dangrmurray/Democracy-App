@@ -1,16 +1,61 @@
-import React from "react";
+import React, {Component} from "react";
 
 import Wrapper from "../../Wrapper"
 import Demographics from "../../Demographics";
+import API from "../../../utils/API.js"
 
 
-const DemoForm = (props) => (
-	<Wrapper>
-			
-		<Demographics></Demographics>
+class DemoForm extends Component {
+	state = {
+		age: "",
+		gender: "",
+		education: "",
+		income: "", 
+		race: "", 
+		region: ""
+	};
+
+	componentDidMount() {
+		this.loadUser();
+	}
+
+	handleInputChange = event => {
+		const { user, value } = event.target;
+		this.setState*({ [user]: value});
+	};
+
+	handleFormSubmit = event => {
+		event.preventDefault();
+		if (this.state.user) {
+			API.saveUser({
+				age: this.state.age,
+				gender: this.state.gender,
+				education: this.state.education,
+				income: this.state.income,
+				race: this.state.race,
+				region: this.state.region
+			})
+			.then(res => this.loadUser())
+			.catch(err => console.log(err));
+		}
+	};
+
+	render() {
+		return (
+			<div>
 	
-	</Wrapper>
+			<Demographics 
+			  handleFormSubmit={this.handleFormSubmit}
 
-)
+
+			/>
+			</div>
+	)};
+}
+
+
+
+
+
 
 export default DemoForm;
