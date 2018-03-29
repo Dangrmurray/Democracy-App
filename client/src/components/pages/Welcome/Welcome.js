@@ -7,11 +7,12 @@ import bgImage from './democracy.jpg';
 const Welcome = (props) => (
 	<div>
 		<div className="row">
-			<div className="col-8">
+			<div className="col-7">
 				<img src={bgImage} alt="Democracy Now MutherTrucker" className="mainImage"/>
 			</div>
-			<div className="col-4">
-				<h1>Stuff and Things</h1>
+			<div className="col-5">
+				<h1>Make your voice heard.</h1>
+				<p>Hold your representatives accountable.</p>
 			</div>
 		</div>
 		<WelcomeDetail />
