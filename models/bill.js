@@ -7,64 +7,72 @@ var Schema = mongoose.Schema;
 var BillSchema = new Schema({
 	name: {
 		type: String,
-		unique: true
+		unique: false
 	},
-	id: {
+	bill_id: {
 		type: String,
 		unique: true
 	},
 	sponsor_name: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	sponsor_state: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	sponsor_party: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	sponsor_title: {
 		type: String,
-		unique: true
+		unique: false
 	},
-	sponsor_uri: {
+	sponsor_url: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	congressdotgov_url: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	govtrack_url: {
 		type: String,
-		unique: true
+		unique: false
 	},
-	short_summary: {
+	summary_short: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	summary: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	active: {
 		type: Boolean,
 	},
 	introduced_date: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	latest_major_action: {
 		type: String,
-		unique: true
+		unique: false
 	},
 	latest_major_action_date: {
 		type: String,
-		unique: true
+		unique: false
+	},
+	votes_yes: {
+		type: Array
+	},
+	votes_no: {
+		type: Array
+	},
+	votes_undecided: {
+		type: Array
 	}
-	
 	
 });
 

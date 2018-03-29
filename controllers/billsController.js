@@ -1,4 +1,4 @@
-const db = require('../models/bill.js');
+const db = require('../models');
 
 // Find All The Bills
 module.exports = {
@@ -12,11 +12,9 @@ module.exports = {
 
 // Add New Bills to DB
   create: function(req, res) {
-    console.log("Create Bill");
-    db.Bill
-      .create(req.body)
+    db.Bill.create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
 
   // Find Individual Bill by ID
@@ -28,7 +26,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  // Update Bill - mainly with new vote count
+  // Update Bill - with new vote count
   update: function(req, res) {
     console.log("Update Bills");
     db.Bill

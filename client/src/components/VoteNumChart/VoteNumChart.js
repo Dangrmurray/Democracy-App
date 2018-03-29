@@ -19,12 +19,12 @@ class Chart extends Component{
   render(){
     return (
       <div className="chart">
-        <Bar
+        <Doughnut
           data={this.state.chartData}
           options={{
             title:{
               display:this.props.displayTitle,
-              text:'Breakdown by '+this.props.location,
+              text:this.props.location,
               fontSize:25
             },
             legend:{

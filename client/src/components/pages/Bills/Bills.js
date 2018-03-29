@@ -21,21 +21,52 @@ class Bills extends Component {
 	// Load Bills
 	getBills = () => {
 		API.getBills()
-		.then(res =>
+			.then(res => {
+
+				const bills = res.data.results[0].bills;
 				this.setState(
-					{bills: res.data.results[0].bills}
-				)
-			)
-		.catch(err => console.log(err));
+					{ bills }
+				);
+
+				// Log all bills in DB
+				for (let i = 0; i < bills.length; i++) {
+					let currentBill = bills[i];
+					// debugger;
+					API.logBills({
+						name: currentBill.title,
+						bill_id: currentBill.bill_id,
+						sponsor_name: currentBill.sponsor_name,
+						sponsor_state: currentBill.sponsor_state,
+						sponsor_party: currentBill.sponsor_party,
+						sponsor_title: currentBill.sponsor_title,
+						// sponsor_url: currentBill.sponsor_url,
+						congressdotgov_url: currentBill.congressdotgov_url,
+						govtrack_url: currentBill.govtrack_url,
+						// summary_short: currentBill.summary_short,
+						// summary: currentBill.summary,
+						active: currentBill.active,
+						introduced_date: currentBill.introduced_date,
+						latest_major_action: currentBill.latest_major_action,
+						latest_major_action_date: currentBill.latest_major_action_date
+					})
+					.then(res => console.log(res))
+					.catch(err => console.log(err))
+				}
+
+			})
+			.catch(err => console.log(err));
 	};
 
-	// saveBills = (bills) => {
-  //     API.saveBills({
-	// 			title:this.state.bills.title
-	// 		})
-  //       .then(res => console.log("saved article"))
-  //       .catch(err => console.log(err));
-  // };
+// <<<<<<<<<<<NEEDS TO FIND BILL AND EDIT>>>>>>>>>>>>>>>>
+	saveBills = (bills) => {
+		console.log("saving bill");
+		API.saveBills({
+			title:this.state.bills.title
+		})
+        .then(res => console.log("saved article"))
+        .catch(err => console.log(err));
+  };
+// <<<<<<<<<<<<<>>>>>>>>>>>>>><<<<<<<<<<<<<>>>>>>>>>
 
 		render() {
 			return (
@@ -77,6 +108,7 @@ class Bills extends Component {
 							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}
 							latest_major_action_date={bill.latest_major_action_date}
+							saveBills={this.saveBills}
 						>
 						</BillBlock>
 					)
