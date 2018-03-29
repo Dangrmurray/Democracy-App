@@ -32,23 +32,23 @@ class Bills extends Component {
 					// debugger;
 					API.logBills({
 						name: currentBill.title,
-						key: currentBill.bill_id,
+						bill_id: currentBill.bill_id,
 						sponsor_name: currentBill.sponsor_name,
 						sponsor_state: currentBill.sponsor_state,
 						sponsor_party: currentBill.sponsor_party,
 						sponsor_title: currentBill.sponsor_title,
-						sponsor_url: currentBill.sponsor_url,
+						// sponsor_url: currentBill.sponsor_url,
 						congressdotgov_url: currentBill.congressdotgov_url,
 						govtrack_url: currentBill.govtrack_url,
-						summary_short: currentBill.summary_short,
-						summary: currentBill.summary,
+						// summary_short: currentBill.summary_short,
+						// summary: currentBill.summary,
 						active: currentBill.active,
 						introduced_date: currentBill.introduced_date,
 						latest_major_action: currentBill.latest_major_action,
 						latest_major_action_date: currentBill.latest_major_action_date
 					})
 					.then(res => console.log(res))
-					.catch(err => console.log(err))					
+					.catch(err => console.log(err))
 				}
 
 			})
