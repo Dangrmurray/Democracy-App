@@ -7,6 +7,7 @@ import About from "./components/pages/About";
 import Region from "./components/pages/Region";
 import Bills from "./components/pages/Bills";
 import BillDetail from "./components/pages/BillDetail";
+import Chart from "./components/pages/Stats";
 import "./App.css";
 
 
@@ -81,6 +82,7 @@ class App extends Component {
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
           <Route path="/billdetail/:bill_id" component={BillDetail} />
+          <Route path="/stats" component={Chart} />
         </div>
       </Router>
     )
