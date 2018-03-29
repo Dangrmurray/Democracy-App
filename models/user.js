@@ -5,19 +5,47 @@ var Schema = mongoose.Schema;
 
 // Uses Schema constructor to create new UserSchema object
 var UserSchema = new Schema({
-	name: {
+	googleId: {
 		type: String,
-		unique: true
+		unique: true,
+		required: true
+
 	},
-
-	// notes array to store ObjectIds
-	notes: [
-	{
-		type: Schema.Types.ObjectId,
-
-		ref: "Note"
+	userName: {
+		type: String,
+		unique: true,
+		required: true
+	},
+	age: {
+		type: String,
+		unique: true,
+		required: false
+	},
+	gender: {
+		type: String,
+		unique: true,
+		required: false
+	},
+	education: {
+		type: String,
+		unique: true,
+		required: false
+	},
+	income: {
+		type: String,
+		unique: true,
+		required: false
+	},
+	race: {
+		type: String,
+		unique: true,
+		required: false
+	},
+	region: {
+		type: String,
+		unique: true,
+		required: false
 	}
-	]
 });
 
 // Creates model for schema using Mongoose
