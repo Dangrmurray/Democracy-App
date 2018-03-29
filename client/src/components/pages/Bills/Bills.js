@@ -27,8 +27,9 @@ class Bills extends Component {
 				);
 
 				// Log all bills in DB
-				for (var i = 0; i < bills.length; i++) {
+				for (let i = 0; i < bills.length; i++) {
 					let currentBill = bills[i];
+					// debugger;
 					API.logBills({
 						name: currentBill.title,
 						key: currentBill.bill_id,

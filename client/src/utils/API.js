@@ -1,15 +1,13 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  // getBills: function() {
-  //   return axios.get("/api/bills");
-  // },
+  
   // Deletes the book with the given id
   logBills: function(bills) {
-    return axios.post("/api/bill", bills)
+    console.log(bills)
+    axios.post("/api/bills", bills)
     .then(function(bills){
-      //console.log(billData)
+      // console.log(bills)
     })
   },
   deleteBill: function(id) {
@@ -17,7 +15,7 @@ export default {
   },
   // Saves a book to the database
   saveBills: function(billData) {
-    return axios.post("/api/bill", billData)
+    return axios.post("/api/bills", billData)
     .then(function(billData){
       //console.log(billData)
     })
