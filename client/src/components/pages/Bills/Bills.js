@@ -13,12 +13,12 @@ class Bills extends Component {
 
 	// When Page loads, get bills
   componentDidMount() {
-    this.findBills();
+    this.getBills();
   }
 	
 	// Load Bills
-	findBills = () => {
-		API.findBills()
+	getBills = () => {
+		API.getBills()
 		.then(res =>
 				this.setState(
 					{bills: res.data.results[0].bills}
@@ -27,17 +27,21 @@ class Bills extends Component {
 		.catch(err => console.log(err));
 	};
 
+	// saveBills = (bills) => {
+  //     API.saveBills({
+	// 			title:this.state.bills.title
+	// 		})
+  //       .then(res => console.log("saved article"))
+  //       .catch(err => console.log(err));
+  // };
+
 		render() {
-			console.log(this.state)
 			return (
 				<Wrapper>
-					<h1>Bills</h1>
-					<div className="row justify-content-md-center border">
-            <div className="col md-1">
-                <h3 className="panel-title"><strong><center>Find Congressional Bills That Interest You</center></strong></h3>
-            </div>
-        </div>
-        <div className="row justify-content-md-center">
+          <div className="row">
+              <h1 className="panel-title">Find Congressional Bills</h1>
+          </div>
+        <div className="row">
             <div className="col-5">
                 <select>
                     <option>Select Topic</option>

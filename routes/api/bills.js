@@ -3,9 +3,8 @@ const billsController = require("../../controllers/billsController");
 
 // Matches with "/api/bills"
 router.route("/")
-  .get(billsController.findAll)
-  // No bills created up in here, up in here.
-  //.post(billsController.create);
+  .get(billsController.create)
+  .post(billsController.create);
 
 // Matches with "/api/bills/:id"
 router.route("/:id")
