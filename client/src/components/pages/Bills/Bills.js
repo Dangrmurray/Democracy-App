@@ -15,12 +15,12 @@ class Bills extends Component {
 
 	// When Page loads, get bills
   componentDidMount() {
-    this.findBills();
+    this.getBills();
   }
 	
 	// Load Bills
-	findBills = () => {
-		API.findBills()
+	getBills = () => {
+		API.getBills()
 		.then(res =>
 				this.setState(
 					{bills: res.data.results[0].bills}
@@ -29,17 +29,21 @@ class Bills extends Component {
 		.catch(err => console.log(err));
 	};
 
+	// saveBills = (bills) => {
+  //     API.saveBills({
+	// 			title:this.state.bills.title
+	// 		})
+  //       .then(res => console.log("saved article"))
+  //       .catch(err => console.log(err));
+  // };
+
 		render() {
-			console.log(this.state)
 			return (
 				<Wrapper>
-					<h1>Bills</h1>
-					<div className="row justify-content-md-center border">
-            <div className="col md-1">
-                <h3 className="panel-title"><strong><center>Find Congressional Bills That Interest You</center></strong></h3>
-            </div>
-        </div>
-        <div className="row justify-content-md-center">
+          <div className="row">
+              <h1 className="panel-title">Find Congressional Bills</h1>
+          </div>
+        <div className="row">
             <div className="col-5">
                 <select>
                     <option>Select Topic</option>
@@ -69,8 +73,10 @@ class Bills extends Component {
 						<BillBlock
 							key={bill.bill_id}
 							title={bill.title}
-							short_summary={bill.short_summary}
+							id={bill.bill_id}
+							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}
+							latest_major_action_date={bill.latest_major_action_date}
 						>
 						</BillBlock>
 					)
