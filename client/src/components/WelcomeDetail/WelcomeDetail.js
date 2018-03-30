@@ -6,11 +6,11 @@ const WelcomeDetail = () => (
 		<div className="row">
 			<div className="col-6 blueBox">
 				<h3>How it Works</h3>
-				<p>We do stuff and then we do other stuff that does stuff with the first stuff.</p>
+				<p>See the bills before congress and vote to see if you agree with those who represent you.</p>
 			</div>
 			<div className="col-6 redBox">
 				<h3>Privacy is Key</h3>
-				<p>We do stuff and then we do other stuff that does stuff with the first stuff.</p>
+				<p>Your information will never be shared with any third party for any reason, ever!</p>
 			</div>
 		</div>
 	
