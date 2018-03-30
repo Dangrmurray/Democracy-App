@@ -43,10 +43,12 @@ var BillSchema = new Schema({
 	},
 	summary_short: {
 		type: String,
+		max: 400,
 		unique: false
 	},
 	summary: {
 		type: String,
+		max: 800,
 		unique: false
 	},
 	active: {

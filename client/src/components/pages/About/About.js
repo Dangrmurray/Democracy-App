@@ -10,13 +10,14 @@ const About = (props) => (
 			<div class="card">
 				<div class="card-header">
 					<a class="card-link" data-toggle="collapse" href="#collapseOne">
-						About Democracy-App
+						About Bill Whip
                 </a>
 				</div>
 				<div id="collapseOne" class="collapse show" data-parent="#accordion">
 					<div class="card-body">
-						<p>At any given time, there could be hundreds, if not thousands of bills passing through congress on either a federal, state,
-						or local level. Our group wanted to come up with a way in which a person could be introduced to a bill they weren’t aware
+						<p>	
+						At any given time, there could be hundreds, if not thousands of bills passing through congress on either a federal, state,
+						or local level. Bill Whip is a way in which a person could be introduced to a bill they weren’t aware
 						of, or do a deep dive on one which they want to know more about. Additionally, there’s an opportunity to cast one’s own approval/disapproval
 						on the bill while also leaving a quick explanation why they feel a certain way. When searching the bill, the user will be
 						told a set number of ones that are on the “hot stove” in the coming days. If they would rather search which bills are coming
@@ -59,6 +60,7 @@ const About = (props) => (
 							<li>Jason Kunkel</li>
 							<li>David Morrill</li>
 							<li>Daniel Murray</li>
+							<li>Abdel Rahman</li>
 							<li>Frank Valdez</li>
 						</ul>
 					</div>
