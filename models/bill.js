@@ -29,10 +29,6 @@ var BillSchema = new Schema({
 		type: String,
 		unique: false
 	},
-	sponsor_url: {
-		type: String,
-		unique: false
-	},
 	congressdotgov_url: {
 		type: String,
 		unique: false
@@ -43,12 +39,12 @@ var BillSchema = new Schema({
 	},
 	summary_short: {
 		type: String,
-		max: 400,
+		max: 2000,
 		unique: false
 	},
 	summary: {
 		type: String,
-		max: 800,
+		max: 10000,
 		unique: false
 	},
 	active: {
