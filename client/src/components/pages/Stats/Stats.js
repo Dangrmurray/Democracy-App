@@ -42,6 +42,7 @@ class App extends Component {
               105162,
               95072
             ],
+
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
@@ -52,6 +53,7 @@ class App extends Component {
               'rgba(119, 191, 198, 1)'
             ]
           },
+          
 
           {
             label:'No',
@@ -525,13 +527,27 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
-        <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
-        <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
-        <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
-        <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
-        <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+      <div className="App container">
+        <div className="row">
+        <div className="AgeChart col-6">
+          <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
+        </div>
+        <div className="IncomeChart col-6">
+          <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
+        </div>
+        <div className="GenderChart col-6">
+          <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
+        </div>
+        <div className="EducationChart col-6">
+          <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
+        </div>
+        <div className="RaceChart col-6">
+          <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
+        </div>
+        <div className="RegionChart col-6">
+          <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+        </div>
+        </div>
       </div>
     );
   }

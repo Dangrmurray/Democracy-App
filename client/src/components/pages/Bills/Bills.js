@@ -8,9 +8,11 @@ import SearchBar from "../../SearchBar/SearchBar.js";
 	
 class Bills extends Component {
 
+
 	state = {
     bills: []
   };
+
 
 	// When Page loads, get bills
   componentDidMount() {
