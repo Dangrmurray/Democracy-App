@@ -8,49 +8,66 @@ import API from "../../../utils/API.js";
 class Bills extends Component {
 
 	state = {
-    bills: []
-  };
+		bills: []
+	};
 
 	// When Page loads, get bills
-  componentDidMount() {
-    this.getBills();
-  }
+	componentDidMount() {
+		this.getBills();
+	}
 	
-	// Load Bills
+	// Save and Load Bills
 	getBills = () => {
+		// Gets bills from ProPublica API
 		API.getBills()
 			.then(res => {
-
 				const bills = res.data.results[0].bills;
-				this.setState(
-					{ bills }
-				);
 
-				// Log all bills in DB
-				for (let i = 0; i < bills.length; i++) {
+				//Loops though API repsonse 
+				for (let i = 0; i < 3; i++) {
 					let currentBill = bills[i];
-					// debugger;
-					API.logBills({
-						name: currentBill.title,
-						bill_id: currentBill.bill_id,
-						sponsor_name: currentBill.sponsor_name,
-						sponsor_state: currentBill.sponsor_state,
-						sponsor_party: currentBill.sponsor_party,
-						sponsor_title: currentBill.sponsor_title,
-						// sponsor_url: currentBill.sponsor_url,
-						congressdotgov_url: currentBill.congressdotgov_url,
-						govtrack_url: currentBill.govtrack_url,
-						// summary_short: currentBill.summary_short,
-						// summary: currentBill.summary,
-						active: currentBill.active,
-						introduced_date: currentBill.introduced_date,
-						latest_major_action: currentBill.latest_major_action,
-						latest_major_action_date: currentBill.latest_major_action_date
-					})
-					.then(res => console.log(res))
-					.catch(err => console.log(err))
-				}
 
+					//Pulls bills from our DB and checks for duplicates
+					API.checkBill(currentBill.bill_id)
+						.then(res => {
+
+							//Looks for each bill by Bill Id, if it gets a valid response, does nothing
+							//Else it saves the bill
+							if (res.data[0]) {
+								console.log("Repeat...");
+							}else {
+								API.logBills({
+									name: currentBill.title,
+									bill_id: currentBill.bill_id,
+									sponsor_name: currentBill.sponsor_name,
+									sponsor_state: currentBill.sponsor_state,
+									sponsor_party: currentBill.sponsor_party,
+									sponsor_title: currentBill.sponsor_title,
+									congressdotgov_url: currentBill.congressdotgov_url,
+									govtrack_url: currentBill.govtrack_url,
+									summary_short: currentBill.summary_short,
+									summary: currentBill.summary,
+									active: currentBill.active,
+									introduced_date: currentBill.introduced_date,
+									latest_major_action: currentBill.latest_major_action,
+									latest_major_action_date: currentBill.latest_major_action_date
+								})
+								.then(res => {
+									console.log("Saving Unique Bill.")
+								})
+								.catch(err => console.log(err))
+							}						
+						})
+				};
+				//Gets all stored bills, including newly saved
+				API.pullBills()
+					.then(res => {
+						let bills = res.data;
+						console.log(bills);
+						this.setState(
+							{ bills }
+						);
+					})
 			})
 			.catch(err => console.log(err));
 	};
@@ -101,7 +118,7 @@ class Bills extends Component {
 					{this.state.bills.map(bill => (
 						<BillBlock
 							key={bill.bill_id}
-							title={bill.title}
+							title={bill.name}
 							id={bill.bill_id}
 							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}

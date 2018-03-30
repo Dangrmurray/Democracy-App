@@ -3,13 +3,13 @@ const billsController = require("../../controllers/billsController");
 
 // Matches with "/api/bills"
 router.route("/bills")
-  .get(billsController.create)
+  .get(billsController.findAll)
   .post(billsController.create);
 
 
 // Matches with "/api/bills/:id"
-router.route("/:id")
-  .get(billsController.findById)
+router.route("/bills/:id")
+  .get(billsController.findAll)
   .put(billsController.update)
   .delete(billsController.remove);
 
