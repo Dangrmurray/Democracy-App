@@ -313,34 +313,8 @@ class App extends Component {
 
   
 
-<<<<<<< HEAD
-  // getChartDataRace(){
-  //   // Ajax calls here
-  //   this.setState({
-  //     chartDataRace:{
-  //       labels: ['Asain', 'Black/African American', 'Hispanic/Latino', 'White', 'Native Am/Pac Isl', 'Am. Indian/AK Native', ],
-  //       datasets:[
-  //         {
-  //           label:'Yes',
-  //           data:[
-  //             417594,
-  //             181045,
-  //             153060,
-  //             106519,
-  //             105162,
-  //             95072
-  //           ],
-  //           backgroundColor:[
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)',
-  //             'rgba(119, 191, 198, 1)'
-  //           ]
-  //         },
-=======
+
+
   getChartDataRace(){
     // Ajax calls here
     this.setState({
@@ -367,53 +341,52 @@ class App extends Component {
               'rgba(119, 191, 198, 1)'
             ]
           },
->>>>>>> 467b3ccd5039b59a6dd913ee637c4e8141f23165
 
-  //         {
-  //           label:'No',
-  //           data:[
-  //             614394,
-  //             231045,
-  //             313060,
-  //             106519,
-  //             105162,
-  //             95072
-  //           ],
-  //           backgroundColor:[
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)',
-  //             'rgba(238, 38, 37, 1)'
-  //           ]
-  //         },
+          {
+            label:'No',
+            data:[
+              614394,
+              231045,
+              313060,
+              106519,
+              105162,
+              95072
+            ],
+            backgroundColor:[
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(238, 38, 37, 1)'
+            ]
+          },
 
-  //          {
-  //           label:'Undecided',
-  //           data:[
-  //             417594,
-  //             181045,
-  //             153060,
-  //             106519,
-  //             105162,
-  //             95072
-  //           ],
-  //           backgroundColor:[
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)',
-  //             'rgba(255, 240, 200, 1)'
-  //           ]
-  //         }
-  //       ]
-  //     }
-  //   });
-  // }
+           {
+            label:'Undecided',
+            data:[
+              417594,
+              181045,
+              153060,
+              106519,
+              105162,
+              95072
+            ],
+            backgroundColor:[
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)',
+              'rgba(255, 240, 200, 1)'
+            ]
+          }
+        ]
+      }
+    });
+  }
 
   getChartDataRegion(){
     // Ajax calls here
