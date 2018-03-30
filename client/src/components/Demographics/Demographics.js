@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Demographics.css';
 import { Link } from "react-router-dom";
 
@@ -10,11 +11,14 @@ const Demographics = (props) => (
 		<div className="panel panel-success">
 			<div className="panel-heading">
 				<h3 className="panel-title"><strong>Demographics</strong></h3>
+  
 				<p>To allow us to track voting trends please enter your census information below. Information is collectged for data purposes only. Nothing is shared</p>
+
 			</div>
  
 		<div className="panel-body">          
           <form>
+
 
          	<div class="form-group col-md-5">
       			<label for="inputState">Select Your Age Range from the List Below</label>
@@ -119,5 +123,7 @@ const Demographics = (props) => (
 
 
 	); 
+
 export default Demographics;
+
 
