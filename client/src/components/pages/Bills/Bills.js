@@ -7,9 +7,11 @@ import API from "../../../utils/API.js";
 	
 class Bills extends Component {
 
+
 	state = {
     bills: []
   };
+
 
 	// When Page loads, get bills
   componentDidMount() {

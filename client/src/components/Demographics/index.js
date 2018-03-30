@@ -1,1 +1,2 @@
-export {default} from "./DemoForm";
+
+export {default} from './Demographics';
