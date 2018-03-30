@@ -90,7 +90,7 @@ const DemoForm = (props) => (
 
       	 
             <div className="form-group">
-        		<label for="state">Select Your State from the List Below</label>
+        		<label for="state">Select Your Region from the List Below</label>
          		<input type="text" className="form-control" id="fan-team" list="state-plan" placeholder="Choose Your Favorite Team" />
         		<select id="state-plan">
 		          <option value="Western">Western</option>
