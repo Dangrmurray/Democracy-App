@@ -110,7 +110,7 @@ const Demographics = (props) => (
 
 
       		<p id="googleID" data-googleID="{{dataValues.googleID}}"></p>
-      		<button onClick={() => props.handleFormSubmit()} type="submit" className="btn btn-primary" href="/region" id="sign-up-button">Save Info</button>
+      		<button onClick={() => {props.handleFormSubmit(); props.sendUser();}} type="submit" className="btn btn-primary" href="/region" id="sign-up-button">Save Info</button>
     		
     		</form>
   		</div>

@@ -87,14 +87,12 @@ class App extends Component {
           <Route exact path="/bills" component={Bills} />
 
           <Route exact path="/billdetail" component={BillDetail} />
-          <Route exat path="/demoform" component={DemoForm} />
+          <Route exact path="/demoform" component={DemoForm} />
 
           <Route path="/billdetail/:bill_id" component={BillDetail} />
-<<<<<<< HEAD
 
-=======
           <Route path="/stats" component={Chart} />
->>>>>>> cd24e6d8cf633d3b587ebb9804cc2a3cac7e814f
+
         </div>
       </Router>
     )

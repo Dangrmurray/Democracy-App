@@ -16,10 +16,14 @@ class DemoForm extends Component {
 	};
 
 	componentDidMount() {
-		this.loadUser();
 	}
 
-	handleInputChange = event => {
+
+	sendUser = () => {
+		console.log("sending user");
+	}
+
+ 	handleInputChange = event => {
 		const { user, value } = event.target;
 		this.setState*({ [user]: value});
 	};
@@ -46,6 +50,7 @@ class DemoForm extends Component {
 	
 			<Demographics 
 			  handleFormSubmit={this.handleFormSubmit}
+			  sendUser={this.sendUser}
 
 
 			/>
