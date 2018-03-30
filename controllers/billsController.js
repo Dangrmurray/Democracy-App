@@ -20,8 +20,9 @@ module.exports = {
   // Find Individual Bill by ID
   findById: function(req, res) {
     console.log("Find Bill By DB-ID");
+    console.log(req.body);
     db.Bill
-      .create(req.body)
+      .find({ "bill_id": req.body })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
