@@ -57,10 +57,10 @@ const About = (props) => (
 					<div class="card-body">
 						<ul>
 							<li>Ryan Brownlow</li>
-							<li>Abdel-Rahma Faisal</li>
 							<li>Jason Kunkel</li>
 							<li>David Morrill</li>
 							<li>Daniel Murray</li>
+							<li>Abdel Rahman</li>
 							<li>Frank Valdez</li>
 						</ul>
 					</div>
