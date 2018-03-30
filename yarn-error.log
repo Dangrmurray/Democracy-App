@@ -22,7 +22,7 @@ npm manifest:
     "scripts": {
       "server": "node server.js",
       "client": "cd client && npm run start",
-      "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+      "start": "./node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
       "build": "cd client && npm run build",
       "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
       "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,6 +36,10 @@ npm manifest:
     },
     "dependencies": {
       "axios": "^0.18.0",
+<<<<<<< HEAD
+      "body-parser": "^1.18.2",
+=======
+>>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
       "express": "^4.15.4",
       "mongoose": "^5.0.12",
       "morgan": "^1.9.0",
@@ -231,7 +235,11 @@ Lockfile:
     version "3.5.0"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   
+<<<<<<< HEAD
+  body-parser@1.18.2, body-parser@^1.18.2:
+=======
   body-parser@1.18.2:
+>>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
     version "1.18.2"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
     dependencies:
@@ -2382,10 +2390,17 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
+<<<<<<< HEAD
+  Exit code: 3221225786
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c .\node_modules\.bin\concurrently "npm run server" "npm run client"
+  Directory: C:\Users\fvald\Desktop\fvaldez421.github.io\Democracy-App
+=======
   Exit code: 127
   Command: sh
   Arguments: -c ./node_modules/.bin/concurrently "./node_modules/.bin/nodemon" "npm run client"
   Directory: /Users/danielmurray/Desktop/Democracy-App
+>>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
   Output:
   
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)

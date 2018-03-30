@@ -4,10 +4,8 @@ export default {
   
   // Deletes the book with the given id
   logBills: function(bills) {
-    console.log(bills)
-    axios.post("/api/bills", bills)
-    .then(function(bills){
-      // console.log(bills)
+    return axios.post("/api/bills", bills)
+    .then(function(response){
     })
   },
   deleteBill: function(id) {
@@ -17,7 +15,6 @@ export default {
   saveBills: function(billData) {
     return axios.post("/api/bills", billData)
     .then(function(billData){
-      //console.log(billData)
     })
   },
   getBills: function() {

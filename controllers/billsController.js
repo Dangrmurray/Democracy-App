@@ -1,4 +1,4 @@
-const db = require('../models/bill.js');
+const db = require('../models');
 
 // Find All The Bills
 module.exports = {
@@ -12,11 +12,9 @@ module.exports = {
 
 // Add New Bills to DB
   create: function(req, res) {
-    // console.log(req);
-
     db.Bill.create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
 
   // Find Individual Bill by ID
