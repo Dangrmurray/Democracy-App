@@ -3,6 +3,7 @@ import './Bills.css';
 import Wrapper from "../../Wrapper";
 import BillBlock from "../../BillBlock";
 import API from "../../../utils/API.js";
+import SearchBar from "../../SearchBar/SearchBar.js";
 
 	
 class Bills extends Component {
@@ -15,7 +16,7 @@ class Bills extends Component {
   componentDidMount() {
     this.getBills();
   }
-	
+
 	// Load Bills
 	getBills = () => {
 		API.getBills()
@@ -73,6 +74,10 @@ class Bills extends Component {
               <h1 className="panel-title">Find Congressional Bills</h1>
           </div>
         <div className="row">
+			<div className="col-4">
+			<SearchBar></SearchBar>
+			
+			</div>
             <div className="col-5">
                 <select>
                     <option>Select Topic</option>

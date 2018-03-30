@@ -26,5 +26,12 @@ export default {
       //console.log(bills);
       return bills
     }))
+  },
+  searchBills: function(keyword) {
+    return (axios.get("https://api.propublica.org/congress/v1/bills/search.json?query="+ keyword, { headers: { "X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU" } })
+      .then(function (bills) {
+        //console.log(bills);
+        return bills
+      }))
   }
 }
