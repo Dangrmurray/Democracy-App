@@ -15,10 +15,10 @@ export default {
     })
   },
   checkBill: function(id) {
+    console.log(id);
     return axios.get("/api/bills/" + id)
     .then(function(response){
       return response;
-      console.log(response);
     })
   },
   deleteBill: function(id) {
@@ -31,7 +31,7 @@ export default {
   //   })
   // },
   getBills: function() {
-    return (axios.get("https://api.propublica.org/congress/v1/115/senate/bills/active.json", {headers: {"X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU"}})
+    return (axios.get("https://api.propublica.org/congress/v1/115/house/bills/active.json", {headers: {"X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU"}})
     .then(function(bills) {
       //console.log(bills);
       return bills
