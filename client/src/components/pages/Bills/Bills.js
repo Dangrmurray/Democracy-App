@@ -3,13 +3,16 @@ import './Bills.css';
 import Wrapper from "../../Wrapper";
 import BillBlock from "../../BillBlock";
 import API from "../../../utils/API.js";
+import SearchBar from "../../SearchBar/SearchBar.js";
 
 	
 class Bills extends Component {
 
+
 	state = {
 		bills: []
 	};
+
 
 	// When Page loads, get bills
 	componentDidMount() {
@@ -90,6 +93,10 @@ class Bills extends Component {
               <h1 className="panel-title">Find Congressional Bills</h1>
           </div>
         <div className="row">
+			<div className="col-4">
+			<SearchBar></SearchBar>
+			
+			</div>
             <div className="col-5">
                 <select>
                     <option>Select Topic</option>
