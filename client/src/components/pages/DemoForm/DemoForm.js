@@ -15,42 +15,42 @@ class DemoForm extends Component {
 		region: ""
 	};
 
-	componentDidMount() {
-	}
+	// componentDidMount() {
+	// }
 
 
-	sendUser = () => {
-		console.log("sending user");
-	}
+	// sendUser = () => {
+	// 	console.log("sending user");
+	// }
 
- 	handleInputChange = event => {
-		const { user, value } = event.target;
-		this.setState*({ [user]: value});
-	};
+ // 	handleInputChange = event => {
+	// 	const { user, value } = event.target;
+	// 	this.setState*({ [user]: value});
+	// };
 
-	handleFormSubmit = event => {
-		event.preventDefault();
-		if (this.state.user) {
-			API.saveUser({
-				age: this.state.age,
-				gender: this.state.gender,
-				education: this.state.education,
-				income: this.state.income,
-				race: this.state.race,
-				region: this.state.region
-			})
-			.then(res => this.loadUser())
-			.catch(err => console.log(err));
-		}
-	};
+	// handleFormSubmit = event => {
+	// 	event.preventDefault();
+	// 	if (this.state.user) {
+	// 		API.saveUser({
+	// 			age: this.state.age,
+	// 			gender: this.state.gender,
+	// 			education: this.state.education,
+	// 			income: this.state.income,
+	// 			race: this.state.race,
+	// 			region: this.state.region
+	// 		})
+	// 		.then(res => this.loadUser())
+	// 		.catch(err => console.log(err));
+	// 	}
+	// };
 
 	render() {
 		return (
 			<div>
 	
 			<Demographics 
-			  handleFormSubmit={this.handleFormSubmit}
-			  sendUser={this.sendUser}
+			  // handleFormSubmit={this.handleFormSubmit}
+			  // sendUser={this.sendUser}
 
 
 			/>
