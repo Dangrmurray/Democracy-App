@@ -114,7 +114,9 @@ const Demographics = (props) => (
 
 
 
-      		<button onClick={() => {props.handleFormSubmit(); props.sendUser();}} id="submitbtn" type="submit" className="btn btn-primary"><a className="nav-link"href="/region">Save Info</a></button>
+      		<button onClick={() => {props.handleFormSubmit(); props.sendUser();}} id="submitbtn" type="submit" className="btn btn-primary">
+          <a className="nav-link" href="/region">Save Info</a>
+          </button>
 
     		
     		</form>

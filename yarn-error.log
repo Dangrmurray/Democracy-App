@@ -1,35 +1,17 @@
 Arguments: 
-<<<<<<< HEAD
-<<<<<<< HEAD
   C:\Program Files\nodejs\node.exe C:\Users\jason\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
-  C:\Users\jason\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jason\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\jason\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\jason\AppData\Local\Programs\Python\Python36-32;C:\Users\jason\AppData\Local\Microsoft\WindowsApps;C:\Users\jason\AppData\Roaming\npm;.;C:\Program Files\Sublime Text 3";C:\Program Files\Heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
-=======
-  C:\Program Files\nodejs\node.exe C:\Users\fvald\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
-
-PATH: 
-  C:\Users\fvald\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\fvald\bin;C:\Users\fvald\introcs\java\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Ruby25-x64\bin;C:\Users\fvald\AppData\Local\Programs\Python\Python35\Scripts;C:\Users\fvald\AppData\Local\Programs\Python\Python35;C:\Ruby24-x64\bin;C:\Users\fvald\introcs\j3d\bin;C:\Users\fvald\introcs\bin;C:\Users\fvald\introcs\java\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Users\fvald\AppData\Local\atom\bin;C:\Users\fvald\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\fvald\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
->>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
-=======
-  /usr/local/Cellar/node/9.3.0_1/bin/node /usr/local/bin/yarn start
-
-PATH: 
-  /bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
->>>>>>> cd24e6d8cf633d3b587ebb9804cc2a3cac7e814f
+  C:\Users\jason\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jason\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\jason\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\jason\AppData\Local\Programs\Python\Python36-32;C:\Users\jason\AppData\Local\Microsoft\WindowsApps;C:\Users\jason\AppData\Roaming\npm;.;C:\Program Files\Sublime Text 3";C:\Program Files\Heroku\bin;C:\Users\jason\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.5.1
 
 Node version: 
-<<<<<<< HEAD
   8.9.1
-=======
-  9.3.0
->>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
 
 Platform: 
-  darwin x64
+  win32 x64
 
 npm manifest: 
   {
@@ -54,13 +36,7 @@ npm manifest:
     },
     "dependencies": {
       "axios": "^0.18.0",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
       "body-parser": "^1.18.2",
-=======
->>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
->>>>>>> cd24e6d8cf633d3b587ebb9804cc2a3cac7e814f
       "express": "^4.15.4",
       "mongoose": "^5.0.12",
       "morgan": "^1.9.0",
@@ -256,11 +232,7 @@ Lockfile:
     version "3.5.0"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   
-<<<<<<< HEAD
   body-parser@1.18.2, body-parser@^1.18.2:
-=======
-  body-parser@1.18.2:
->>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
     version "1.18.2"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
     dependencies:
@@ -1773,8 +1745,6 @@ Lockfile:
     version "1.1.14"
     resolved "https://registry.yarnpkg.com/react-bootstrap-dropdown-menu/-/react-bootstrap-dropdown-menu-1.1.14.tgz#c3210d2e7a8351d9ae085e8f7b3bdaf33706d815"
   
-<<<<<<< HEAD
-=======
   react-google-oauth@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/react-google-oauth/-/react-google-oauth-1.0.0.tgz#da65f41a4568cc69e44abc0b58fe0b4a97ab228e"
@@ -1792,7 +1762,6 @@ Lockfile:
       object-assign "^4.1.0"
       prop-types "^15.5.10"
   
->>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
   readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4:
     version "2.3.5"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
@@ -2414,12 +2383,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-<<<<<<< HEAD
   Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
-<<<<<<< HEAD
-  Arguments: /d /s /c .\node_modules\.bin\concurrently "./node_modules/.bin/nodemon" "npm run client"
-<<<<<<< HEAD
+  Arguments: /d /s /c .\node_modules\.bin\concurrently "npm run server" "npm run client"
   Directory: C:\Users\jason\My Documents\CODING BOOTCAMP\Democracy-App
   Output:
   
@@ -2430,23 +2396,3 @@ Trace:
       at ChildProcess.emit (events.js:214:7)
       at maybeClose (internal/child_process.js:925:16)
       at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
-=======
-=======
-  Arguments: /d /s /c .\node_modules\.bin\concurrently "npm run server" "npm run client"
->>>>>>> cd24e6d8cf633d3b587ebb9804cc2a3cac7e814f
-  Directory: C:\Users\fvald\Desktop\fvaldez421.github.io\Democracy-App
-=======
-  Exit code: 127
-  Command: sh
-  Arguments: -c ./node_modules/.bin/concurrently "./node_modules/.bin/nodemon" "npm run client"
-  Directory: /Users/danielmurray/Desktop/Democracy-App
->>>>>>> 86f3dadafe63bf9975dad4b3219944c477cc9f22
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:159:13)
-      at maybeClose (internal/child_process.js:943:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
->>>>>>> 6cb17ff93d772f99b82f88cc980f4c50329604b6
