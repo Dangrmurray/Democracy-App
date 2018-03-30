@@ -8,7 +8,7 @@ router.route("/bills")
 
 // Matches with "/api/bills/:id"
 router.route("/bills/:id")
-  .get(billsController.findAll)
+  .get(billsController.findById)
   .put(billsController.update)
   .delete(billsController.remove);
 

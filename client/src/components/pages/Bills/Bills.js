@@ -27,7 +27,7 @@ class Bills extends Component {
 				const bills = res.data.results[0].bills;
 
 				//Loops though API repsonse 
-				for (let i = 0; i < 3; i++) {
+				for (let i = 0; i < bills.length; i++) {
 					let currentBill = bills[i];
 
 					//Pulls bills from our DB and checks for duplicates
@@ -49,7 +49,7 @@ class Bills extends Component {
 									congressdotgov_url: currentBill.congressdotgov_url,
 									govtrack_url: currentBill.govtrack_url,
 									summary_short: currentBill.summary_short,
-									summary: currentBill.summary,
+									// summary: currentBill.summary,
 									active: currentBill.active,
 									introduced_date: currentBill.introduced_date,
 									latest_major_action: currentBill.latest_major_action,
