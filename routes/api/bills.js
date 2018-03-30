@@ -6,7 +6,6 @@ router.route("/bills")
   .get(billsController.findAll)
   .post(billsController.create);
 
-
 // Matches with "/api/bills/:id"
 router.route("/bills/:id")
   .get(billsController.findById)

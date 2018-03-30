@@ -80,17 +80,15 @@ class App extends Component {
             handleLogoutClick={this.handleLogoutClick}
             isLoggedIn={this.state.isLoggedIn}
             button={this.state.button}
+            userId={this.state.userId}
           />
           <Route exact path="/" component={this.state.isLoggedIn ? Region : Welcome} />
           <Route exact path="/about" component={About } />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
-
           <Route exact path="/billdetail" component={BillDetail} />
           <Route exact path="/demoform" component={DemoForm} />
-
-          <Route path="/billdetail/:bill_id" component={BillDetail} />
-
+          <Route path="/billdetail/:bill_id" render={(props) => (<BillDetail userId={this.state.userId} />)} />
           <Route path="/stats" component={Chart} />
 
         </div>
