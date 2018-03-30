@@ -43,6 +43,7 @@ class App extends Component {
               95072
             ],
 
+           
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
@@ -53,7 +54,6 @@ class App extends Component {
               'rgba(119, 191, 198, 1)'
             ]
           },
-          
 
           {
             label:'No',
@@ -106,7 +106,7 @@ class App extends Component {
     // Ajax calls here
     this.setState({
       chartDataIncome:{
-        labels: ['$0-$9,524', '$9,525-$38,699', '$38,700-$82,499', '$82,500-$157,499', '$157,500-$199,999', '$200,000-$499,999', ],
+        labels: ['<$9,524', '<$38,699', '<-$82,499', '<$157,499', '<$199,999', '<$499,999', ],
         datasets:[
           {
             label:'Yes',
@@ -242,12 +242,12 @@ class App extends Component {
     // Ajax calls here
     this.setState({
       chartDataEducation:{
-        labels: ['Some High School', 'High School Diploma/Equivalent', 'Some College', 'Bachelor Degree', 'PHD', 'Vocational/Trade School', ],
+        labels: ['Some HS', 'HS Dip/Equiv', 'Some Coll', 'Bachelor', 'PHD', 'Vocational/Trade', ],
         datasets:[
           {
             label:'Yes',
             data:[
-              9997594,
+              997594,
               181045,
               153060,
               106519,
@@ -311,84 +311,13 @@ class App extends Component {
     });
   }
 
-  getChartDataRace(){
-    // Ajax calls here
-    this.setState({
-      chartDataRace:{
-        labels: ['Asain', 'Black/African American', 'Hispanic/Latino', 'White', 'PHD', 'Vocational/Trade School', ],
-        datasets:[
-          {
-            label:'Yes',
-            data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
-            ],
-            backgroundColor:[
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)',
-              'rgba(119, 191, 198, 1)'
-            ]
-          },
-
-          {
-            label:'No',
-            data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              105162,
-              95072
-            ],
-            backgroundColor:[
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)',
-              'rgba(238, 38, 37, 1)'
-            ]
-          },
-
-           {
-            label:'Undecided',
-            data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
-            ],
-            backgroundColor:[
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)',
-              'rgba(255, 240, 200, 1)'
-            ]
-          }
-        ]
-      }
-    });
-  }
+  
 
   getChartDataRace(){
     // Ajax calls here
     this.setState({
       chartDataRace:{
-        labels: ['Asain', 'Black/African American', 'Hispanic/Latino', 'White', 'Native Am/Pac Isl', 'Am. Indian/AK Native', ],
+        labels: ['Asain', 'Black/Af. Am.', 'Hisp/Lat', 'White', 'Native Am/Pac Isl', 'Am. In./AK Native', ],
         datasets:[
           {
             label:'Yes',
@@ -538,15 +467,16 @@ class App extends Component {
         <div className="GenderChart col-6">
           <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
         </div>
+        <div className="RegionChart col-6">
+          <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+        </div>
         <div className="EducationChart col-6">
           <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
         </div>
         <div className="RaceChart col-6">
           <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
         </div>
-        <div className="RegionChart col-6">
-          <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
-        </div>
+        
         </div>
       </div>
     );
