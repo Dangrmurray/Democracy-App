@@ -42,6 +42,7 @@ class App extends Component {
               105162,
               95072
             ],
+
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
               'rgba(119, 191, 198, 1)',
@@ -52,6 +53,7 @@ class App extends Component {
               'rgba(119, 191, 198, 1)'
             ]
           },
+          
 
           {
             label:'No',
