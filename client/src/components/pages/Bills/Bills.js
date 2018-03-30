@@ -16,15 +16,15 @@ class Bills extends Component {
     this.getBills();
   }
 	
-	// Load Bills
+	// Load Bills from API
 	getBills = () => {
 		API.getBills()
 			.then(res => {
-
 				const bills = res.data.results[0].bills;
 				this.setState(
 					{ bills }
 				);
+				
 
 				// Log all bills in DB
 				for (let i = 0; i < bills.length; i++) {

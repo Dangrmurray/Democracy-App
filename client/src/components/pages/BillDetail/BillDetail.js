@@ -10,6 +10,7 @@ class BillDetail extends Component {
 
 	componentDidMount() {
 		this.getBill();
+		console.log(this.props.userId)
 	}
 
 	getBill = () => {
@@ -21,7 +22,9 @@ class BillDetail extends Component {
 		return (
 			<div className="container">
 				<BillInfo></BillInfo>
-				<Vote></Vote>
+				<Vote
+					userId={this.props.userId}
+				></Vote>
 				<Comments></Comments>
 			</div>
 		)

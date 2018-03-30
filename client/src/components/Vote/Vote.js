@@ -6,19 +6,16 @@ import Chart from '../VoteNumChart';
 
 
 class Vote extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      
+  constructor(props){
+    super(props);
+    this.state = {   
       chartDataNum:{}
-      
     }
   }
+  
 
   componentWillMount(){
     this.getChartDataNum();
-    
-    
   }
 
   getChartDataNum(){
@@ -44,26 +41,42 @@ class Vote extends React.Component {
       }
     });
   }
+
+  voteYes(){
+    console.log('You voted Yes');
+  }
   
+  voteNo(){
+    console.log('You voted No');
+  }
+
+  voteUndecided(){
+    console.log('You voted Perhaps?');
+  }
    
     render() {
-  
+      console.log(this.props.userId)
       return (
+       
         <div className="col-6 mx-auto voteBlock">
-          <div className=" loggedOut">
-            <h5>Login To Vote</h5>
-          </div>
-
-          <div className="loggedIn">
-            <button className="btn btn-success">YES</button>
-            <button className="btn btn-danger">NO</button>
-            <button className="btn btn-secondary">UNDECIDED</button>
-          </div>
-          <div className="voteOverview">
-            <h5>Vote Summary Graph</h5>
-              <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
-            
-          </div>
+          {
+          (!this.props.userId) 
+          ? <div className=" loggedOut">
+              <h5>Login To Vote</h5>
+            </div>
+          : <div>
+              <div className="loggedIn">
+                <button onClick={this.voteYes} className="btn btn-success">YES</button>
+                <button onClick={this.voteNo} className="btn btn-danger">NO</button>
+                <button onClick={this.voteUndecided} className="btn btn-secondary">UNDECIDED</button>
+              </div>
+              
+              <div className="voteOverview">
+                <h5>Vote Summary Graph</h5>
+                  <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
+              </div>
+            </div>
+          }
         </div>
       );
     }
