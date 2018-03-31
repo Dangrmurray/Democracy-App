@@ -9,6 +9,9 @@ class Vote extends React.Component {
   constructor(){
     super();
     this.state = {
+
+      // add to State what would be displayed tally of the onClick 
+     // think about when somebody clicks the yes delta State btn
       
       chartDataNum:{}
       
@@ -44,6 +47,17 @@ class Vote extends React.Component {
       }
     });
   }
+    yesVote = (event) => {
+      event.preventDefault();
+    }
+
+    noVote = (event) => {
+      event.preventDefault();
+    }
+
+    undecidedVote = (event) => {
+      event.preventDefault();
+    }
   
    
     render() {
@@ -55,9 +69,9 @@ class Vote extends React.Component {
           </div>
 
           <div className="loggedIn">
-            <button className="btn btn-success">YES</button>
-            <button className="btn btn-danger">NO</button>
-            <button className="btn btn-secondary">UNDECIDED</button>
+            <button onClick={this.yesVote} className="btn btn-success">YES</button>
+            <button onClick={this.noVote} className="btn btn-danger">NO</button>
+            <button onClick={this.undecidedVote} className="btn btn-secondary">UNDECIDED</button>
           </div>
           <div className="voteOverview">
             <h5>Vote Summary Graph</h5>
