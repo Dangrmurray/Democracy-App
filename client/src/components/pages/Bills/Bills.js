@@ -33,12 +33,9 @@ class Bills extends Component {
 					//Pulls bills from our DB and checks for duplicates
 					API.checkBill(currentBill.bill_id)
 						.then(res => {
-
 							//Looks for each bill by Bill Id, if it gets a valid response, does nothing
 							//Else it saves the bill
-							if (res.data[0]) {
-								console.log("Repeat...");
-							}else {
+							if (!res.data[0] && currentBill) {
 								API.logBills({
 									name: currentBill.title,
 									bill_id: currentBill.bill_id,
@@ -49,7 +46,7 @@ class Bills extends Component {
 									congressdotgov_url: currentBill.congressdotgov_url,
 									govtrack_url: currentBill.govtrack_url,
 									summary_short: currentBill.summary_short,
-									// summary: currentBill.summary,
+									summary: currentBill.summary,
 									active: currentBill.active,
 									introduced_date: currentBill.introduced_date,
 									latest_major_action: currentBill.latest_major_action,
@@ -59,6 +56,8 @@ class Bills extends Component {
 									console.log("Saving Unique Bill.")
 								})
 								.catch(err => console.log(err))
+							}else {
+								console.log("Repeat...");
 							}						
 						})
 				};
