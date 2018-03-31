@@ -6,6 +6,7 @@ import Chart from '../VoteNumChart';
 
 
 class Vote extends React.Component {
+<<<<<<< HEAD
   constructor(){
     super();
     this.state = {
@@ -13,15 +14,18 @@ class Vote extends React.Component {
       // add to State what would be displayed tally of the onClick 
      // think about when somebody clicks the yes delta State btn
       
+=======
+  constructor(props){
+    super(props);
+    this.state = {   
+>>>>>>> d9fe48a7c45aac8769cce5704fbaf5b6f030b5c4
       chartDataNum:{}
-      
     }
   }
+  
 
   componentWillMount(){
     this.getChartDataNum();
-    
-    
   }
 
   getChartDataNum(){
@@ -47,6 +51,7 @@ class Vote extends React.Component {
       }
     });
   }
+<<<<<<< HEAD
     yesVote = (event) => {
       event.preventDefault();
     }
@@ -58,12 +63,27 @@ class Vote extends React.Component {
     undecidedVote = (event) => {
       event.preventDefault();
     }
+=======
+
+  voteYes(){
+    console.log('You voted Yes');
+  }
+>>>>>>> d9fe48a7c45aac8769cce5704fbaf5b6f030b5c4
   
+  voteNo(){
+    console.log('You voted No');
+  }
+
+  voteUndecided(){
+    console.log('You voted Perhaps?');
+  }
    
     render() {
-  
+      console.log(this.props.userId)
       return (
+       
         <div className="col-6 mx-auto voteBlock">
+<<<<<<< HEAD
           <div className=" loggedOut">
             <h5>Login To Vote</h5>
           </div>
@@ -78,6 +98,26 @@ class Vote extends React.Component {
               <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
             
           </div>
+=======
+          {
+          (!this.props.userId) 
+          ? <div className=" loggedOut">
+              <h5>Login To Vote</h5>
+            </div>
+          : <div>
+              <div className="loggedIn">
+                <button onClick={this.voteYes} className="btn btn-success">YES</button>
+                <button onClick={this.voteNo} className="btn btn-danger">NO</button>
+                <button onClick={this.voteUndecided} className="btn btn-secondary">UNDECIDED</button>
+              </div>
+              
+              <div className="voteOverview">
+                <h5>Vote Summary Graph</h5>
+                  <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
+              </div>
+            </div>
+          }
+>>>>>>> d9fe48a7c45aac8769cce5704fbaf5b6f030b5c4
         </div>
       );
     }

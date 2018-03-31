@@ -12,7 +12,7 @@ const Welcome = (props) => (
 			</div>
 			<div className="col-5">
 				<h1>Make your voice heard.</h1>
-				<p>Hold your representatives accountable.</p>
+				<p>Does our government work for you? See real bills and vote to see what would pass if the people were in charge. </p>
 			</div>
 		</div>
 		<WelcomeDetail />
