@@ -27,9 +27,9 @@ class Vote extends React.Component {
           {
             label:'Votes',
             data:[
-              417594,
-              105162,
-              95072
+              67,
+              567,
+              987
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
