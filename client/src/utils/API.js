@@ -45,4 +45,9 @@ export default {
         return bills
       }))
   }
+  // saveUser: function(id) {
+  //   return (axios.post("/api/user", user)
+  //     .then(function(response) {
+  //       })
+  // },
 }
