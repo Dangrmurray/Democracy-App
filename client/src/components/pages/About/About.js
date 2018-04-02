@@ -17,7 +17,7 @@ const About = (props) => (
 					<div class="card-body">
 						<p>	
 						At any given time, there could be hundreds, if not thousands of bills passing through congress on either a federal, state,
-						or local level. Bill Whip is a way in which a person could be introduced to a bill they weren’t aware
+						or local level. Vote.ly is a way in which a person could be introduced to a bill they weren’t aware
 						of, or do a deep dive on one which they want to know more about. Additionally, there’s an opportunity to cast one’s own approval/disapproval
 						on the bill while also leaving a quick explanation why they feel a certain way. When searching the bill, the user will be
 						told a set number of ones that are on the “hot stove” in the coming days. If they would rather search which bills are coming
