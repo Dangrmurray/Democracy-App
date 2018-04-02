@@ -75,14 +75,14 @@ class Bills extends Component {
 	};
 
 // <<<<<<<<<<<NEEDS TO FIND BILL AND EDIT>>>>>>>>>>>>>>>>
-	saveBills = (bills) => {
-		console.log("saving bill");
-		API.saveBills({
-			title:this.state.bills.title
-		})
-        .then(res => console.log("saved article"))
-        .catch(err => console.log(err));
-  };
+	// saveBills = (bills) => {
+	// 	console.log("saving bill");
+	// 	API.saveBills({
+	// 		title:this.state.bills.title
+	// 	})
+ //        .then(res => console.log("saved article"))
+ //        .catch(err => console.log(err));
+ //  };
 // <<<<<<<<<<<<<>>>>>>>>>>>>>><<<<<<<<<<<<<>>>>>>>>>
 
 		render() {
@@ -129,7 +129,7 @@ class Bills extends Component {
 							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}
 							latest_major_action_date={bill.latest_major_action_date}
-							saveBills={this.saveBills}
+							// saveBills={this.saveBills}
 						>
 						</BillBlock>
 					)
