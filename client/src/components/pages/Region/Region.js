@@ -20,7 +20,7 @@ const Region = (props) => (
                     <div className="card bill">State</div>
                 </div>
                 <div className="col-4">
-                    <div className="card bill">Federal</div>
+                    <div className="card bill"><a className="nav-link" href="/bills">Federal</a></div>
                 </div>
             </div>
         </div>
