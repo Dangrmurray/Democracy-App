@@ -44,10 +44,16 @@ export default {
       .then(function (bills) {
         return bills
       }))
+  },
+  saveUser: function(user) {
+    console.log(user);    
+    return axios.post("/api/user", user)
+      .then(function(response){
+        console.log("heyo")
+        console.log(response)
+     })
   }
-  // saveUser: function(id) {
-  //   return (axios.post("/api/user", user)
-  //     .then(function(response) {
-  //       })
-  // },
+  // getUser: function(id) {
+  //   return axios
+  // }
 }
