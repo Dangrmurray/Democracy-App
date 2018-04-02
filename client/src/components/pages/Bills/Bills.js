@@ -46,7 +46,7 @@ class Bills extends Component {
 									congressdotgov_url: currentBill.congressdotgov_url,
 									govtrack_url: currentBill.govtrack_url,
 									summary_short: currentBill.summary_short,
-									summary: currentBill.summary,
+									// summary: currentBill.summary,
 									active: currentBill.active,
 									introduced_date: currentBill.introduced_date,
 									latest_major_action: currentBill.latest_major_action,
@@ -75,14 +75,14 @@ class Bills extends Component {
 	};
 
 // <<<<<<<<<<<NEEDS TO FIND BILL AND EDIT>>>>>>>>>>>>>>>>
-	saveBills = (bills) => {
-		console.log("saving bill");
-		API.saveBills({
-			title:this.state.bills.title
-		})
-        .then(res => console.log("saved article"))
-        .catch(err => console.log(err));
-  };
+	// saveBills = (bills) => {
+	// 	console.log("saving bill");
+	// 	API.saveBills({
+	// 		title:this.state.bills.title
+	// 	})
+ //        .then(res => console.log("saved article"))
+ //        .catch(err => console.log(err));
+ //  };
 // <<<<<<<<<<<<<>>>>>>>>>>>>>><<<<<<<<<<<<<>>>>>>>>>
 
 		render() {
@@ -129,7 +129,7 @@ class Bills extends Component {
 							short_summary={bill.summary_short}
 							introduced_date={bill.introduced_date}
 							latest_major_action_date={bill.latest_major_action_date}
-							saveBills={this.saveBills}
+							// saveBills={this.saveBills}
 						>
 						</BillBlock>
 					)
