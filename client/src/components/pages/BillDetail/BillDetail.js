@@ -10,7 +10,7 @@ class BillDetail extends Component {
 
 	componentDidMount() {
 		this.getBill();
-		console.log(this.props.userId)
+		//console.log(this.props.userId)
 	}
 
 	getBill = () => {
