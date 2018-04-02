@@ -8,13 +8,13 @@ var UserSchema = new Schema({
 	googleId: {
 		type: String,
 		unique: true,
-		required: true
+		required: false
 
 	},
 	userName: {
 		type: String,
 		unique: true,
-		required: true
+		required: false
 	},
 	age: {
 		type: String,
