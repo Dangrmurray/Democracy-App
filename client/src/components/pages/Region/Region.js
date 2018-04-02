@@ -14,10 +14,10 @@ const Region = (props) => (
         <div className="container">
             <div className="row">
                 <div className="col-4">
-                    <div className="card bill">City</div>
+                    <div className="card bill">City (coming soon)</div>
                 </div>
                 <div className="col-4">
-                    <div className="card bill">State</div>
+                    <div className="card bill">State (coming soon)</div>
                 </div>
                 <div className="col-4">
                     <div className="card bill"><a className="nav-link" href="/bills">Federal</a></div>
