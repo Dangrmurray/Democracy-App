@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 
 const BillInfo = (props) => (
 	<div>
+
 		<h1>{props.title}</h1>
+
 		<img src="" alt=""/>
 		<h6>{props.sponsor_name}</h6>
 		{/*<Link to={'/stats/' + props.id} className="btn btn-primary">Demographic Stats</Link>*/}

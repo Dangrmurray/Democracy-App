@@ -11,7 +11,9 @@ class BillDetail extends Component {
 
 	componentDidMount() {
 		this.getBill();
+
 		console.log(this.props.match.params.bill_id)
+
 	}
 	state = {
 		bill: []

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
-//import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
@@ -94,6 +94,8 @@ class App extends Component {
           render={(props) => (<BillDetail userId={this.state.userId} {...props} />)} 
           />
           <Route path="/stats" component={Chart} />
+
+          <Footer/>
 
         </div>
       </Router>
