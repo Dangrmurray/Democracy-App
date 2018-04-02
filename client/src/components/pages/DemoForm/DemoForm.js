@@ -21,6 +21,7 @@ class DemoForm extends Component {
 	};
 
 	handleFormSubmit = event => {
+		
 		// event.preventDefault();
 		
 			API.saveUser({
