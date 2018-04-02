@@ -91,8 +91,6 @@ class App extends Component {
           <Route path="/billdetail/:bill_id" render={(props) => (<BillDetail userId={this.state.userId} />)} />
           <Route path="/stats" component={Chart} />
 
-          <br>
-
           <Footer/>
 
         </div>
