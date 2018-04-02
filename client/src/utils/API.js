@@ -33,10 +33,9 @@ export default {
   getBills: function() {
     return (axios.get("https://api.propublica.org/congress/v1/115/house/bills/active.json", {headers: {"X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU"}})
     .then(function(bills) {
-<<<<<<< HEAD
+
       console.log(bills)
-=======
->>>>>>> d9fe48a7c45aac8769cce5704fbaf5b6f030b5c4
+
       return bills
     }))
   },
