@@ -10,7 +10,7 @@ const About = (props) => (
 			<div class="card">
 				<div class="card-header">
 					<a class="card-link" data-toggle="collapse" href="#collapseOne">
-						About Bill Whip
+						About Vote.ly
                 </a>
 				</div>
 				<div id="collapseOne" class="collapse show" data-parent="#accordion">
