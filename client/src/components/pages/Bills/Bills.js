@@ -46,7 +46,7 @@ class Bills extends Component {
 									congressdotgov_url: currentBill.congressdotgov_url,
 									govtrack_url: currentBill.govtrack_url,
 									summary_short: currentBill.summary_short,
-									// summary: currentBill.summary,
+									// summary: congressdotgov_urlrentBill.summary,
 									active: currentBill.active,
 									introduced_date: currentBill.introduced_date,
 									latest_major_action: currentBill.latest_major_action,
