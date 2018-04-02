@@ -1,11 +1,12 @@
 import React from 'react';
 import './Header.css';
 import LoginControl from "../LoginControl";
+import logo from "./votely2x.png";
 
 
 const Header = (props) => (
     <nav className="navbar navbar-expand-lg">
-      <a className="navbar-brand" href="/">Bill Whip</a>
+      <a className="navbar-brand" href="/"><img src={logo} alt="Democracy app logo"/></a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

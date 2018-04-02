@@ -1,0 +1,17 @@
+.card h5{
+  font-weight:bold;
+  text-align:left;
+}
+
+.card-text{
+  overflow: scroll;
+  height: 150px;
+  color: #999;
+}
+
+.card-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
