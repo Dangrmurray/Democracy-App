@@ -14,6 +14,9 @@ class DemoForm extends Component {
 		race: "", 
 		region: ""
 	};
+	// conponentDidMount() {
+	// 	API.getUser()
+	// }
 
  	handleChange = event => {
 		const { name, value } = event.target;
