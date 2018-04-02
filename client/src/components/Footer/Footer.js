@@ -2,8 +2,8 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = (props) => (
-  <footer className="bg-light">
-    <div className="container">&copy; 2018 Bill Whip - Ryan Brownlow, Jason Kunkel, David Morrill, Daniel Murray, Abdel Rahman, Frank Valdez </div>
+  <footer className="bg-light footer">
+    <div className="container">&copy; 2018 Vote.ly</div>
   </footer>
 )
 export default Footer;

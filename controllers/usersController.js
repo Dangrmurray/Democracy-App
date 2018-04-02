@@ -1,4 +1,4 @@
-const db = require('../models/user.js');
+const db = require('../models');
 
 
 // find all users

@@ -33,21 +33,32 @@ export default {
   getBills: function() {
     return (axios.get("https://api.propublica.org/congress/v1/115/house/bills/active.json", {headers: {"X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU"}})
     .then(function(bills) {
-
       console.log(bills)
-
       return bills
     }))
-  }
+  },
   // searchBills: function(keyword) {
   //   return (axios.get("https://api.propublica.org/congress/v1/bills/search.json?query="+ keyword, { headers: { "X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU" }})
   //     .then(function (bills) {
   //       return bills
   //     }))
-  // }
-  // saveUser: function(id) {
-  //   return (axios.post("/api/user", user)
-  //     .then(function(response) {
-  //       })
   // },
-}
+  saveUser: function(user) {
+    console.log(user);    
+    return axios.post("/api/user", user)
+      .then(function(response){
+        console.log("heyo")
+        console.log(response)
+     })
+  }
+  // getUser: function(id) {
+  //   return axios.get("/api/user" + id)
+  // }
+  // }
+  // searchBills: function(keyword) {
+  //   return (axios.get("https://api.propublica.org/congress/v1/bills/search.json?query="+ keyword, { headers: { "X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU" }})
+  //     .then(function (bills) {
+  //       return bills
+  //     }))
+    }
+

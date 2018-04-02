@@ -11,8 +11,10 @@ const LoginControl = (props) => (
         clientId="470848001164-2l4g92q85okvv703tf7ptnllvtci31km.apps.googleusercontent.com"
         fetch_basic_profile="true" >
           <div>
-          { props.isLoggedIn ? <GoogleLogout 
-	          	onLogoutSuccess={props.handleLogoutClick} 
+          { props.isLoggedIn ?
+            <GoogleLogout 
+              onLogoutSuccess={props.handleLogoutClick} 
+              
           	/> : <GoogleLogin 
 	          	onLoginSuccess={props.handleLoginClick} 
           	/> 
