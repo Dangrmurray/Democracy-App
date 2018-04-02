@@ -18,29 +18,29 @@ class Vote extends React.Component {
    this.getChartDataNum();
  }
 
- getChartDataNum(){
-   // Ajax calls here
-   this.setState({
-     chartDataNum:{
-       labels: ['Yes', 'No', 'Undecided',],
-       datasets:[
-         {
-           label:'Votes',
-           data:[
-             67,
-             567,
-             987
-           ],
-           backgroundColor:[
-             'rgba(119, 191, 198, 1)',
-             'rgba(238, 38, 37, 1)',
-             'rgba(255, 240, 200, 1)'
-           ]
-         },
-       ]
-     }
-   });
- }
+  getChartDataNum(){
+    // Ajax calls here
+    this.setState({
+      chartDataNum:{
+        labels: ['Yes', 'No', 'Undecided',],
+        datasets:[
+          {
+            label:'Votes',
+            data:[
+              67,
+              567,
+              987
+            ],
+            backgroundColor:[
+              'rgba(119, 191, 198, 1)',
+              'rgba(238, 38, 37, 1)',
+              'rgba(255, 240, 200, 1)'
+            ]
+          },
+        ]
+      }
+    });
+  }
 
  voteYes(){
    console.log('You voted Yes');
