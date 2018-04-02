@@ -31,7 +31,7 @@ class DemoForm extends Component {
 				race: this.state.race,
 				region: this.state.region
 			})
-			.then(res => this.loadUser())
+			.then(res => {this.loadUser()})
 			.catch(err => console.log(err));
 		
 	};
