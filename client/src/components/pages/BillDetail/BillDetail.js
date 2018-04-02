@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './BillDetail.css';
 import BillInfo from "../../BillInfo";
 import Vote from "../../Vote";
-import Comments from "../../Comments";
+
 
 
 
@@ -25,7 +25,6 @@ class BillDetail extends Component {
 				<Vote
 					userId={this.props.userId}
 				></Vote>
-				<Comments></Comments>
 			</div>
 		)
 	}
