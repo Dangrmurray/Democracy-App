@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
-//import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
@@ -90,6 +90,10 @@ class App extends Component {
           <Route exact path="/demoform" component={DemoForm} />
           <Route path="/billdetail/:bill_id" render={(props) => (<BillDetail userId={this.state.userId} />)} />
           <Route path="/stats" component={Chart} />
+
+          <br>
+
+          <Footer/>
 
         </div>
       </Router>
