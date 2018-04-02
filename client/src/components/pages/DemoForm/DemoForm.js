@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import Wrapper from "../../Wrapper";
-import Demographics from "../../Demographics";
+// import Demographics from "../../Demographics";
 import API from "../../../utils/API.js"
 
 
@@ -21,7 +21,8 @@ class DemoForm extends Component {
 	};
 
 	handleFormSubmit = event => {
-		event.preventDefault();
+		
+		// event.preventDefault();
 		
 			API.saveUser({
 				age: this.state.age,
@@ -31,7 +32,7 @@ class DemoForm extends Component {
 				race: this.state.race,
 				region: this.state.region
 			})
-			.then(res => this.loadUser())
+			.then(res => {this.loadUser()})
 			.catch(err => console.log(err));
 		
 	};
