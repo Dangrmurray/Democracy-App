@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
-//import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
@@ -82,14 +82,20 @@ class App extends Component {
             button={this.state.button}
             userId={this.state.userId}
           />
-          <Route exact path="/" component={this.state.isLoggedIn ? Region : Welcome} />
+          <Route exact path="/" 
+          render={(props) => this.state.isLoggedIn ? <DemoForm userId={this.state.userId} {...props} /> : <Welcome />}
+          />
           <Route exact path="/about" component={About } />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
           <Route exact path="/billdetail" component={BillDetail} />
           <Route exact path="/demoform" component={DemoForm} />
-          <Route path="/billdetail/:bill_id" render={(props) => (<BillDetail userId={this.state.userId} />)} />
+          <Route path="/billdetail/:bill_id" 
+          render={(props) => (<BillDetail userId={this.state.userId} {...props} />)} 
+          />
           <Route path="/stats" component={Chart} />
+
+          <Footer/>
 
         </div>
       </Router>
