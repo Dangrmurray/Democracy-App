@@ -46,8 +46,6 @@ export default {
   saveUser: function(user) {
     return axios.post("/api/user", user)
       .then(function(response){
-        console.log("heyo")
-        console.log(response)
      })
   },
   getUser: function(id) {
@@ -69,5 +67,5 @@ export default {
   //     .then(function (bills) {
   //       return bills
   //     }))
-    }
+    
 

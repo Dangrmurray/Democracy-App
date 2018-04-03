@@ -62,13 +62,25 @@ class App extends Component {
     console.log("logging user out");
   }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  getUser() {
-    API.getUser(this.state.userId)
+  getUser(id) {
+    console.log("in here");
+    console.log(id);
+    let userId;
+    if (this.state) {
+      userId = this.state.userId; 
+    }else {
+      userId = id;
+    };
+
+    API.getUser(userId)
       .then(res => {
         console.log(res.data);
         if (res.data[0]) {
-          this.setState({ userExist: true });
+          console.log("Helllooooo")
           window.sessionStorage.setItem("userExist", true);
+          if (this.state){
+            this.setState({ userExist: true });            
+          }
         };
       })
       .catch(err => console.log(err));
@@ -95,7 +107,8 @@ class App extends Component {
                 : <DemoForm 
                   userId={this.state.userId} 
                   userName={this.state.userName}
-                  exists={this.state.userExist} /> 
+                  exists={this.state.userExist}
+                  getUser={this.getUser} /> 
               ] : <Welcome />
             }
           />

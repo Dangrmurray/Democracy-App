@@ -27,7 +27,7 @@ class DemoForm extends Component {
 	handleFormSubmit = event => {
 		
 		// event.preventDefault();
-		if (!this.props.exists) {
+		if (!this.props.exists && this.props.userName) {
 			API.saveUser({
 				userId: this.props.userId,
 				userName: this.props.userName,
@@ -159,8 +159,9 @@ class DemoForm extends Component {
 									  </select>
 								</div>
 
-								<Link to={"/"}>
-									<button onClick={ this.handleFormSubmit } 
+								<Link to="/region" >
+									<button 
+										onClick={ () => {this.handleFormSubmit(); this.props.getUser(this.props.userId)}} 
 										id="submitbtn" type="submit" className="btn btn-primary">
 										Submit
 									</button>
