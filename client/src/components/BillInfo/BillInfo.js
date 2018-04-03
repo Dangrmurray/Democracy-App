@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 
 const BillInfo = (props) => (
-	<div>
-		<h1>Bill Title</h1>
+	<div className="billInfo">
+		<h1>{props.title}</h1>
 		<img src="" alt=""/>
-		<h6>Sponsor Name</h6>
-		<Link to={'/stats/' + props.id} className="btn btn-primary">Stats</Link>
-		<p>Bill Lorem ipsum shiot.</p>
-		<Link to='props.sample'>View Bill</Link>
-		<Link to='props.sample'>View PDF</Link>
+		<h6>{props.sponsor_name}</h6>
+		<Link to={'/stats/' + props.id} className="btn btn-primary">Demographic Stats</Link>
+		<p>{props.summary}</p>
+		<a target="_blank" href={props.dot_gov}>View Bill</a>
+		<a target="_blank" href={props.gov_track}>View GovTrack</a>
 	</div>
 )
 

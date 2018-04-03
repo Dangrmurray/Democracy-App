@@ -2,13 +2,13 @@ import React from 'react';
 import './Welcome.css';
 //import Wrapper from "../../Wrapper";
 import WelcomeDetail from "../../WelcomeDetail";
-import bgImage from './democracy.jpg';
+import bgImage from './demo.png';
 
 const Welcome = (props) => (
 	<div>
-		<div className="row">
+		<div className="jumbotron blue row">
 			<div className="col-7">
-				<img src={bgImage} alt="Democracy Now MutherTrucker" className="mainImage"/>
+				<img src={bgImage} alt="Vote.ly" className="mainImage"/>
 			</div>
 			<div className="col-5">
 				<h1>Make your voice heard.</h1>

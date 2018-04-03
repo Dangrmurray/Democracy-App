@@ -12,14 +12,15 @@ module.exports = {
 
 // Add New Bills to DB
   create: function(req, res) {
-    db.Bill.create(req.body)
+    db.Bill
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => console.log(err));
   },
 
   // Find Individual Bill by ID
   findById: function(req, res) {
-    console.log("Find Bill By DB-ID");
+    console.log("Find Bill By bill_id");
     db.Bill
       .find({ "bill_id": req.params.id })
       .then(dbModel => res.json(dbModel))
@@ -28,11 +29,11 @@ module.exports = {
 
   // Update Bill - with new vote count
   update: function(req, res) {
-    console.log("Update Bills");
+    console.log("Update Bills with Vote Count");
     db.Bill
-      .create(req.body)
+      .find({ "bill_id": req.params.id })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
 
   // Delete Bills - Wont be doing this.

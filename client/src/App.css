@@ -1,4 +1,11 @@
+html, body{
+  height: 100%;
+}
 
-body{
-  background-color:#FFF0C8;
+.jumbotron{
+  padding: 20px;
+  color: #fff;
+  margin-top: -20px;
+  border-radius: 0;
+  margin-bottom:0;
 }
