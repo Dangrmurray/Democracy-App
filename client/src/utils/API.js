@@ -42,30 +42,33 @@ export default {
   //     }))
   // },
   saveUser: function(user) {
-    console.log(user);    
     return axios.post("/api/user", user)
       .then(function(response){
-        console.log("heyo")
-        console.log(response)
      })
   },
+
   voteYes: function(id) {
     return axios.put("/api/bills/" + id)
+
+  getUser: function(id) {
+    return axios.get("/api/user/" + id)
     .then(function(response){
       return response;
     })
   },
 
-
-
-  // getUser: function(id) {
-  //   return axios.get("/api/user" + id)
-  // }
+  updateUser: function(id, changes) {
+    return axios.get("/api/user/" + id, changes)
+      .then(function(response){
+        return response;
+    })
+  }
+}
   // }
   // searchBills: function(keyword) {
   //   return (axios.get("https://api.propublica.org/congress/v1/bills/search.json?query="+ keyword, { headers: { "X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU" }})
   //     .then(function (bills) {
   //       return bills
   //     }))
-    }
+    
 

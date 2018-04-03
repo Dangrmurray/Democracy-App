@@ -8,15 +8,22 @@ import API from "../../../utils/API.js";
 	
 class Bills extends Component {
 
-
 	state = {
-		bills: []
+		bills: [],
+		loaded: false
 	};
 
-
-	// When Page loads, get bills
+	// When Page loads, get bills, set state 
 	componentDidMount() {
 		this.getBills();
+
+		let userBool = (window.sessionStorage.getItem("loaded"));
+
+		if (JSON.parse(userBool) === true) {
+			this.setState({ loaded: true });
+		}else {
+			this.setState({ loaded: false });
+		};
 	}
 	
 	// Save and Load Bills
@@ -26,41 +33,45 @@ class Bills extends Component {
 			.then(res => {
 				const bills = res.data.results[0].bills;
 
-				//Loops though API repsonse 
-				for (let i = 0; i < bills.length; i++) {
-					let currentBill = bills[i];
+				//Loops though API repsonse
 
-					//Pulls bills from our DB and checks for duplicates
-					API.checkBill(currentBill.bill_id)
-						.then(res => {
-							//Looks for each bill by Bill Id, if it gets a valid response, does nothing
-							//Else it saves the bill
-							if (!res.data[0] && currentBill) {
-								API.logBills({
-									name: currentBill.title,
-									bill_id: currentBill.bill_id,
-									sponsor_name: currentBill.sponsor_name,
-									sponsor_state: currentBill.sponsor_state,
-									sponsor_party: currentBill.sponsor_party,
-									sponsor_title: currentBill.sponsor_title,
-									congressdotgov_url: currentBill.congressdotgov_url,
-									govtrack_url: currentBill.govtrack_url,
-									summary_short: currentBill.summary_short,
-									// summary: congressdotgov_urlrentBill.summary,
-									active: currentBill.active,
-									introduced_date: currentBill.introduced_date,
-									latest_major_action: currentBill.latest_major_action,
-									latest_major_action_date: currentBill.latest_major_action_date
-								})
-								.then(res => {
-									console.log("Saving Unique Bill.")
-								})
-								.catch(err => console.log(err))
-							}else {
-								console.log("Repeat...");
-							}						
-						})
-				};
+				if (!this.state.loaded) {
+					for (let i = 0; i < bills.length; i++) {
+						let currentBill = bills[i];
+
+						//Pulls bills from our DB and checks for duplicates
+						API.checkBill(currentBill.bill_id)
+							.then(res => {
+								//Looks for each bill by Bill Id, if it gets a valid response, does nothing
+								//Else it saves the bill
+								if (!res.data[0] && currentBill) {
+									API.logBills({
+										name: currentBill.title,
+										bill_id: currentBill.bill_id,
+										sponsor_name: currentBill.sponsor_name,
+										sponsor_state: currentBill.sponsor_state,
+										sponsor_party: currentBill.sponsor_party,
+										sponsor_title: currentBill.sponsor_title,
+										congressdotgov_url: currentBill.congressdotgov_url,
+										govtrack_url: currentBill.govtrack_url,
+										summary_short: currentBill.summary_short,
+										// summary: congressdotgov_urlrentBill.summary,
+										active: currentBill.active,
+										introduced_date: currentBill.introduced_date,
+										latest_major_action: currentBill.latest_major_action,
+										latest_major_action_date: currentBill.latest_major_action_date
+									})
+									.then(res => {
+										console.log("Saving Unique Bill.")
+									})
+									.catch(err => console.log(err))
+								}else {
+									console.log("Repeat...");
+								}						
+							})
+					};
+				}
+
 				//Gets all stored bills, including newly saved
 				API.pullBills()
 					.then(res => {
@@ -69,20 +80,25 @@ class Bills extends Component {
 						this.setState(
 							{ bills }
 						);
+						if (!this.state.loaded) {
+							window.sessionStorage.setItem("loaded", true);
+							this.setState({ loaded: true })
+							window.location.reload();
+						}
 					})
 			})
 			.catch(err => console.log(err));
 	};
 
 // <<<<<<<<<<<NEEDS TO FIND BILL AND EDIT>>>>>>>>>>>>>>>>
-	saveBills = (bills) => {
-		console.log("saving bill");
-		API.saveBills({
-			title:this.state.bills.title
-		})
-        .then(res => console.log("saved article"))
-        .catch(err => console.log(err));
-  };
+	// saveBills = (bills) => {
+	// 	console.log("saving bill");
+	// 	API.saveBills({
+	// 		title:this.state.bills.title
+	// 	})
+ //        .then(res => console.log("saved article"))
+ //        .catch(err => console.log(err));
+ //  };
 // <<<<<<<<<<<<<>>>>>>>>>>>>>><<<<<<<<<<<<<>>>>>>>>>
 
 		render() {
