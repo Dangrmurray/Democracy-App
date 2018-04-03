@@ -62,11 +62,6 @@ class App extends Component {
     console.log("logging user out");
   }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-  initLogin(response) {
-    // <<<<<<Search for user in DB...>>>>>>
-  }
-
   getUser() {
     API.getUser(this.state.userId)
       .then(res => {
