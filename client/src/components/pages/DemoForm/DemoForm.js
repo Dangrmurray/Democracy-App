@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
-import Wrapper from "../../Wrapper";
+import './Demoform.css';
+//import Wrapper from "../../Wrapper";
 // import Demographics from "../../Demographics";
 
 import API from "../../../utils/API.js"
@@ -59,20 +60,11 @@ class DemoForm extends Component {
 
 	render() {
 		return (
-			<Wrapper>
-				<div className="container">
-					<div className="panel panel-success">
-						<div className="panel-heading">
-							<h3 className="panel-title"><strong>Demographics</strong></h3>
-			  
-							<p>To allow us to track voting trends please enter your census information below. Information is collectged for data purposes only. Nothing is shared</p>
-			
-						</div>
-			 
-						<div className="panel-body"> 
-							<form>
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Age Range from the List Below</label>
+				<div className="row">
+					<div className="col-6 form-panel"> 
+					<form>
+								<div class="form-group">
+									  <label for="inputState">Select Your Age Range</label>
 									  <select onChange={this.handleChange} name="age" id="inputState" class="form-control">
 										  <option selected>Choose ...</option>
 										  <option value="16-22">16 - 22</option>
@@ -85,9 +77,8 @@ class DemoForm extends Component {
 									  </select>
 								</div>
 					
-					
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Education Level from the List Below</label>
+								<div class="form-group">
+									  <label for="inputState">Select Your Education Level</label>
 									  <select onChange={this.handleChange} name="education" id="inputState" class="form-control">
 										  <option selected>Choose...</option>
 										<option value="hs">Some High School</option>
@@ -103,8 +94,8 @@ class DemoForm extends Component {
 					
 					
 					
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Ethnicity from the List Below</label>
+								<div class="form-group">
+									  <label for="inputState">Select Your Ethnicity</label>
 									  <select onChange={this.handleChange} name="race" id="inputState" class="form-control">
 										<option selected>Choose...</option>
 										<option value="aian">American Indian or Alaska Native</option>
@@ -119,8 +110,8 @@ class DemoForm extends Component {
 								</div>
 					
 					
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Gender from the List Below</label>
+								<div class="form-group">
+									  <label for="inputState">Select Your Gender</label>
 									  <select onChange={this.handleChange} name="gender" id="inputState" class="form-control">
 										<option selected>Choose...</option>
 										<option value="male">Male</option>
@@ -132,8 +123,8 @@ class DemoForm extends Component {
 								</div>
 					
 					
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Income Range from the List Below</label>
+								<div class="form-group">
+									  <label for="inputState">Select Your Income Range</label>
 									  <select onChange={this.handleChange} name="income" id="inputState" class="form-control">
 										<option selected>Choose...</option>
 										  <option value="1">Under $9,525</option>
@@ -149,8 +140,8 @@ class DemoForm extends Component {
 					
 								
 					
-								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your Region from the List Below</label>
+								<div class="form-group">
+									  <label for="inputState">Select Your Region</label>
 									  <select onChange={this.handleChange} name="region" id="inputState" class="form-control">
 										<option selected>Choose...</option>
 										<option value="western">Western</option>
@@ -169,11 +160,13 @@ class DemoForm extends Component {
 										Submit
 									</button>
 								</Link>
-							</form>
-				  		</div>
-				  	</div>
+						</form>
+					</div>
+					<div className="col-6 blue full-height">
+						<h3 className="panel-title"><strong>Demographics</strong></h3>
+						<p>To allow us to track voting trends please enter your census information below. Information is collectged for data purposes only. Nothing is shared</p>	
+					</div>
 				</div>
-			</Wrapper>	
 		)
 	}
 }
