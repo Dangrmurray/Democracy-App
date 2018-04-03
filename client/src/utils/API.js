@@ -49,6 +49,7 @@ export default {
 
   voteYes: function(id) {
     return axios.put("/api/bills/" + id)
+  },
 
   getUser: function(id) {
     return axios.get("/api/user/" + id)

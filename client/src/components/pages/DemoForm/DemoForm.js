@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
-//import Wrapper from "../../Wrapper";
+import Wrapper from "../../Wrapper";
 // import Demographics from "../../Demographics";
 
 import API from "../../../utils/API.js"
