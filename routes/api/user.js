@@ -7,7 +7,7 @@ router.route("/user")
 	.post(usersController.create);
 
 // Match with user id
-router.route("/DemoForm/:id")
+router.route("/user/:id")
 	.get(usersController.findById)
 	.put(usersController.update)
 	.delete(usersController.remove);

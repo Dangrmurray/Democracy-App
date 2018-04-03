@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 // Uses Schema constructor to create new UserSchema object
 var UserSchema = new Schema({
-	googleId: {
+	userId: {
 		type: String,
 		unique: true,
 		required: false

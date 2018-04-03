@@ -13,6 +13,7 @@ module.exports = {
 	// Add new user to db
 	create: function(req, res) {
 		console.log('Create User');
+		console.log(req.body);
 		db.User
 			.create(req.body)
 			.then(dbModel => res.json(dbModel))
@@ -21,9 +22,10 @@ module.exports = {
 
 	// Find individual user by ID
 	findById: function(req, res) {
-		console.log("Find User by User-DB");
+		console.log("Find User by User-Id");
+		console.log("userId: " + req.params.id);
 		db.User
-			.create(req.body)
+			.find({ "userId": req.params.id })
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
 		},
@@ -32,7 +34,7 @@ module.exports = {
 	update: function(req, res) {
 		console.log("Update User");
 		db.User
-			.create(req.body)
+			.findOneAndUpdate({ "userId": req.params.id }, req.body)
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
 	},

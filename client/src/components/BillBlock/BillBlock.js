@@ -11,7 +11,6 @@ const BillBlock = (props) => (
             <strong>Bill ID: {props.id}</strong>
             <p>Introduced Date: {props.introduced_date}</p>
             <p>Last Action Date: {props.latest_major_action_date}</p>
-            
             <Link to={'/billdetail/' + props.id} className="btn btn-primary">Bill Detail</Link>
         </div>
     </div>
