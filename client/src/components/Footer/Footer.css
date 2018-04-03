@@ -4,6 +4,15 @@
 	bottom: 0; */
 	text-align: center;
 	padding: 20px;
+
+	width: 100%;
+	background-color: red;
+
+}
+
+.footerin{
+	background-color: red;
+
 	width: 100%;	
 }
 
