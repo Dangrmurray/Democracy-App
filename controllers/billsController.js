@@ -31,7 +31,7 @@ module.exports = {
   update: function(req, res) {
     console.log("Update Bills with Vote Count");
     db.Bill
-      .find({ "bill_id": req.params.id })
+      .findOneAndUpdate({ "bill_id": req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => console.log(err));
   },

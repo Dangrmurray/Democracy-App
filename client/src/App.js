@@ -26,6 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    window.sessionStorage.setItem("votedBills", "");
     let loginBool = (window.sessionStorage.getItem("loggedIn"));
     let userBool = (window.sessionStorage.getItem("userExist"));
 
@@ -49,6 +50,7 @@ class App extends Component {
     if(response) {
       console.log("finding user, ID: " + response.getId());
       window.sessionStorage.setItem("loggedIn", true);
+      window.sessionStorage.setItem("user", response.getId());
       this.setState({ isLoggedIn: true, userId: response.getId(), userName: response.w3.ig });
       this.getUser();
 
@@ -116,7 +118,6 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
-          <Route exact path="/billdetail" component={BillDetail} />
           <Route path="/billdetail/:bill_id" 
           render={(props) => (<BillDetail userId={this.state.userId} {...props} />)} 
           />
