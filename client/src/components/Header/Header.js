@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import LoginControl from "../LoginControl";
-import logo from "./votely2x.png";
+import logo from "./logo-white.png";
 
 
 const Header = (props) => (
