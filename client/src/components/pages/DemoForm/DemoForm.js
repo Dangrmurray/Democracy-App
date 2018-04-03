@@ -112,6 +112,7 @@ class DemoForm extends Component {
 										  <option value="black">Black or African American</option>
 										  <option value="hispanic">Hispanic or Latino</option>
 										  <option value="white">White</option> 
+										  <option value="mixed">Mixed</option>
 										  <option value="native">Native American or Other Pacific Islander</option>
 										  <option value="pns">Prefer Not to Say</option>       
 									  </select>
@@ -135,7 +136,7 @@ class DemoForm extends Component {
 									  <label for="inputState">Select Your Income Range from the List Below</label>
 									  <select onChange={this.handleChange} name="income" id="inputState" class="form-control">
 										<option selected>Choose...</option>
-										<option value="1"></option>
+										  <option value="1">Under $9,525</option>
 										  <option value="2">$9,525 - $38,699</option>
 										  <option value="3">$38,700 - $82,499</option>
 										  <option value="4">$82,500 - $157,499</option>
@@ -149,7 +150,7 @@ class DemoForm extends Component {
 								
 					
 								<div class="form-group col-md-5">
-									  <label for="inputState">Select Your State from the List Below</label>
+									  <label for="inputState">Select Your Region from the List Below</label>
 									  <select onChange={this.handleChange} name="region" id="inputState" class="form-control">
 										<option selected>Choose...</option>
 										<option value="western">Western</option>
