@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 import API from "../../utils/API.js"
+<<<<<<< HEAD
 import Bills from "../pages/Bills/"
 
 // I need to set the bills component state -> bills array from the searchBar.js file
 // .The searchBar make an api call and returns a bills array that I would like 
 // to set the bills array on the Bills.js component
 
+=======
+//import Bills from "../pages/Bills/"
+>>>>>>> e976a18e4c20a00207269195df16e5eaafb072d0
 // import bills
 
 //access the bills component and change it .bills to the result of this search bills function. Change bills variable

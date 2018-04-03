@@ -1,19 +1,16 @@
 import React from 'react';
 import './Vote.css';
 import Chart from '../VoteNumChart';
-
-
-
+import API from "../../utils/API.js";
 
 class Vote extends React.Component {
   constructor(props){
     super(props);
     this.state = {   
       chartDataNum:{}
-    }
+    } 
   }
   
-
   componentWillMount(){
     this.getChartDataNum();
   }
@@ -41,17 +38,26 @@ class Vote extends React.Component {
       }
     });
   }
-
-  voteYes(){
-    console.log('You voted Yes');
+  
+  voteYes = () => {
+    API.voteYes(this.props.bill_id)
+			.then(res => {
+				console.log('data')
+      })
+    // Add userid to yes vote db array
+    // Display vote graph
   }
   
   voteNo(){
     console.log('You voted No');
+    // Add userid to no vote db array
+    // Display vote graph
   }
 
   voteUndecided(){
     console.log('You voted Perhaps?');
+    // Add userid to undecided vote db array
+    // Display vote graph
   }
    
     render() {
