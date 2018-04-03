@@ -1,30 +1,30 @@
 import React from 'react';
 import './Region.css';
-import Wrapper from "../../Wrapper";
+//import Wrapper from "../../Wrapper";
 
 const Region = (props) => (
-    <Wrapper>
-        <div className="container">
-            <div className="row-justify-content-md-center border">
-                <div className="col-md-1">
-                <h2 className="panel-title"><strong><center>Choose Your Region</center></strong></h2>
-                </div>
-            </div>
-        </div>
-        <div className="container">
+    <div>
+        <div className="jumbotron blue region">
+            <h2 className="panel-title">CHOOSE YOUR REGION</h2>
             <div className="row">
                 <div className="col-4">
-                    <div className="card bill">City (coming soon)</div>
+                    <div className="card bill not-active">
+                        <a className="nav-link" href="/bills">City <span>(coming soon)</span></a>
+                    </div>
                 </div>
                 <div className="col-4">
-                    <div className="card bill">State (coming soon)</div>
+                    <div className="card bill not-active">
+                        <a className="nav-link" href="/bills">State <span>(coming soon)</span></a>
+                    </div>
                 </div>
                 <div className="col-4">
-                    <div className="card bill"><a className="nav-link" href="/bills">Federal</a></div>
+                    <div className="card bill">
+                        <a className="nav-link" href="/bills">Federal</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </Wrapper>
+        </div> 
+    </div>
 );
 
 export default Region;
