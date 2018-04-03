@@ -2,17 +2,19 @@ import React from "react";
 import "./WelcomeDetail.css";
 
 const WelcomeDetail = () => (
-	
-		<div className="row">
-			<div className="col-6 blueBox">
-				<h3>How it Works</h3>
-				<p>See the bills before congress and vote to see if you agree with those who represent you.</p>
-			</div>
-			<div className="col-6 redBox">
-				<h3>Privacy is Key</h3>
-				<p>Your information will never be shared with any third party for any reason, ever!</p>
-			</div>
+	<div>
+		<div className="jumbotron red">
+
+			<h2>61% OF AMERICANS SAY NEITHER POLITICAL PARTY REFLECTS THEIR OPINIONS TODAY, ACCORDING TO THE AMERICAN VALUES SURVERY.</h2>
+			<p>Does our government work for you? See real bills and vote to see what would pass if the people were in charge.</p>
 		</div>
+
+		<div className="jumbotron blue">
+
+			<h2>VOTE ON WHAT YOU BLEIVE MATTERS AND TOGETHER WE CAN MAKE THIS A REAL DEMOCRACY!</h2>
+			<p>Does our government work for you? See real bills and vote to see what would pass if the people were in charge.</p>
+		</div>
+	</div>
 	
 	);
 

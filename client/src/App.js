@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Welcome from "./components/pages/Welcome";
 import About from "./components/pages/About";
 import Region from "./components/pages/Region";
@@ -123,8 +123,8 @@ class App extends Component {
           />
           <Route path="/stats" component={Chart} />
 
-{/*          <Footer/>
-*/}
+          <Footer/>
+
         </div>
       </Router>
     )
