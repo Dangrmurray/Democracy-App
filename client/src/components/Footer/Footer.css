@@ -1,10 +1,12 @@
 .footer{
-	/*position: absolute;*/
-	position: fixed;
-	bottom: 0;
+	position: absolute;
+	/* position: fixed;
+	bottom: 0; */
 	text-align: center;
 	padding: 20px;
-	width: 100%;
+	width: 100%;	
+}
 
-	
+footer .container{
+	background-color:transparent;
 }

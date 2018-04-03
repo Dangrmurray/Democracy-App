@@ -12,8 +12,6 @@ class BillDetail extends Component {
 	componentDidMount() {
 		this.getBill();
 
-		console.log(this.props.match.params.bill_id)
-
 	}
 	state = {
 		bill: []
@@ -31,17 +29,20 @@ class BillDetail extends Component {
 	render() {
 		return (
 			<div className="container">
+				<div className="col-8 mx-auto">
 				<BillInfo
 					title={this.state.bill.name}
 					bill_id={this.state.bill.bill_id}
 					sponsor_name={this.state.bill.sponsor_name}
-					summary={this.state.bill.summary}
-					
-
+					summary={this.state.bill.summary_short}
+					gov_track={this.state.bill.govtrack_url}
+					dot_gov={this.state.bill.congressdotgov_url}
 				/>
 				<Vote
 					userId={this.props.userId}
+					bill_id={this.state.bill.bill_id}
 				></Vote>
+				</div>
 			</div>
 		)
 	}
