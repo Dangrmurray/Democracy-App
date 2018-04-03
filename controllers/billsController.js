@@ -28,11 +28,11 @@ module.exports = {
 
   // Update Bill - with new vote count
   update: function(req, res) {
-    console.log("Update Bills");
+    console.log("Update Bills with Vote Count");
     db.Bill
-      .create(req.body)
+      .find({ "bill_id": req.params.id })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
 
   // Delete Bills - Wont be doing this.

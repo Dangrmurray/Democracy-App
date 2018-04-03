@@ -3,7 +3,7 @@ import './Bills.css';
 import Wrapper from "../../Wrapper";
 import BillBlock from "../../BillBlock";
 import API from "../../../utils/API.js";
-import SearchBar from "../../SearchBar/SearchBar.js";
+//import SearchBar from "../../SearchBar/SearchBar.js";
 
 	
 class Bills extends Component {
