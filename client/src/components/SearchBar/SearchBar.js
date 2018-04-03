@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 import API from "../../utils/API.js"
-import Bills from "../pages/Bills/"
+//import Bills from "../pages/Bills/"
 // import bills
 
 //access the bills component and change it .bills to the result of this search bills function. Change bills variable
