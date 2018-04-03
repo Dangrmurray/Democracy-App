@@ -4,15 +4,25 @@ import Chart from '../VoteNumChart';
 import API from "../../utils/API.js";
 
 class Vote extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {   
-      chartDataNum:{}
+      chartDataNum:{},
+      isLoggedIn: false
     } 
   }
   
   componentWillMount(){
     this.getChartDataNum();
+    let loggedIn = JSON.parse(window.sessionStorage.getItem("loggedIn"));
+    
+    if (JSON.parse(loggedIn) === true) {
+      this.setState({ isLoggedIn: true });
+    }else {
+      this.setState({ isLoggedIn: false });
+    };
+
   }
 
   getChartDataNum(){
@@ -61,12 +71,11 @@ class Vote extends React.Component {
   }
    
     render() {
-      console.log(this.props.userId)
       return (
        
         <div className="col-6 mx-auto voteBlock">
           {
-          (!this.props.userId) 
+          (!this.state.isLoggedIn) 
           ? <div className=" loggedOut">
               <h5>Login To Vote</h5>
             </div>
