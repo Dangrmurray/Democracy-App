@@ -35,12 +35,12 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              94,
+              45,
+              60,
+              19,
+              62,
+              2
             ],
 
            
@@ -58,12 +58,12 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              105162,
-              95072
+              18,
+              13,
+              7,
+              5,
+              23,
+              9
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -79,12 +79,12 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              44,
+              15,
+              10,
+              19,
+              12,
+              92
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -111,12 +111,12 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              41,
+              18,
+              15,
+              10,
+              10,
+              9
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -132,12 +132,12 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              105162,
-              95072
+              61,
+              31,
+              12,
+              29,
+              10,
+              2
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -153,12 +153,12 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              4,
+              17,
+              56,
+              76,
+              23,
+              12
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -185,10 +185,10 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
-              181045,
-              153060,
-              106519
+              33,
+              45,
+              21,
+              36
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -202,10 +202,10 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519
+              78,
+              102,
+              32,
+              43
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -219,10 +219,10 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519
+              110,
+              88,
+              92,
+              72
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -247,12 +247,12 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              997594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              57,
+              47,
+              32,
+              19,
+              7,
+              78
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -268,12 +268,12 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              105162,
-              95072
+              78,
+              56,
+              23,
+              89,
+              75,
+              23
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -289,12 +289,12 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              56,
+              72,
+              153,
+              34,
+              105,
+              92
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -324,12 +324,12 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              109,
+              207,
+              305,
+              765,
+              343,
+              88
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -345,12 +345,12 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              105162,
-              95072
+              56,
+              45,
+              60,
+              19,
+              62,
+              72
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -366,12 +366,12 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              4,
+              45,
+              30,
+              59,
+              12,
+              32
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -397,11 +397,11 @@ class App extends Component {
           {
             label:'Yes',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              879832
+              35,
+              1,
+              12,
+              17,
+              8
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -416,11 +416,11 @@ class App extends Component {
           {
             label:'No',
             data:[
-              614394,
-              231045,
-              313060,
-              106519,
-              283779
+              94,
+              15,
+              30,
+              19,
+              28
             ],
             backgroundColor:[
               'rgba(238, 38, 37, 1)',
@@ -435,11 +435,11 @@ class App extends Component {
            {
             label:'Undecided',
             data:[
-              417594,
-              181045,
-              153060,
-              106519,
-              467838
+              12,
+              56,
+              21,
+              15,
+              20
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
