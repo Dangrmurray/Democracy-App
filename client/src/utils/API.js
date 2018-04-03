@@ -69,5 +69,5 @@ export default {
   //     .then(function (bills) {
   //       return bills
   //     }))
-  // }
+    }
 
