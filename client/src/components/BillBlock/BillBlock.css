@@ -15,3 +15,23 @@
   text-overflow: ellipsis;
 }
 
+.card-title{
+    width:100%;
+    color: #0079c1;
+    height: 2em; 
+    line-height: 1em; 
+    font-size: 20px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /*word-break: break-all*/;
+    overflow:hidden;
+    white-space: nowrap;
+}
+.card-title:hover{
+    overflow: visible; 
+    white-space: normal;
+    height:auto; /* just added this line */
+}
+
