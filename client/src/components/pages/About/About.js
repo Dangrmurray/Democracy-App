@@ -16,16 +16,7 @@ const About = (props) => (
 				<div id="collapseOne" class="collapse show" data-parent="#accordion">
 					<div class="card-body">
 						<p>	
-						At any given time, there could be hundreds, if not thousands of bills passing through congress on either a federal, state,
-						or local level. Vote.ly is a way in which a person could be introduced to a bill they weren’t aware
-						of, or do a deep dive on one which they want to know more about. Additionally, there’s an opportunity to cast one’s own approval/disapproval
-						on the bill while also leaving a quick explanation why they feel a certain way. When searching the bill, the user will be
-						told a set number of ones that are on the “hot stove” in the coming days. If they would rather search which bills are coming
-						up in a few days in a particular category (i.e. Technology, Medicine, Public Safety) they can toggle to that and only bills
-						in those categories will come up. Furthermore, if one wants to learn about a specific bill they can search by bill name or
-						number and will be given access to the bill itself as well as a plethora of information such as who sponsors the bill and
-						arguments for and against that bill. As membership increases, and users vote on how they feel about each bill, one can get
-						the “pulse” of others on a particular bill through visual reports broken down by traits such as gender, location, or income.
+						Representative democracy made the most sense when people were not physically able to vote on every issue. It was once hard to research a topic and become truly informed. Times have changed! These days everybody is walking around with a portable voting machine in their pocket and information has never been more accessible. Vote.ly aims to bring true democracy back to the people. Sign in with google, and fill out a short demographics form. Your information will be kept completely private. Select your region to see current bills you care about on city, state, and federal levels. Choose the bills you want to vote on and click in for greater detail. Vote to see how the people really feel!
                     </p>
 
 					</div>
