@@ -1,12 +1,18 @@
 .mainImage{
-  width:70%
+  width:70%;
+  margin-top:-35px;
 }
 
-.blue{
-  background-color: #007BFF;
-  padding: 20px;
-  color: #fff;
-  margin-top: -20px;
-  border-radius: 0;
-  margin-bottom:0;
+.jumbotron{
+  padding-top:0;
+}
+
+h1{
+  margin-top: 10%;
+}
+
+.jumbotron .headertext{
+  text-align:left;
+  margin:0;
+
 }
