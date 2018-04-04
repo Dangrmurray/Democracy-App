@@ -28,6 +28,8 @@
     /*word-break: break-all*/;
     overflow:hidden;
     white-space: nowrap;
+    transition-timing-function: ease-in-out;
+    line-height:1.2em;
 }
 .card-title:hover{
     overflow: visible; 
