@@ -32,7 +32,6 @@ class Bills extends Component {
 		API.getBills()
 			.then(res => {
 				const bills = res.data.results[0].bills;
-
 				//Loops though API repsonse
 
 				if (!this.state.loaded) {
@@ -43,10 +42,11 @@ class Bills extends Component {
 						API.checkBill(currentBill.bill_id)
 							.then(res => {
 								//Looks for each bill by Bill Id, if it gets a valid response, does nothing
+
 								//Else it saves the bill
 								if (!res.data[0] && currentBill) {
 									API.logBills({
-										name: currentBill.title,
+										name: currentBill.short_title,
 										bill_id: currentBill.bill_id,
 										sponsor_name: currentBill.sponsor_name,
 										sponsor_state: currentBill.sponsor_state,
@@ -54,8 +54,7 @@ class Bills extends Component {
 										sponsor_title: currentBill.sponsor_title,
 										congressdotgov_url: currentBill.congressdotgov_url,
 										govtrack_url: currentBill.govtrack_url,
-										summary_short: currentBill.summary_short,
-										// summary: congressdotgov_urlrentBill.summary,
+										summary_short: getSummary(currentBill.summary_short),
 										active: currentBill.active,
 										introduced_date: currentBill.introduced_date,
 										latest_major_action: currentBill.latest_major_action,
@@ -63,6 +62,7 @@ class Bills extends Component {
 									})
 									.then(res => {
 										console.log("Saving Unique Bill.")
+										console.log(getSummary(currentBill.summary_short, currentBill.summary))
 									})
 									.catch(err => console.log(err))
 								}else {
@@ -71,6 +71,22 @@ class Bills extends Component {
 							})
 					};
 				}
+
+				function getSummary(summary) {
+					if (summary === "") {
+						return "No description available, please visit the 'View Bill' link for more information";
+					} else if (summary.includes("&quot;")){
+						summary.replace("&quot;", "");
+						return summary;
+					} else if (summary.includes("&#39;")) {
+						summary.replace("&#39;", "");
+						return summary;
+					} else {
+						return summary
+					}
+				}
+
+
 
 				//Gets all stored bills, including newly saved
 				API.pullBills()
@@ -104,8 +120,8 @@ class Bills extends Component {
 		render() {
 			return (
 				<Wrapper>
-          <div className="row">
-              <h1 className="panel-title">Find Congressional Bills</h1>
+          <div className="row bills-page">
+              <h1 className="panel-title mx-auto">FIND CONGRESSIONAL BILLS</h1>
           </div>    
 			<div className="row">
 				{this.state.bills.map(bill => (

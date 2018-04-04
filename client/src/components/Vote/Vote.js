@@ -34,7 +34,6 @@ class Vote extends React.Component {
     };
     if (bills) {
       if(bills.includes(window.sessionStorage.getItem("bill"))) {
-        this.setState
       }
     }
   }
@@ -56,8 +55,8 @@ class Vote extends React.Component {
               undecided
             ],
             backgroundColor:[
-              'rgba(119, 191, 198, 1)',
-              'rgba(238, 38, 37, 1)',
+              'rgba(0, 123, 255, 1)',
+              'rgba(251, 34, 89, 1)',
               'rgba(255, 240, 200, 1)'
             ]
           },
@@ -79,10 +78,10 @@ class Vote extends React.Component {
               (!this.state.voted) 
                 ? (
                     <div className="loggedIn">
-                      <button onClick={this.props.voteYes} className="btn btn-success">YES</button>
-                      <button onClick={this.props.voteNo} className="btn btn-danger">NO</button>
-                      <button onClick={this.props.voteUndecided} className="btn btn-secondary">UNDECIDED</button>
-                    </div>)
+                <button onClick={this.props.voteYes} className="btn btn-success btn-yes">YES</button>
+                <button onClick={this.props.voteNo} className="btn btn-danger btn-no">NO</button>
+                <button onClick={this.props.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
+              </div>)
                 : (<div>
                     <p> Thanks for voting! </p>
                   </div>)
@@ -91,8 +90,7 @@ class Vote extends React.Component {
         <div>
           <div>
               <div className="voteOverview">
-                <h5>Vote Summary Graph</h5>
-                  <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
+                <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
               </div>
             </div>
         </div>
