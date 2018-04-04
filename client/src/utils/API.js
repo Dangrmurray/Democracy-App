@@ -17,7 +17,6 @@ export default {
   },
   // Check DB if Bill already exists
   checkBill: function(id) {
-    console.log(id);
     return axios.get("/api/bills/" + id)
     .then(function(response){
       return response;
@@ -31,7 +30,6 @@ export default {
   getBills: function() {
     return (axios.get("https://api.propublica.org/congress/v1/115/house/bills/active.json", {headers: {"X-API-Key": "7BoKxES5grHLDPrdYNsMrvhgNQuN5aZL0Jdr0ZDU"}})
     .then(function(bills) {
-      console.log(bills)
       return bills
     }))
   },
@@ -41,14 +39,23 @@ export default {
   //       return bills
   //     }))
   // },
+  
+  voteYes: function(id, bill) {
+    return axios.put("/api/bills/yes/" + id, bill)
+  },
+
+  voteNo: function(id, bill) {
+    return axios.put("/api/bills/no/" + id, bill)
+  },
+
+  voteUnde: function(id, bill) {
+    return axios.put("/api/bills/unde/" + id, bill)
+  },
+
   saveUser: function(user) {
     return axios.post("/api/user", user)
       .then(function(response){
      })
-  },
-
-  voteYes: function(id) {
-    return axios.put("/api/bills/" + id)
   },
 
   getUser: function(id) {

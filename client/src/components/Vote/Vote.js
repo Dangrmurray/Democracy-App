@@ -1,7 +1,7 @@
 import React from 'react';
 import './Vote.css';
 import Chart from '../VoteNumChart';
-import API from "../../utils/API.js";
+// import API from "../../utils/API.js";
 
 class Vote extends React.Component {
 
@@ -9,13 +9,17 @@ class Vote extends React.Component {
     super(props);
     this.state = {   
       chartDataNum:{},
-      isLoggedIn: false
+      isLoggedIn: false,
+      voted: false
     } 
+    console.log(props)
   }
   
   componentWillMount(){
     this.getChartDataNum();
     let loggedIn = JSON.parse(window.sessionStorage.getItem("loggedIn"));
+    let voted = JSON.parse(window.sessionStorage.getItem("voted"));
+    let bills = JSON.parse(window.localStorage.getItem("votedBills"));
     
     if (JSON.parse(loggedIn) === true) {
       this.setState({ isLoggedIn: true });
@@ -23,10 +27,23 @@ class Vote extends React.Component {
       this.setState({ isLoggedIn: false });
     };
 
+    if (JSON.parse(voted) === true) {
+      this.setState({ voted: true });
+    }else {
+      this.setState({ voted: false });
+    };
+    if (bills) {
+      if(bills.includes(window.sessionStorage.getItem("bill"))) {
+        this.setState
+      }
+    }
   }
 
   getChartDataNum(){
-    // Ajax calls here
+    let yes = JSON.parse(window.sessionStorage.getItem("yes"));
+    let no = JSON.parse(window.sessionStorage.getItem("no"));
+    let undecided = JSON.parse(window.sessionStorage.getItem("yes"));
+
     this.setState({
       chartDataNum:{
         labels: ['Yes', 'No', 'Undecided',],
@@ -34,9 +51,9 @@ class Vote extends React.Component {
           {
             label:'Votes',
             data:[
-              67,
-              567,
-              987
+              yes,
+              no,
+              undecided
             ],
             backgroundColor:[
               'rgba(119, 191, 198, 1)',
@@ -48,51 +65,38 @@ class Vote extends React.Component {
       }
     });
   }
-  
-  voteYes = () => {
-    API.voteYes(this.props.bill_id)
-			.then(res => {
-				console.log('data')
-      })
-    // Add userid to yes vote db array
-    // Display vote graph
-  }
-  
-  voteNo(){
-    console.log('You voted No');
-    // Add userid to no vote db array
-    // Display vote graph
-  }
 
-  voteUndecided(){
-    console.log('You voted Perhaps?');
-    // Add userid to undecided vote db array
-    // Display vote graph
-  }
-   
-    render() {
+  render() {
       return (
        
         <div className="col-6 mx-auto voteBlock">
           {
-          (!this.state.isLoggedIn) 
-          ? <div className=" loggedOut">
+          (!this.state.isLoggedIn) ? 
+            <div className=" loggedOut">
               <h5>Login To Vote</h5>
             </div>
-          : <div>
-              <div className="loggedIn">
-                <button onClick={this.voteYes} className="btn btn-success btn-yes">YES</button>
-                <button onClick={this.voteNo} className="btn btn-danger btn-no">NO</button>
-                <button onClick={this.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
+          : [
+              (!this.state.voted) 
+                ? (
+                    <div className="loggedIn">
+                <button onClick={this.props.voteYes} className="btn btn-success btn-yes">YES</button>
+                <button onClick={this.props.voteNo} className="btn btn-danger btn-no">NO</button>
+                <button onClick={this.props.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
               </div>
-              
+                : (<div>
+                    <p> Thanks for voting! </p>
+                  </div>)
+            ]
+          }
+        <div>
+          <div>
               <div className="voteOverview">
                 <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
               </div>
             </div>
-          }
         </div>
-      );
+        </div>
+      )
     }
   }
   

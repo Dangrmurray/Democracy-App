@@ -12,4 +12,14 @@ router.route("/bills/:id")
   .put(billsController.update)
   .delete(billsController.remove);
 
+router.route("/bills/yes/:id")
+  .put(billsController.update)
+
+router.route("/bills/no/:id")
+  .put(billsController.update)
+
+router.route("/bills/unde/:id")
+  .put(billsController.update)
+
+
 module.exports = router;
