@@ -13,9 +13,8 @@ const LoginControl = (props) => (
         fetch_basic_profile="true" >
           <div>
           { props.isLoggedIn ?
-            <Link to={"/"}>
+            <Link to="/">
               <GoogleLogout 
-                to={"/"}
                 onLogoutSuccess={props.handleLogoutClick} 
             	/>
             </Link>
