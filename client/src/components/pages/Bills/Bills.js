@@ -104,8 +104,8 @@ class Bills extends Component {
 		render() {
 			return (
 				<Wrapper>
-          <div className="row">
-              <h1 className="panel-title">Find Congressional Bills</h1>
+          <div className="row bills-page">
+              <h1 className="panel-title mx-auto">FIND CONGRESSIONAL BILLS</h1>
           </div>    
 			<div className="row">
 				{this.state.bills.map(bill => (
