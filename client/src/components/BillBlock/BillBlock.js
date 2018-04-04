@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const BillBlock = (props) => (
     <div className="col-4">
         <div className="card bill">
-            <h5 className="card-title">{props.title}</h5>
+            <Link to={'/billdetail/' + props.id} >
+                <h5 className="card-title">{props.title}</h5>
+            </Link>
             <p className="card-text">{props.short_summary}</p>
             <strong>Bill ID: {props.id}</strong>
             <p>Introduced Date: {props.introduced_date}</p>
