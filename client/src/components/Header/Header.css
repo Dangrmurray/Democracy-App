@@ -2,6 +2,10 @@
   background-color: #100E14;
 }  */
 
+nav{
+  margin-bottom:0!important;
+}
+
 .navbar-brand img{
   width:100px;
   
@@ -17,4 +21,8 @@ nav{
 
 h1{
   font-weight:bold;
+}
+
+a{
+  color:#fff
 }

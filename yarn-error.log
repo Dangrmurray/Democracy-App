@@ -2384,9 +2384,15 @@ Lockfile:
 Trace: 
   Error: Command failed.
   Exit code: 1
+<<<<<<< HEAD
   Command: sh
   Arguments: -c ./node_modules/.bin/concurrently "npm run server" "npm run client"
   Directory: /Users/judimorrill/Desktop/Democracy-App
+=======
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c .\node_modules\.bin\concurrently "npm run server" "npm run client"
+  Directory: C:\Users\fvald\Desktop\fvaldez421.github.io\Democracy-App
+>>>>>>> a4dc1ae1c3ad496ac5cbeeba6bfb5a6e03dc1c92
   Output:
   
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
