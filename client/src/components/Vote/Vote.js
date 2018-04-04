@@ -55,8 +55,8 @@ class Vote extends React.Component {
               undecided
             ],
             backgroundColor:[
-              'rgba(119, 191, 198, 1)',
-              'rgba(238, 38, 37, 1)',
+              'rgba(0, 123, 255, 1)',
+              'rgba(251, 34, 89, 1)',
               'rgba(255, 240, 200, 1)'
             ]
           },
