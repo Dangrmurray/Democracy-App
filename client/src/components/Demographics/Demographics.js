@@ -105,7 +105,6 @@ const DemoForm = (props) => (
 
       		<p id="googleID" data-googleID="{{dataValues.googleID}}"></p>
       		<button type="submit" className="btn btn-primary" id="sign-up-button">Save Info</button>
-
     		
      		</form>
    		</div>
