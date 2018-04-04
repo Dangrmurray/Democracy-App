@@ -34,7 +34,6 @@ class Vote extends React.Component {
     };
     if (bills) {
       if(bills.includes(window.sessionStorage.getItem("bill"))) {
-        this.setState
       }
     }
   }
