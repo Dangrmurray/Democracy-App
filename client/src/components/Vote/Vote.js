@@ -81,7 +81,7 @@ class Vote extends React.Component {
                 <button onClick={this.props.voteYes} className="btn btn-success btn-yes">YES</button>
                 <button onClick={this.props.voteNo} className="btn btn-danger btn-no">NO</button>
                 <button onClick={this.props.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
-              </div>
+              </div>)
                 : (<div>
                     <p> Thanks for voting! </p>
                   </div>)
