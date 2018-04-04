@@ -9,7 +9,7 @@ const LoginControl = (props) => (
     
         <div>
         <GoogleAPI 
-        clientId="973206179313-tic92hoj77kbd8q3ck7lml8gvlcj5np6.apps.googleusercontent.com"
+        clientId="470848001164-2l4g92q85okvv703tf7ptnllvtci31km.apps.googleusercontent.com"
         fetch_basic_profile="true" >
           <div>
           { props.isLoggedIn ?
