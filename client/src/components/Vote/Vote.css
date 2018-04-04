@@ -11,3 +11,15 @@ h5{
 	text-align: center;
 }
 
+.btn-yes{
+    background-color:#0057B5;
+}
+
+.btn-no{
+    background-color:#FB2259;
+    margin:0 10px;
+}
+
+.btn-maybe{
+
+}

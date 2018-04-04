@@ -81,14 +81,13 @@ class Vote extends React.Component {
             </div>
           : <div>
               <div className="loggedIn">
-                <button onClick={this.voteYes} className="btn btn-success">YES</button>
-                <button onClick={this.voteNo} className="btn btn-danger">NO</button>
-                <button onClick={this.voteUndecided} className="btn btn-secondary">UNDECIDED</button>
+                <button onClick={this.voteYes} className="btn btn-success btn-yes">YES</button>
+                <button onClick={this.voteNo} className="btn btn-danger btn-no">NO</button>
+                <button onClick={this.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
               </div>
               
               <div className="voteOverview">
-                <h5>Vote Summary Graph</h5>
-                  <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
+                <Chart chartData={this.state.chartDataNum} location="Votes" legendPosition="top"/>
               </div>
             </div>
           }
