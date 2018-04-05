@@ -36,6 +36,8 @@ The user is authenticated through Google Oauth and assigned a unique id. Each us
 * Google OAUTH: User login authentication
 * Heroku Deployment: Used for deploying to the internet
 
-### Log-In
+### Bill Illustration
+
+![Home page image of Vote.ly](https://github.com/Dangrmurray/Democracy-App/blob/master/client/public/images/Dem-2.png)
 
 
