@@ -2,6 +2,8 @@
 
 ## A civic engagement application that informs the general public on current legislative acts and encourages citizens to be part of the political discourse.
 
+![Home page image of Vote.ly](https://github.com/Dangrmurray/Democracy-App/blob/master/client/public/images/Log-in.png)
+
 ### About our App
 
 We created a full stack  application called Vote.ly that lets voters be more engaged citizens in the Political process. Our application calls on  the Pro Republica API to look up congressional representatives and the bills they are sponsoring also accounting for how far bills are along the legislative process. 
