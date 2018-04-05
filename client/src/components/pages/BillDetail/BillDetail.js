@@ -141,8 +141,8 @@ class BillDetail extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<div className="col-8 mx-auto">
+			<div className="bill-info">
+				
 				<BillInfo
 					title={this.state.bill.name}
 					bill_id={this.state.bill.bill_id}
@@ -157,7 +157,6 @@ class BillDetail extends Component {
 					voteNo={this.voteNo}
 					voteUndecided={this.voteUndecided}
 				/>
-				</div>
 			</div>
 		)
 	}

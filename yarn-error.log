@@ -2383,12 +2383,16 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
+<<<<<<< HEAD
   Exit code: 1
 <<<<<<< HEAD
   Command: sh
   Arguments: -c ./node_modules/.bin/concurrently "npm run server" "npm run client"
   Directory: /Users/judimorrill/Desktop/Democracy-App
 =======
+=======
+  Exit code: 3221225786
+>>>>>>> fc779e0b065c44f645f9b60bcc51a5090808dedb
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c .\node_modules\.bin\concurrently "npm run server" "npm run client"
   Directory: C:\Users\fvald\Desktop\fvaldez421.github.io\Democracy-App
