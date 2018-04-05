@@ -11,7 +11,7 @@ const WelcomeDetail = () => (
 
 		<div className="jumbotron blue">
 
-			<h2>VOTE ON WHAT YOU BLEIVE MATTERS AND TOGETHER WE CAN MAKE THIS A REAL DEMOCRACY!</h2>
+			<h2>VOTE ON WHAT YOU BELIEVE MATTERS AND TOGETHER WE CAN MAKE THIS A REAL DEMOCRACY!</h2>
 			<p>Does our government work for you? See real bills and vote to see what would pass if the people were in charge.</p>
 		</div>
 	</div>
