@@ -24,15 +24,15 @@ The user is authenticated through Google Oauth and assigned a unique id. Each us
 
 ### Technologies Utilised
 
-* React.js Render components and data dynamic throughou the application
-* Javascript Main language for framework
-* MongoDB Non relational Database with independent input fields
-* Bootstrap Front-End design
-* ProBublica API Used to populate the Bills page
-* Express.js Node package used for routing
-* Charts.js JavaScript Library used to illustrate demographic data
-* Google OAUTH User login authentication
-* Heroku Deployment Used for deploying to the internet
+* React.js: Render components and data dynamic throughou the application
+* Javascript: Main language for framework
+* MongoDB: Non relational Database with independent input fields
+* Bootstrap: Front-End design
+* ProBublica: API Used to populate the Bills page
+* Express.js: Node package used for routing
+* Charts.js: JavaScript Library used to illustrate demographic data
+* Google OAUTH: User login authentication
+* Heroku Deployment: Used for deploying to the internet
 
 ### Log-In
 
