@@ -9,9 +9,9 @@ The user is authenticated through Google Oauth and assigned a unique id. Each us
 
 ### To Visit
 
-* Visit: (Heroku Dpeloyment link)
+* Visit: (Heroku Deployment link)
 * Visit: https://github.com/Dangrmurray/Democracy-App
-* See our presentation on Slides at : [Github] https://docs.google.com/Vote.ly
+* See our presentation on Slides at : [Github] https://docs.google.com/presentation/d/1pOIRwqdiUuqxCpK8G55H_aS72uPInnrdb0Q1vwGrZkI/edit#slide=id.p
 
 ### Contributors
 
@@ -24,12 +24,16 @@ The user is authenticated through Google Oauth and assigned a unique id. Each us
 
 ### Technologies Utilised
 
-* React.js
-* Javascript
-* MongoDB
-* Bootstrap
-* ProBublica API
-* Express.js
-* Charts.js
-* Google OAUTH
-* Heroku Deployment 
+* React.js Render components and data dynamic throughou the application
+* Javascript Main language for framework
+* MongoDB Non relational Database with independent input fields
+* Bootstrap Front-End design
+* ProBublica API Used to populate the Bills page
+* Express.js Node package used for routing
+* Charts.js JavaScript Library used to illustrate demographic data
+* Google OAUTH User login authentication
+* Heroku Deployment Used for deploying to the internet
+
+### Log-In
+
+
