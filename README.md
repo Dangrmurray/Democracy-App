@@ -40,6 +40,14 @@ The user is authenticated through Google Oauth and assigned a unique id. Each us
 
 ![Home page image of Vote.ly](https://github.com/Dangrmurray/Democracy-App/blob/master/client/public/images/Dem-2.png)
 
+### Planned Future Features
+
+* Robust informational portal where specific bills can be searched and filtered
+* Adding similar platforms for local and state levels
+* Ability to save favorites for later
+* Voters can add context to their opinions through comments.
+
+
 
 
 
