@@ -1,84 +1,35 @@
-# Create React Express App
+# Vote.ly
 
-## About This Boilerplate
+## A civic engagement application that informs the general public on current legislative acts and encourages citizens to be part of the political discourse.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+### About our App
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+We created a full stack  application called Vote.ly that lets voters be more engaged citizens in the Political process. Our application calls on  the Pro Republica API to look up congressional representatives and the bills they are sponsoring also accounting for how far bills are along the legislative process. 
+The user is authenticated through Google Oauth and assigned a unique id. Each user ID is pertinent to dislaying particualr demographic statistics of vote results. Upon vsiting the website (Heroku Deployment info) each user will login through Google OAUTH and unique user information along with congressional bills will be stored in a Mongo database.
 
-## Starting the app locally
+### To Visit
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+* Visit: (Heroku Dpeloyment link)
+* Visit: https://github.com/Dangrmurray/Democracy-App
+* See our presentation on Slides at : [Github] https://docs.google.com/Vote.ly
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
+### Contributors
 
-After both installations complete, run the following command in your terminal:
+* Daniel Murray
+* David Morrill
+* Frank Valdez
+* Jason Kunkel
+* Ryan  Brownlow
+* Abdel Rahman
 
-```
-yarn start
-```
+### Technologies Utilised
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-### Create a Git Repo
-
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Heroku
-
-Make sure that you have a Heroku app created for this project. If so, proceed to the next section, otherwise run the following command in your terminal:
-
-```
-heroku create
-```
-
-Optionally add an argument for your application's name after `create`, e.g.
-
-```
-heroku myawesomeapp
-```
-
-### Deploying
-
-#### Option 1
-
-Use the deploy script inside of the outer `package.json`
-
-After confirming that you have an up to date git repository and a Heroku app created, run the following command to deploy:
-
-```
-yarn deploy
-```
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
-
-#### Option 2
-
-Manually deploy 
-
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
-
-1. Build the React app for production by running the following command:
-
-```
-yarn build
-```
-
-2. Add and commit all changes to git
-
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+* React.js
+* Javascript
+* MongoDB
+* Bootstrap
+* ProBublica API
+* Express.js
+* Charts.js
+* Google OAUTH
+* Heroku Deployment 
