@@ -41,7 +41,7 @@ class Vote extends React.Component {
   getChartDataNum(){
     let yes = JSON.parse(window.sessionStorage.getItem("yes"));
     let no = JSON.parse(window.sessionStorage.getItem("no"));
-    let undecided = JSON.parse(window.sessionStorage.getItem("yes"));
+    let undecided = JSON.parse(window.sessionStorage.getItem("undecided"));
 
     this.setState({
       chartDataNum:{
