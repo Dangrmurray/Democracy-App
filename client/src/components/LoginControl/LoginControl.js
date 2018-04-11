@@ -18,9 +18,10 @@ const LoginControl = (props) => (
                 onLogoutSuccess={props.handleLogoutClick} 
             	/>
             </Link>
-            : <GoogleLogin 
-	          	onLoginSuccess={props.handleLoginClick} 
-          	/> 
+            : 
+              <GoogleLogin 
+  	          	onLoginSuccess={props.handleLoginClick} 
+            	/> 
           }
           </div> 
         </GoogleAPI>

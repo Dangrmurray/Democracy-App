@@ -8,11 +8,13 @@ import Vote from "../../Vote";
 
 
 class BillDetail extends Component {
+	componentWillMount() {
+		this.getBill();		
+
+	}
 
 	componentDidMount() {
-		this.getBill();
-		window.sessionStorage.setItem("voted", false);
-		window.sessionStorage.setItem("bill", this.props.match.params.bill_id);
+		this.setState({ voted: false });
 	}
 	
     constructor(props){
@@ -25,14 +27,14 @@ class BillDetail extends Component {
 			bill_id: this.props.match.params.bill_id,
 			bill: [],
 			userId: window.sessionStorage.getItem("user"),
+			voted: false
 		};
     }
 
-	getBill = () => {
+	getBill() {
 	// <<<<<<<<<<Will call to the controller
 		API.checkBill(this.state.bill_id)
 			.then(res => {
-				console.log(res.data[0]);
 				this.setState({ bill: res.data[0] });
 				window.sessionStorage.setItem("yes", this.state.bill.votes_yes.length)
 				window.sessionStorage.setItem("no", this.state.bill.votes_no.length)
@@ -40,20 +42,20 @@ class BillDetail extends Component {
 
 				if (this.state.bill.votes_no.includes(this.state.userId)) {
 					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);
+					this.setState({ voted: true })
 				}
 				if (this.state.bill.votes_yes.includes(this.state.userId)) {
 					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);
+					this.setState({ voted: true })
 				}
 				if (this.state.bill.votes_undecided.includes(this.state.userId)) {
 					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);	
+					this.setState({ voted: true })	
 				}
 			})
 	}
 
-	voteYes() {
+	voteYes() { 
 		if (this.state.bill.votes_yes.includes(this.state.userId)) {
 			console.log("no repeats bro...");
 		} else {
@@ -69,16 +71,8 @@ class BillDetail extends Component {
 		.then(res => {
 			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})
-		.catch(err => console.log(err))
-		window.location.reload()
+		.catch(err => console.log(err));
 
 	}
 
@@ -98,16 +92,8 @@ class BillDetail extends Component {
 		.then(res => {
 			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})		
-		.catch(err => console.log(err))
-		window.location.reload()
+		.catch(err => console.log(err));
 
 	}
 	voteUndecided() {
@@ -126,16 +112,8 @@ class BillDetail extends Component {
 		.then(res => {
 			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})		
-		.catch(err => console.log(err))
-		window.location.reload()
+		.catch(err => console.log(err));
 
 	}
 
@@ -151,15 +129,32 @@ class BillDetail extends Component {
 					gov_track={this.state.bill.govtrack_url}
 					dot_gov={this.state.bill.congressdotgov_url}
 				/>
-				<Vote
-					userId={this.props.userId}
-					voteYes={this.voteYes}
-					voteNo={this.voteNo}
-					voteUndecided={this.voteUndecided}
-				/>
+              {
+                (this.state.bill.votes_yes || 
+                  this.state.bill.votes_no ||
+                  this.state.bill.votes_undecided) ?
+              
+					(<Vote
+						voteYes={this.voteYes}
+						voteNo={this.voteNo}
+						voteUndecided={this.voteUndecided}
+						voted={this.state.voted}
+						bill_id={this.state.bill_id}
+						votes_yes={this.state.bill.votes_yes}
+						votes_no={this.state.bill.votes_no}
+						votes_undecided={this.state.bill.votes_undecided}
+					/>)
+                : 
+                	(<p>Something's wrong with our chart :(</p>)
+              }				
 			</div>
 		)
 	}
 }
 
 export default BillDetail;
+
+
+					// yes={this.state.bill.votes_yes.length}
+					// no={this.state.bill.votes_no.length}
+					// undecided={this.state.bill.votes_undecided.length}

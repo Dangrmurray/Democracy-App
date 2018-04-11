@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    window.sessionStorage.setItem("votedBills", "");
     let loginBool = (window.sessionStorage.getItem("loggedIn"));
     let userBool = (window.sessionStorage.getItem("userExist"));
 
@@ -65,8 +64,6 @@ class App extends Component {
   }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   getUser(id) {
-    console.log("in here");
-    console.log(id);
     let userId;
     if (this.state) {
       userId = this.state.userId; 
