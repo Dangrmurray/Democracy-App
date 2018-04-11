@@ -1,7 +1,5 @@
 import React from 'react';
 import './Vote.css';
-import API from "../../utils/API.js";
-import Chart from '../VoteNumChart';
 
 class Vote extends React.Component {
 
@@ -13,7 +11,6 @@ class Vote extends React.Component {
   }
   
   componentWillMount(){
-    this.getChartDataNum();
     let loggedIn = JSON.parse(window.sessionStorage.getItem("loggedIn"));
     
     if (JSON.parse(loggedIn) === true) {
@@ -24,35 +21,8 @@ class Vote extends React.Component {
 
   }
 
-  getChartDataNum(){
-
-     this.setState({ chartUpdate : false });
-
-    this.setState({
-      chartDataNum:{
-        labels: ['Yes', 'No', 'Undecided',],
-        datasets:[
-          {
-            label:'Votes',
-            data:[
-            this.props.votes_yes.length,
-            this.props.votes_no.length,
-            this.props.votes_undecided.length
-            ],
-            backgroundColor:[
-              'rgba(0, 123, 255, 1)',
-              'rgba(251, 34, 89, 1)',
-              'rgba(255, 240, 200, 1)'
-            ]
-          },
-        ]
-      }
-    });
-  }
-
   render() {
 
-    let chartData = this.state.chartDataNum;
       return (
        
         <div className="col-6 mx-auto voteBlock">
@@ -75,12 +45,7 @@ class Vote extends React.Component {
               ]
             }
             <div>
-                  <div className="voteOverview">
-                    <Chart chartData={chartData} 
-                    redraw
-                    location="Votes" 
-                    legendPosition="top"/>
-                  </div>
+              {this.props.children}
             </div>
         </div>
       )
