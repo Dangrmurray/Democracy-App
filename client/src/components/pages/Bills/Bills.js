@@ -99,7 +99,6 @@ class Bills extends Component {
 						if (!this.state.loaded) {
 							window.sessionStorage.setItem("loaded", true);
 							this.setState({ loaded: true })
-							window.location.reload();
 						}
 					})
 			})

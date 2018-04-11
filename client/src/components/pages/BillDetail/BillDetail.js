@@ -3,17 +3,14 @@ import './BillDetail.css';
 import API from "../../../utils/API.js";
 import BillInfo from "../../BillInfo";
 import Vote from "../../Vote";
-
-
+import Chart from "../../VoteNumChart";
 
 
 class BillDetail extends Component {
-
-	componentDidMount() {
-		this.getBill();
-		window.sessionStorage.setItem("voted", false);
-		window.sessionStorage.setItem("bill", this.props.match.params.bill_id);
-	}
+	
+	componentWillMount() {
+		this.getBill();		
+	};
 	
     constructor(props){
         super(props);
@@ -25,118 +22,71 @@ class BillDetail extends Component {
 			bill_id: this.props.match.params.bill_id,
 			bill: [],
 			userId: window.sessionStorage.getItem("user"),
+			voted: false
 		};
     }
 
-	getBill = () => {
-	// <<<<<<<<<<Will call to the controller
+	getBill() {
 		API.checkBill(this.state.bill_id)
 			.then(res => {
-				console.log(res.data[0]);
 				this.setState({ bill: res.data[0] });
-				window.sessionStorage.setItem("yes", this.state.bill.votes_yes.length)
-				window.sessionStorage.setItem("no", this.state.bill.votes_no.length)
-				window.sessionStorage.setItem("undecided", this.state.bill.votes_undecided.length)
 
 				if (this.state.bill.votes_no.includes(this.state.userId)) {
-					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);
-				}
-				if (this.state.bill.votes_yes.includes(this.state.userId)) {
-					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);
-				}
-				if (this.state.bill.votes_undecided.includes(this.state.userId)) {
-					// console.log("no repeats bro...");
-					window.sessionStorage.setItem("voted", true);	
+					this.setState({ voted: true })
+				}else if (this.state.bill.votes_yes.includes(this.state.userId)) {
+					this.setState({ voted: true })
+				}else if (this.state.bill.votes_undecided.includes(this.state.userId)) {
+					this.setState({ voted: true })	
 				}
 			})
 	}
 
-	voteYes() {
-		if (this.state.bill.votes_yes.includes(this.state.userId)) {
-			console.log("no repeats bro...");
-		} else {
+	voteYes() { 
+		if (!(this.state.bill.votes_yes.includes(this.state.userId))) {
 			let bill = this.state.bill;
 			bill.votes_yes.push(this.state.userId);
 			this.setState({ bill: bill });
-			console.log(this.state.bill.votes_yes);
 		}
 
 		API.voteYes(this.state.bill_id, {
 			votes_yes: this.state.bill.votes_yes
 		})
 		.then(res => {
-			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})
-		.catch(err => console.log(err))
-		window.location.reload()
-
+		.catch(err => console.log(err));
 	}
 
 	voteNo() {
-		if (this.state.bill.votes_no.includes(this.state.userId)) {
-			console.log("no repeats bro...");
-		} else {
+		if (!(this.state.bill.votes_no.includes(this.state.userId))) {
 			let bill = this.state.bill;
 			bill.votes_no.push(this.state.userId);
 			this.setState({ bill });
-			console.log(this.state.bill.votes_no)
 		}
 
 		API.voteNo(this.state.bill_id, {
 			votes_no: this.state.bill.votes_no
 		})
 		.then(res => {
-			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})		
-		.catch(err => console.log(err))
-		window.location.reload()
-
+		.catch(err => console.log(err));
 	}
+
 	voteUndecided() {
-		if (this.state.bill.votes_undecided.includes(this.state.userId)) {
-			console.log("no repeats bro...");
-		} else {
+		if (!(this.state.bill.votes_undecided.includes(this.state.userId))) {
 			let bill = this.state.bill;
 			bill.votes_undecided.push(this.state.userId);
 			this.setState({ bill });
-			console.log(this.state.bill.votes_undecided)
 		}
 
 		API.voteUnde(this.state.bill_id, {
 			votes_undecided: this.state.bill.votes_undecided
 		})
 		.then(res => {
-			console.log(res);
 			this.getBill();
-			window.sessionStorage.setItem("voted", true)
-			
-			let votedBills = JSON.parse(window.sessionStorage.getItem("votedBills"));
-			if (!votedBills.includes(this.state.bill_id)){
-				votedBills.push(this.state.bill_id);
-			};
-			window.sessionStorage.setItem("votedBills", JSON.stringify(votedBills));
 		})		
-		.catch(err => console.log(err))
-		window.location.reload()
-
+		.catch(err => console.log(err));
 	}
 
 	render() {
@@ -151,12 +101,36 @@ class BillDetail extends Component {
 					gov_track={this.state.bill.govtrack_url}
 					dot_gov={this.state.bill.congressdotgov_url}
 				/>
+				
 				<Vote
-					userId={this.props.userId}
+					voted={this.state.voted}
 					voteYes={this.voteYes}
 					voteNo={this.voteNo}
 					voteUndecided={this.voteUndecided}
-				/>
+				>
+					{
+		                (this.state.bill.votes_yes || 
+		                this.state.bill.votes_no ||
+		               	this.state.bill.votes_undecided) ?
+		                	[
+			                	((this.state.bill.votes_yes.length 
+			                	+ this.state.bill.votes_no.length 
+			                	+ this.state.bill.votes_undecided.length > 0)) ?
+									(<Chart
+										bill_id={this.state.bill_id}
+										votes_yes={this.state.bill.votes_yes}
+										votes_no={this.state.bill.votes_no}
+										votes_undecided={this.state.bill.votes_undecided}
+										location="Votes"
+										legendPosition="top"
+									/>)
+								:
+									(<p>No votes yet :(</p>)
+							]
+		                : 
+		                	(<p>Something's wrong with our chart :(</p>)
+	                }
+                </Vote>			
 			</div>
 		)
 	}
