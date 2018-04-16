@@ -127,7 +127,7 @@ class Bills extends Component {
 					<BillBlock
 						key={bill.bill_id}
 						title={bill.name}
-						id={bill.bill_id}
+						bill_id={bill.bill_id}
 						short_summary={bill.summary_short}
 						introduced_date={bill.introduced_date}
 						latest_major_action_date={bill.latest_major_action_date}

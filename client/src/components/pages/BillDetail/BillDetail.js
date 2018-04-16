@@ -95,7 +95,7 @@ class BillDetail extends Component {
 				
 				<BillInfo
 					title={this.state.bill.name}
-					bill_id={this.state.bill.bill_id}
+					bill_id={this.state.bill_id}
 					sponsor_name={this.state.bill.sponsor_name}
 					summary={this.state.bill.summary_short}
 					gov_track={this.state.bill.govtrack_url}

@@ -11,7 +11,7 @@ import API from "./utils/API.js"
 
 import DemoForm from "./components/pages/DemoForm";
 
-import Chart from "./components/pages/Stats";
+import Stats from "./components/pages/Stats";
 
 import "./App.css";
 
@@ -118,7 +118,7 @@ class App extends Component {
           <Route path="/billdetail/:bill_id" 
           render={(props) => (<BillDetail userId={this.state.userId} {...props} />)} 
           />
-          <Route path="/stats" component={Chart} />
+          <Route path="/stats/:bill_id" component={Stats} />
 
           <Footer/>
 

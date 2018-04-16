@@ -1,36 +1,896 @@
 import React, { Component } from 'react';
 import './Stats.css';
+import API from "../../../utils/API.js";
 import Chart from '../../Chart';
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      bill_id: this.props.match.params.bill_id,
+      yesVoters: [],
+      noVoters: [],
+      undeVoters: [],
+
       chartDataAge:{},
+      ageArrs: {
+        yes: [1, 2, 3, 4, 5, 6, 7],
+        no: [1, 2, 3, 4, 5, 6, 7],
+        undecided: [1, 2, 3, 4, 5, 6, 7]
+        },
+
       chartDataIncome:{},
+      incomeArrs: {
+        yes: [],
+        no: [],
+        undecided: []
+        },
+
       chartDataGender:{},
+      gendArrs: {
+        yes: [],
+        no: [],
+        undecided: []
+        },
+
       chartDataEducation:{},
+      eduArrs: {
+        yes: [],
+        no: [],
+        undecided: []
+        },
+
       chartDataRace:{},
-      chartDataRegion:{}
-      
+      raceArrs: {
+        yes: [],
+        no: [],
+        undecided: []
+        },
+
+      chartDataRegion:{},
+      regArrs: {
+        yes: [],
+        no: [],
+        undecided: []
+        }
     }
+    console.log(this.state.bill_id)
   }
 
-  componentWillMount(){
+  componentWillMount() {
+    this.getBill();
+
+    this.dotThenFuncs();
+  }
+
+  getBill() {
+    API.checkBill(this.state.bill_id)
+      .then(res => {
+        this.setState({ 
+          yesVoters: res.data[0]["votes_yes"],
+          noVoters: res.data[0]["votes_no"],
+          undeVoters: res.data[0]["votes_undecided"] 
+        });
+        console.log(this.state.yesVoters)
+        console.log(this.state.noVoters)
+        console.log(this.state.undeVoters)
+
+        this.getYesVoters();
+      })
+  }
+
+  getYesVoters() {
+    console.log("getting yessers");
+    let yesAge = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      pns: []
+    };
+    let yesInc = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let yesGen = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      pns: []
+    };
+    let yesEdu = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let yesRa = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let yesReg = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      pns: []
+    };
+
+    for (let i = 0; i < this.state.yesVoters.length; i++) {
+      console.log("calling API");
+      API.getUser(this.state.yesVoters[i])
+        .then(res => {
+          let user = res.data[0];
+          console.log(res);
+          if (user) {
+  // _____________________ AGE ___________________________
+            switch(user.age) {
+              case "1":
+              yesAge.One.push(user.userId);
+              break;
+
+              case "2":
+              yesAge.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesAge.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesAge.Four.push(user.userId);
+              break;
+
+              case "5":
+              yesAge.Five.push(user.userId);
+              break;
+
+              case "6":
+              yesAge.Six.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesAge.pns.push(user.userId);
+              break;
+            };
+  // _____________________ INCOME ________________________
+            switch(user.income) {
+              case "1":
+              yesInc.One.push(user.userId);
+              break;
+
+              case "2":
+              yesInc.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesInc.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesInc.Four.push(user.userId);
+              break;
+
+              case "5":
+              yesInc.Five.push(user.userId);
+              break;
+
+              case "6":
+              yesInc.Six.push(user.userId);
+              break;
+
+              case "7":
+              yesInc.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesInc.pns.push(user.userId);
+              break;
+            };
+  // _____________________ GENDER ________________________
+            switch(user.gender) {
+              case "1":
+              yesGen.One.push(user.userId);
+              break;
+
+              case "2":
+              yesGen.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesGen.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesGen.Four.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesGen.pns.push(user.userId);
+              break;
+            };
+  // _____________________ EDUCATION _____________________
+            switch(user.education) {
+              case "1":
+              yesEdu.One.push(user.userId);
+              break;
+
+              case "2":
+              yesEdu.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesEdu.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesEdu.Four.push(user.userId);
+              break;
+
+              case "5":
+              yesEdu.Five.push(user.userId);
+              break;
+
+              case "6":
+              yesEdu.Six.push(user.userId);
+              break;
+
+              case "7":
+              yesEdu.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesEdu.pns.push(user.userId);
+              break;
+            };
+  // _____________________ RACE __________________________
+            switch(user.race) {
+              case "1":
+              yesRa.One.push(user.userId);
+              break;
+
+              case "2":
+              yesRa.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesRa.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesRa.Four.push(user.userId);
+              break;
+
+              case "5":
+              yesRa.Five.push(user.userId);
+              break;
+
+              case "6":
+              yesRa.Six.push(user.userId);
+              break;
+
+              case "7":
+              yesRa.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesRa.pns.push(user.userId);
+              break;
+            };
+  // _____________________ REGION ________________________
+            switch(user.region) {
+              case "1":
+              yesReg.One.push(user.userId);
+              break;
+
+              case "2":
+              yesReg.Two.push(user.userId);
+              break;
+
+              case "3":
+              yesReg.Three.push(user.userId);
+              break;
+
+              case "4":
+              yesReg.Four.push(user.userId);
+              break;
+
+              case "5":
+              yesReg.Five.push(user.userId);
+              break;
+
+              case "pns" || "":
+              yesReg.pns.push(user.userId);
+              break;
+            };
+          };
+        })
+    }
+  // _____________________ TESTS _________________________
+    console.log("age");
+    console.log(yesAge);
+    console.log("income");
+    console.log(yesInc);
+    console.log("gender");
+    console.log(yesGen);
+    console.log("education");
+    console.log(yesEdu);
+    console.log("race");
+    console.log(yesRa);
+    console.log("region");
+    console.log(yesReg);
+
+    this.getNoVoters();
+  };
+
+  getNoVoters() {
+    console.log("getting noers");
+    let noAge = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      pns: []
+    };
+    let noInc = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let noGen = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      pns: []
+    };
+    let noEdu = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let noRa = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let noReg = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      pns: []
+    };
+
+    for (let i = 0; i < this.state.noVoters.length; i++) {
+      console.log("calling API");
+      API.getUser(this.state.noVoters[i])
+        .then(res => {
+          let user = res.data[0];
+          console.log(res);
+          if (user) {
+  // _____________________ AGE ___________________________
+            switch(user.age) {
+              case "1":
+              noAge.One.push(user.userId);
+              break;
+
+              case "2":
+              noAge.Two.push(user.userId);
+              break;
+
+              case "3":
+              noAge.Three.push(user.userId);
+              break;
+
+              case "4":
+              noAge.Four.push(user.userId);
+              break;
+
+              case "5":
+              noAge.Five.push(user.userId);
+              break;
+
+              case "6":
+              noAge.Six.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noAge.pns.push(user.userId);
+              break;
+            };
+  // _____________________ INCOME ________________________
+            switch(user.income) {
+              case "1":
+              noInc.One.push(user.userId);
+              break;
+
+              case "2":
+              noInc.Two.push(user.userId);
+              break;
+
+              case "3":
+              noInc.Three.push(user.userId);
+              break;
+
+              case "4":
+              noInc.Four.push(user.userId);
+              break;
+
+              case "5":
+              noInc.Five.push(user.userId);
+              break;
+
+              case "6":
+              noInc.Six.push(user.userId);
+              break;
+
+              case "7":
+              noInc.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noInc.pns.push(user.userId);
+              break;
+            };
+  // _____________________ GENDER ________________________
+            switch(user.gender) {
+              case "1":
+              noGen.One.push(user.userId);
+              break;
+
+              case "2":
+              noGen.Two.push(user.userId);
+              break;
+
+              case "3":
+              noGen.Three.push(user.userId);
+              break;
+
+              case "4":
+              noGen.Four.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noGen.pns.push(user.userId);
+              break;
+            };
+  // _____________________ EDUCATION _____________________
+            switch(user.education) {
+              case "1":
+              noEdu.One.push(user.userId);
+              break;
+
+              case "2":
+              noEdu.Two.push(user.userId);
+              break;
+
+              case "3":
+              noEdu.Three.push(user.userId);
+              break;
+
+              case "4":
+              noEdu.Four.push(user.userId);
+              break;
+
+              case "5":
+              noEdu.Five.push(user.userId);
+              break;
+
+              case "6":
+              noEdu.Six.push(user.userId);
+              break;
+
+              case "7":
+              noEdu.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noEdu.pns.push(user.userId);
+              break;
+            };
+  // _____________________ RACE __________________________
+            switch(user.race) {
+              case "1":
+              noRa.One.push(user.userId);
+              break;
+
+              case "2":
+              noRa.Two.push(user.userId);
+              break;
+
+              case "3":
+              noRa.Three.push(user.userId);
+              break;
+
+              case "4":
+              noRa.Four.push(user.userId);
+              break;
+
+              case "5":
+              noRa.Five.push(user.userId);
+              break;
+
+              case "6":
+              noRa.Six.push(user.userId);
+              break;
+
+              case "7":
+              noRa.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noRa.pns.push(user.userId);
+              break;
+            };
+  // _____________________ REGION ________________________
+            switch(user.region) {
+              case "1":
+              noReg.One.push(user.userId);
+              break;
+
+              case "2":
+              noReg.Two.push(user.userId);
+              break;
+
+              case "3":
+              noReg.Three.push(user.userId);
+              break;
+
+              case "4":
+              noReg.Four.push(user.userId);
+              break;
+
+              case "5":
+              noReg.Five.push(user.userId);
+              break;
+
+              case "pns" || "":
+              noReg.pns.push(user.userId);
+              break;
+            };
+          };
+        })
+    }
+  // _____________________ TESTS _________________________
+    console.log("age");
+    console.log(noAge);
+    console.log("income");
+    console.log(noInc);
+    console.log("gender");
+    console.log(noGen);
+    console.log("education");
+    console.log(noEdu);
+    console.log("race");
+    console.log(noRa);
+    console.log("region");
+    console.log(noReg);
+
+    this.getUndeVoters();
+  };
+
+  getUndeVoters() {
+    console.log("getting undeVoters");
+    let undeAge = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      pns: []
+    };
+    let undeInc = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let undeGen = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      pns: []
+    };
+    let undeEdu = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let undeRa = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      Six: [],
+      Seven: [],
+      pns: []
+    };
+    let undeReg = {
+      One: [],
+      Two: [],
+      Three: [],
+      Four: [],
+      Five: [],
+      pns: []
+    };
+
+    for (let i = 0; i < this.state.undeVoters.length; i++) {
+      console.log("calling API");
+      API.getUser(this.state.undeVoters[i])
+        .then(res => {
+          let user = res.data[0];
+          console.log(res);
+          if (user) {
+  // _____________________ AGE ___________________________
+            switch(user.age) {
+              case "1":
+              undeAge.One.push(user.userId);
+              break;
+
+              case "2":
+              undeAge.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeAge.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeAge.Four.push(user.userId);
+              break;
+
+              case "5":
+              undeAge.Five.push(user.userId);
+              break;
+
+              case "6":
+              undeAge.Six.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeAge.pns.push(user.userId);
+              break;
+            };
+  // _____________________ INCOME ________________________
+            switch(user.income) {
+              case "1":
+              undeInc.One.push(user.userId);
+              break;
+
+              case "2":
+              undeInc.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeInc.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeInc.Four.push(user.userId);
+              break;
+
+              case "5":
+              undeInc.Five.push(user.userId);
+              break;
+
+              case "6":
+              undeInc.Six.push(user.userId);
+              break;
+
+              case "7":
+              undeInc.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeInc.pns.push(user.userId);
+              break;
+            };
+  // _____________________ GENDER ________________________
+            switch(user.gender) {
+              case "1":
+              undeGen.One.push(user.userId);
+              break;
+
+              case "2":
+              undeGen.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeGen.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeGen.Four.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeGen.pns.push(user.userId);
+              break;
+            };
+  // _____________________ EDUCATION _____________________
+            switch(user.education) {
+              case "1":
+              undeEdu.One.push(user.userId);
+              break;
+
+              case "2":
+              undeEdu.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeEdu.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeEdu.Four.push(user.userId);
+              break;
+
+              case "5":
+              undeEdu.Five.push(user.userId);
+              break;
+
+              case "6":
+              undeEdu.Six.push(user.userId);
+              break;
+
+              case "7":
+              undeEdu.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeEdu.pns.push(user.userId);
+              break;
+            };
+  // _____________________ RACE __________________________
+            switch(user.race) {
+              case "1":
+              undeRa.One.push(user.userId);
+              break;
+
+              case "2":
+              undeRa.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeRa.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeRa.Four.push(user.userId);
+              break;
+
+              case "5":
+              undeRa.Five.push(user.userId);
+              break;
+
+              case "6":
+              undeRa.Six.push(user.userId);
+              break;
+
+              case "7":
+              undeRa.Seven.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeRa.pns.push(user.userId);
+              break;
+            };
+  // _____________________ REGION ________________________
+            switch(user.region) {
+              case "1":
+              undeReg.One.push(user.userId);
+              break;
+
+              case "2":
+              undeReg.Two.push(user.userId);
+              break;
+
+              case "3":
+              undeReg.Three.push(user.userId);
+              break;
+
+              case "4":
+              undeReg.Four.push(user.userId);
+              break;
+
+              case "5":
+              undeReg.Five.push(user.userId);
+              break;
+
+              case "pns" || "":
+              undeReg.pns.push(user.userId);
+              break;
+            };
+          };
+        })
+    }
+  // _____________________ TESTS _________________________
+    console.log("age");
+    console.log(undeAge);
+    console.log("income");
+    console.log(undeInc);
+    console.log("gender");
+    console.log(undeGen);
+    console.log("education");
+    console.log(undeEdu);
+    console.log("race");
+    console.log(undeRa);
+    console.log("region");
+    console.log(undeReg);
+  }
+
+
+  dotThenFuncs() {
     this.getChartDataAge();
     this.getChartDataIncome();
     this.getChartDataGender();
     this.getChartDataEducation();
     this.getChartDataRace();
     this.getChartDataRegion();
-    
   }
 
-  getChartDataAge(){
-    // Ajax calls here
+  getChartDataAge() {
     this.setState({
       chartDataAge:{
-        labels: ['Under 18yrs', '18-34yrs', '35-50yrs', '51-69yrs', '70-87yrs', '88+yrs'],
+        labels: [
+          'Under 18yrs', 
+          '18-34yrs', 
+          '35-50yrs', 
+          '51-69yrs', 
+          '70-87yrs', 
+          '88+yrs', 
+          'No Answer'
+          ],
         datasets:[
           {
             label:'Yes',
@@ -40,7 +900,8 @@ class App extends Component {
               60,
               19,
               62,
-              2
+              2,
+              5
             ],
 
            
@@ -63,7 +924,8 @@ class App extends Component {
               7,
               5,
               23,
-              9
+              9,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -84,7 +946,8 @@ class App extends Component {
               10,
               19,
               12,
-              92
+              92,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -101,12 +964,18 @@ class App extends Component {
     });
   }
 
-
-  getChartDataIncome(){
-    // Ajax calls here
+  getChartDataIncome() {
     this.setState({
       chartDataIncome:{
-        labels: ['<$9,524', '<$38,699', '<-$82,499', '<$157,499', '<$199,999', '<$499,999', ],
+        labels: [
+          '<$9,524', 
+          '<$38,699', 
+          '<-$82,499', 
+          '<$157,499', 
+          '<$199,999', 
+          '<$499,999', 
+          'No Answer' 
+          ],
         datasets:[
           {
             label:'Yes',
@@ -116,7 +985,8 @@ class App extends Component {
               15,
               10,
               10,
-              9
+              9,
+              5
             ],
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
@@ -137,7 +1007,8 @@ class App extends Component {
               12,
               29,
               10,
-              2
+              2,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -158,7 +1029,8 @@ class App extends Component {
               56,
               76,
               23,
-              12
+              12,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -175,12 +1047,16 @@ class App extends Component {
     });
   }
 
-
-   getChartDataGender(){
-    // Ajax calls here
+  getChartDataGender() {
     this.setState({
       chartDataGender:{
-        labels: ['Female', 'Male', 'Trans', 'Other', ],
+        labels: [
+          'Female', 
+          'Male', 
+          'Trans', 
+          'Other', 
+          'No Answer' 
+          ],
         datasets:[
           {
             label:'Yes',
@@ -188,7 +1064,8 @@ class App extends Component {
               33,
               45,
               21,
-              36
+              36,
+              5
             ],
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
@@ -205,7 +1082,8 @@ class App extends Component {
               78,
               102,
               32,
-              43
+              43,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -222,7 +1100,8 @@ class App extends Component {
               110,
               88,
               92,
-              72
+              72,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -237,12 +1116,18 @@ class App extends Component {
     });
   }
 
-
-  getChartDataEducation(){
-    // Ajax calls here
+  getChartDataEducation() {
     this.setState({
       chartDataEducation:{
-        labels: ['Some HS', 'HS Dip/Equiv', 'Some Coll', 'Bachelor', 'PHD', 'Vocational/Trade', ],
+        labels: [
+          'Some HS', 
+          'HS Dip/Equiv', 
+          'Some Coll', 
+          'Bachelor', 
+          'PHD', 
+          'Vocational/Trade', 
+          'No Answer' 
+          ],
         datasets:[
           {
             label:'Yes',
@@ -252,7 +1137,8 @@ class App extends Component {
               32,
               19,
               7,
-              78
+              78,
+              5
             ],
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
@@ -273,7 +1159,8 @@ class App extends Component {
               23,
               89,
               75,
-              23
+              23,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -294,7 +1181,8 @@ class App extends Component {
               153,
               34,
               105,
-              92
+              92,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -311,15 +1199,18 @@ class App extends Component {
     });
   }
 
-  
-
-
-
-  getChartDataRace(){
-    // Ajax calls here
+  getChartDataRace() {
     this.setState({
       chartDataRace:{
-        labels: ['Asain', 'Black/Af. Am.', 'Hisp/Lat', 'White', 'Native Am/Pac Isl', 'Am. In./AK Native', ],
+        labels: [
+          'Asain', 
+          'Black/Af. Am.', 
+          'Hisp/Lat', 
+          'White', 
+          'Native Am/Pac Isl', 
+          'Am. In./AK Native', 
+          'No Answer' 
+          ],
         datasets:[
           {
             label:'Yes',
@@ -327,9 +1218,10 @@ class App extends Component {
               109,
               207,
               305,
-              765,
+              265,
               343,
-              88
+              88,
+              5
             ],
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
@@ -350,7 +1242,8 @@ class App extends Component {
               60,
               19,
               62,
-              72
+              72,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -371,7 +1264,8 @@ class App extends Component {
               30,
               59,
               12,
-              32
+              32,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
@@ -388,11 +1282,17 @@ class App extends Component {
     });
   }
 
-  getChartDataRegion(){
-    // Ajax calls here
+  getChartDataRegion() {
     this.setState({
       chartDataRegion:{
-        labels: ['Western', 'Mid-Western', 'Southern', 'North-Eastern', 'South-Eastern' ],
+        labels: [
+          'Western', 
+          'Mid-West', 
+          'South-West', 
+          'North-East', 
+          'South-East', 
+          'No Answer' 
+          ],
         datasets:[
           {
             label:'Yes',
@@ -401,7 +1301,8 @@ class App extends Component {
               1,
               12,
               17,
-              8
+              8,
+              5
             ],
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
@@ -420,7 +1321,8 @@ class App extends Component {
               15,
               30,
               19,
-              28
+              28,
+              5
             ],
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
@@ -439,7 +1341,8 @@ class App extends Component {
               56,
               21,
               15,
-              20
+              20,
+              5
             ],
             backgroundColor:[
               'rgba(255, 240, 200, 1)',

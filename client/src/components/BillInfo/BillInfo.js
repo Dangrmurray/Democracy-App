@@ -17,7 +17,7 @@ const BillInfo = (props) => (
 				<h6><strong>Bill Sponsor:</strong> {props.sponsor_name}</h6>
 			</div>
 			<div className="col-2">
-				<Link to={'/stats/' + props.id} className="btn btn-primary redBtn">Demographic Stats</Link>
+				<Link to={'/stats/' + props.bill_id} className="btn btn-primary redBtn">Demographic Stats</Link>
 			</div>
 		</div>
 		<div className="container">
