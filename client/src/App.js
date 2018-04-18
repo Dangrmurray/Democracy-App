@@ -7,10 +7,8 @@ import About from "./components/pages/About";
 import Region from "./components/pages/Region";
 import Bills from "./components/pages/Bills";
 import BillDetail from "./components/pages/BillDetail";
-import API from "./utils/API.js"
-
+import API from "./utils/API.js";
 import DemoForm from "./components/pages/DemoForm";
-
 import Stats from "./components/pages/Stats";
 
 import "./App.css";
