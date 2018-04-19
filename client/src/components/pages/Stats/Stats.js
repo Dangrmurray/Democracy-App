@@ -7,57 +7,48 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      checkCount: 0,
+      stateUpdated: false,
+
       bill_id: this.props.match.params.bill_id,
-      yesVoters: [],
-      noVoters: [],
-      undeVoters: [],
+      yesVoters: [0,0,0,0,0,0,0],
+      noVoters: [0,0,0,0,0,0,0],
+      undeVoters: [0,0,0,0,0,0,0],
 
       chartDataAge:{},
-      ageYes: [1, 2, 3, 4, 5, 6, 7],
-      ageNo: [1, 2, 3, 4, 5, 6, 7],
-      ageUnde: [1, 2, 3, 4, 5, 6, 7],
+      ageYes: [],
+      ageNo: [],
+      ageUnde: [],
 
       chartDataIncome:{},
-      incomeArrs: {
-        yes: [],
-        no: [],
-        undecided: []
-        },
+      incYes: [],
+      incNo: [],
+      incUnde: [],
 
       chartDataGender:{},
-      gendArrs: {
-        yes: [],
-        no: [],
-        undecided: []
-        },
-
+      genYes: [],
+      genNo: [],
+      genUnde: [],
+      
       chartDataEducation:{},
-      eduArrs: {
-        yes: [],
-        no: [],
-        undecided: []
-        },
+      eduYes: [],
+      eduNo: [],
+      eduUnde: [],
 
       chartDataRace:{},
-      raceArrs: {
-        yes: [],
-        no: [],
-        undecided: []
-        },
+      raYes: [],
+      raNo: [],
+      raUnde: [],
 
       chartDataRegion:{},
-      regArrs: {
-        yes: [],
-        no: [],
-        undecided: []
-        }
+      regYes: [],
+      regNo: [],
+      regUnde: []
     }
-    console.log(this.state.bill_id)
   }
 
   componentWillMount() {
     this.getBill();
-    this.dotThenFuncs();
   }
 
   getBill() {
@@ -73,16 +64,35 @@ class App extends Component {
         // console.log(this.state.undeVoters)
         if (this.state.yesVoters.length > 0) {
           this.getYesVoters();
-        }else if (this.state.noVoters.length > 0) {
+        }else {
+          let checkCount = ((this.state.checkCount) + 1);
+          this.setState({ checkCount });
+          // console.log(this.state.checkCount);
+          this.checkCountStatus();
+        }
+
+        if (this.state.noVoters.length > 0) {
           this.getNoVoters();
-        }else if (this.state.undeVoters.length > 0) {
+        }else {
+          let checkCount = ((this.state.checkCount) + 1);
+          this.setState({ checkCount });
+          // console.log(this.state.checkCount);
+          this.checkCountStatus();
+        }
+
+        if (this.state.undeVoters.length > 0) {
           this.getUndeVoters();
+        }else {
+          let checkCount = ((this.state.checkCount) + 1);
+            this.setState({ checkCount });
+            // console.log(this.state.checkCount);
+            this.checkCountStatus();
         }
       })
   }
 
   getYesVoters() {
-    console.log("getting yessers");
+    // console.log("getting yessers");
     let yesAge = {
       One: [],
       Two: [],
@@ -139,13 +149,13 @@ class App extends Component {
     };
 
     for (let i = 0; i < this.state.yesVoters.length; i++) {
-      console.log("calling API");
+      // console.log("calling API");
       API.getUser(this.state.yesVoters[i])
         .then(res => {
           let user = res.data[0];
-          console.log(res);
+          // console.log(res);
           if (res.data[0]) {
-            console.log(res.data[0]);
+            // console.log(res.data[0]);
   // _____________________ AGE ___________________________
             switch(user.age) {
               case "1":
@@ -175,6 +185,9 @@ class App extends Component {
               case "pns" || "":
               yesAge.pns.push(user.userId);
               break;
+
+              default: 
+              yesAge.pns.push(user.userId);
             };
   // _____________________ INCOME ________________________
             switch(user.income) {
@@ -209,6 +222,9 @@ class App extends Component {
               case "pns" || "":
               yesInc.pns.push(user.userId);
               break;
+
+              default: 
+              yesInc.pns.push(user.userId);
             };
   // _____________________ GENDER ________________________
             switch(user.gender) {
@@ -231,6 +247,9 @@ class App extends Component {
               case "pns" || "":
               yesGen.pns.push(user.userId);
               break;
+
+              default: 
+              yesGen.pns.push(user.userId);
             };
   // _____________________ EDUCATION _____________________
             switch(user.education) {
@@ -265,6 +284,9 @@ class App extends Component {
               case "pns" || "":
               yesEdu.pns.push(user.userId);
               break;
+
+              default: 
+              yesEdu.pns.push(user.userId);
             };
   // _____________________ RACE __________________________
             switch(user.race) {
@@ -299,6 +321,9 @@ class App extends Component {
               case "pns" || "":
               yesRa.pns.push(user.userId);
               break;
+
+              default: 
+              yesRa.pns.push(user.userId);
             };
   // _____________________ REGION ________________________
             switch(user.region) {
@@ -325,9 +350,12 @@ class App extends Component {
               case "pns" || "":
               yesReg.pns.push(user.userId);
               break;
+
+              default: 
+              yesReg.pns.push(user.userId);
             };
           
-            console.log("setState for ageYes array.");
+            // console.log("setState for ageYes array.");
             this.setState({ 
               ageYes: [ 
                 yesAge.One.length, 
@@ -337,8 +365,64 @@ class App extends Component {
                 yesAge.Five.length,
                 yesAge.Six.length,
                 yesAge.pns.length
+              ],
+              incYes: [ 
+                yesInc.One.length, 
+                yesInc.Two.length, 
+                yesInc.Three.length,
+                yesInc.Four.length,
+                yesInc.Five.length,
+                yesInc.Six.length,
+                yesInc.Seven.length,
+                yesInc.pns.length
+              ],
+              genYes: [ 
+                yesGen.One.length, 
+                yesGen.Two.length, 
+                yesGen.Three.length,
+                yesGen.Four.length,
+                yesGen.pns.length
+              ],
+              eduYes: [ 
+                yesEdu.One.length, 
+                yesEdu.Two.length, 
+                yesEdu.Three.length,
+                yesEdu.Four.length,
+                yesEdu.Five.length,
+                yesEdu.Six.length,
+                yesEdu.Seven.length,
+                yesEdu.pns.length
+              ],
+              raYes: [ 
+                yesRa.One.length, 
+                yesRa.Two.length, 
+                yesRa.Three.length,
+                yesRa.Four.length,
+                yesRa.Five.length,
+                yesRa.Six.length,
+                yesRa.Seven.length,
+                yesRa.pns.length
+              ],
+              regYes: [ 
+                yesReg.One.length, 
+                yesReg.Two.length, 
+                yesReg.Three.length,
+                yesReg.Four.length,
+                yesReg.Five.length,
+                yesReg.pns.length
               ]
             })
+            // console.log(yesAge.One);
+            // console.log(yesAge.One.length);
+            // console.log(this.state.ageYes);
+            if (i === (this.state.yesVoters.length) - 1) {
+              let checkCount = ((this.state.checkCount) + 1);
+              this.setState({ checkCount });
+              // console.log("Loop Done");
+              // console.log(checkCount);
+              // console.log(this.state.checkCount);
+              this.checkCountStatus();
+            };
           };
         })
     }
@@ -355,13 +439,10 @@ class App extends Component {
     // console.log(yesRa);
     // console.log("region");
     // console.log(yesReg);
-    // console.log(yesAge.One);
-    // console.log(yesAge.One.length);
-    // console.log(this.state.ageYes);
   };
 
   getNoVoters() {
-    console.log("getting noers");
+    // console.log("getting noers");
     let noAge = {
       One: [],
       Two: [],
@@ -418,11 +499,11 @@ class App extends Component {
     };
 
     for (let i = 0; i < this.state.noVoters.length; i++) {
-      console.log("calling API");
+      // console.log("calling API");
       API.getUser(this.state.noVoters[i])
         .then(res => {
           let user = res.data[0];
-          console.log(res);
+          // console.log(res);
           if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
@@ -453,6 +534,9 @@ class App extends Component {
               case "pns" || "":
               noAge.pns.push(user.userId);
               break;
+
+              default: 
+              noAge.pns.push(user.userId);
             };
   // _____________________ INCOME ________________________
             switch(user.income) {
@@ -487,6 +571,9 @@ class App extends Component {
               case "pns" || "":
               noInc.pns.push(user.userId);
               break;
+
+              default: 
+              noInc.pns.push(user.userId);
             };
   // _____________________ GENDER ________________________
             switch(user.gender) {
@@ -509,6 +596,9 @@ class App extends Component {
               case "pns" || "":
               noGen.pns.push(user.userId);
               break;
+
+              default: 
+              noGen.pns.push(user.userId);
             };
   // _____________________ EDUCATION _____________________
             switch(user.education) {
@@ -543,6 +633,9 @@ class App extends Component {
               case "pns" || "":
               noEdu.pns.push(user.userId);
               break;
+
+              default: 
+              noEdu.pns.push(user.userId);
             };
   // _____________________ RACE __________________________
             switch(user.race) {
@@ -577,6 +670,9 @@ class App extends Component {
               case "pns" || "":
               noRa.pns.push(user.userId);
               break;
+
+              default: 
+              noRa.pns.push(user.userId);
             };
   // _____________________ REGION ________________________
             switch(user.region) {
@@ -603,19 +699,78 @@ class App extends Component {
               case "pns" || "":
               noReg.pns.push(user.userId);
               break;
+
+              default: 
+              noReg.pns.push(user.userId);
             };
-            console.log("setState for ageNo array.")
+            // console.log("setState for ageNo array.")
             this.setState({ 
               ageNo: [ 
-                noAge.One.length,
+                noAge.One.length, 
                 noAge.Two.length, 
                 noAge.Three.length,
                 noAge.Four.length,
                 noAge.Five.length,
                 noAge.Six.length,
                 noAge.pns.length
+              ],
+              incNo: [ 
+                noInc.One.length, 
+                noInc.Two.length, 
+                noInc.Three.length,
+                noInc.Four.length,
+                noInc.Five.length,
+                noInc.Six.length,
+                noInc.Seven.length,
+                noInc.pns.length
+              ],
+              genNo: [ 
+                noGen.One.length, 
+                noGen.Two.length, 
+                noGen.Three.length,
+                noGen.Four.length,
+                noGen.pns.length
+              ],
+              eduNo: [ 
+                noEdu.One.length, 
+                noEdu.Two.length, 
+                noEdu.Three.length,
+                noEdu.Four.length,
+                noEdu.Five.length,
+                noEdu.Six.length,
+                noEdu.Seven.length,
+                noEdu.pns.length
+              ],
+              raNo: [ 
+                noRa.One.length, 
+                noRa.Two.length, 
+                noRa.Three.length,
+                noRa.Four.length,
+                noRa.Five.length,
+                noRa.Six.length,
+                noRa.Seven.length,
+                noRa.pns.length
+              ],
+              regNo: [ 
+                noReg.One.length, 
+                noReg.Two.length, 
+                noReg.Three.length,
+                noReg.Four.length,
+                noReg.Five.length,
+                noReg.pns.length
               ]
             })
+            // console.log(noAge.One);
+            // console.log(noAge.One.length);
+            // console.log(this.state.ageNo);
+            if (i === (this.state.noVoters.length) - 1) {
+              let checkCount = ((this.state.checkCount) + 1);
+              this.setState({ checkCount });
+              // console.log("Loop Done");
+              // console.log(checkCount);
+              // console.log(this.state.checkCount);
+              this.checkCountStatus();
+            }
           };
         })
     }
@@ -631,15 +786,11 @@ class App extends Component {
     // console.log("race");
     // console.log(noRa);
     // console.log("region");
-    // console.log(noReg);
-    // console.log(noAge.One);
-    // console.log(noAge.One.length);
-    // console.log(this.state.ageNo);
-
+    // console.log(noReg)
   };
 
   getUndeVoters() {
-    console.log("getting undeVoters");
+    // console.log("getting undeVoters");
     let undeAge = {
       One: [],
       Two: [],
@@ -696,11 +847,11 @@ class App extends Component {
     };
 
     for (let i = 0; i < this.state.undeVoters.length; i++) {
-      console.log("calling API");
+      // console.log("calling API");
       API.getUser(this.state.undeVoters[i])
         .then(res => {
           let user = res.data[0];
-          console.log(res);
+          // console.log(res);
           if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
@@ -731,6 +882,9 @@ class App extends Component {
               case "pns" || "":
               undeAge.pns.push(user.userId);
               break;
+
+              default: 
+              undeAge.pns.push(user.userId);
             };
   // _____________________ INCOME ________________________
             switch(user.income) {
@@ -765,6 +919,9 @@ class App extends Component {
               case "pns" || "":
               undeInc.pns.push(user.userId);
               break;
+
+              default: 
+              undeInc.pns.push(user.userId);
             };
   // _____________________ GENDER ________________________
             switch(user.gender) {
@@ -787,6 +944,9 @@ class App extends Component {
               case "pns" || "":
               undeGen.pns.push(user.userId);
               break;
+
+              default: 
+              undeGen.pns.push(user.userId);
             };
   // _____________________ EDUCATION _____________________
             switch(user.education) {
@@ -821,6 +981,9 @@ class App extends Component {
               case "pns" || "":
               undeEdu.pns.push(user.userId);
               break;
+
+              default: 
+              undeEdu.pns.push(user.userId);
             };
   // _____________________ RACE __________________________
             switch(user.race) {
@@ -855,6 +1018,9 @@ class App extends Component {
               case "pns" || "":
               undeRa.pns.push(user.userId);
               break;
+
+              default: 
+              undeRa.pns.push(user.userId);
             };
   // _____________________ REGION ________________________
             switch(user.region) {
@@ -881,20 +1047,79 @@ class App extends Component {
               case "pns" || "":
               undeReg.pns.push(user.userId);
               break;
+
+              default: 
+              undeReg.pns.push(user.userId);
             };
 
-            console.log("setState for ageUnde array.")
+            // console.log("setState for ageUnde array.")
             this.setState({ 
               ageUnde: [ 
-                undeAge.One.length,
+                undeAge.One.length, 
                 undeAge.Two.length, 
                 undeAge.Three.length,
                 undeAge.Four.length,
                 undeAge.Five.length,
                 undeAge.Six.length,
                 undeAge.pns.length
+              ],
+              incUnde: [ 
+                undeInc.One.length, 
+                undeInc.Two.length, 
+                undeInc.Three.length,
+                undeInc.Four.length,
+                undeInc.Five.length,
+                undeInc.Six.length,
+                undeInc.Seven.length,
+                undeInc.pns.length
+              ],
+              genUnde: [ 
+                undeGen.One.length, 
+                undeGen.Two.length, 
+                undeGen.Three.length,
+                undeGen.Four.length,
+                undeGen.pns.length
+              ],
+              eduUnde: [ 
+                undeEdu.One.length, 
+                undeEdu.Two.length, 
+                undeEdu.Three.length,
+                undeEdu.Four.length,
+                undeEdu.Five.length,
+                undeEdu.Six.length,
+                undeEdu.Seven.length,
+                undeEdu.pns.length
+              ],
+              raUnde: [ 
+                undeRa.One.length, 
+                undeRa.Two.length, 
+                undeRa.Three.length,
+                undeRa.Four.length,
+                undeRa.Five.length,
+                undeRa.Six.length,
+                undeRa.Seven.length,
+                undeRa.pns.length
+              ],
+              regUnde: [ 
+                undeReg.One.length, 
+                undeReg.Two.length, 
+                undeReg.Three.length,
+                undeReg.Four.length,
+                undeReg.Five.length,
+                undeReg.pns.length
               ]
             })
+            // console.log(undeAge.One);
+            // console.log(undeAge.One.length);
+            // console.log(this.state.ageUnde);
+            if (i === (this.state.undeVoters.length) - 1) {
+              let checkCount = ((this.state.checkCount) + 1);
+              this.setState({ checkCount });
+              // console.log("Loop Done");
+              // console.log(checkCount);
+              // console.log(this.state.checkCount);
+              this.checkCountStatus();
+            }
           };
         })
     }
@@ -911,11 +1136,14 @@ class App extends Component {
     // console.log(undeRa);
     // console.log("region");
     // console.log(undeReg);
-    console.log(undeAge.One);
-    console.log(undeAge.One.length);
-    console.log(this.state.ageUnde);
   }
 
+  checkCountStatus() {
+    if (this.state.checkCount === 3){
+      // console.log("Check count at 3");
+      this.dotThenFuncs();
+    }
+  }
 
   dotThenFuncs() {
     this.getChartDataAge();
@@ -985,6 +1213,7 @@ class App extends Component {
         ]
       }
     });
+    // console.log("1");
   }
 
   getChartDataIncome() {
@@ -1002,15 +1231,7 @@ class App extends Component {
         datasets:[
           {
             label:'Yes',
-            data:[
-              41,
-              18,
-              15,
-              10,
-              10,
-              9,
-              5
-            ],
+            data: this.state.incYes,
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
@@ -1024,15 +1245,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              61,
-              31,
-              12,
-              29,
-              10,
-              2,
-              5
-            ],
+            data: this.state.incNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -1046,15 +1259,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              4,
-              17,
-              56,
-              76,
-              23,
-              12,
-              5
-            ],
+            data: this.state.incUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1068,14 +1273,15 @@ class App extends Component {
         ]
       }
     });
+    // console.log("2");
   }
 
   getChartDataGender() {
     this.setState({
       chartDataGender:{
         labels: [
-          'Female', 
           'Male', 
+          'Female', 
           'Trans', 
           'Other', 
           'No Answer' 
@@ -1083,13 +1289,7 @@ class App extends Component {
         datasets:[
           {
             label:'Yes',
-            data:[
-              33,
-              45,
-              21,
-              36,
-              5
-            ],
+            data: this.state.genYes,
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
@@ -1101,13 +1301,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              78,
-              102,
-              32,
-              43,
-              5
-            ],
+            data: this.state.genNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -1119,13 +1313,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              110,
-              88,
-              92,
-              72,
-              5
-            ],
+            data: this.state.genUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1137,6 +1325,7 @@ class App extends Component {
         ]
       }
     });
+    // console.log("3");
   }
 
   getChartDataEducation() {
@@ -1145,24 +1334,17 @@ class App extends Component {
         labels: [
           'Some HS', 
           'HS Dip/Equiv', 
+          'Voc/Trade', 
           'Some Coll', 
-          'Bachelor', 
-          'PHD', 
-          'Vocational/Trade', 
+          'Undergrad', 
+          'Grad', 
+          'Postgrad',
           'No Answer' 
           ],
         datasets:[
           {
             label:'Yes',
-            data:[
-              57,
-              47,
-              32,
-              19,
-              7,
-              78,
-              5
-            ],
+            data: this.state.eduYes,
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
@@ -1176,15 +1358,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              78,
-              56,
-              23,
-              89,
-              75,
-              23,
-              5
-            ],
+            data: this.state.eduNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -1198,15 +1372,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              56,
-              72,
-              153,
-              34,
-              105,
-              92,
-              5
-            ],
+            data: this.state.eduUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1220,32 +1386,26 @@ class App extends Component {
         ]
       }
     });
+    // console.log("4");
   }
 
   getChartDataRace() {
     this.setState({
       chartDataRace:{
         labels: [
-          'Asain', 
-          'Black/Af. Am.', 
-          'Hisp/Lat', 
+          'Am. In./AK Nat', 
+          'Asian', 
+          'Blk/Af Am.',
+          'His/Lat', 
           'White', 
-          'Native Am/Pac Isl', 
-          'Am. In./AK Native', 
+          'Mixed', 
+          'Pac Isl', 
           'No Answer' 
           ],
         datasets:[
           {
             label:'Yes',
-            data:[
-              109,
-              207,
-              305,
-              265,
-              343,
-              88,
-              5
-            ],
+            data: this.state.raYes,
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
@@ -1259,15 +1419,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              56,
-              45,
-              60,
-              19,
-              62,
-              72,
-              5
-            ],
+            data: this.state.raNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -1281,15 +1433,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              4,
-              45,
-              30,
-              59,
-              12,
-              32,
-              5
-            ],
+            data: this.state.raUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1303,6 +1447,7 @@ class App extends Component {
         ]
       }
     });
+    // console.log("5");
   }
 
   getChartDataRegion() {
@@ -1319,14 +1464,7 @@ class App extends Component {
         datasets:[
           {
             label:'Yes',
-            data:[
-              35,
-              1,
-              12,
-              17,
-              8,
-              5
-            ],
+            data: this.state.regYes,
             backgroundColor:[
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
@@ -1339,14 +1477,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              94,
-              15,
-              30,
-              19,
-              28,
-              5
-            ],
+            data: this.state.regNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -1359,14 +1490,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              12,
-              56,
-              21,
-              15,
-              20,
-              5
-            ],
+            data: this.state.regUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1379,34 +1503,52 @@ class App extends Component {
         ]
       }
     });
+    this.setState({ stateUpdated: true });
+    // console.log("done");
+    // console.log(this.state.stateUpdated);
   }
 
 
   render() {
     return (
       <div className="App container">
-        <div className="row">
-          <div className="AgeChart col-6">
-            <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
-          </div>
-            <div className="IncomeChart col-6">
-              <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
-            </div>
-              <div className="GenderChart col-6">
-                <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
+        {
+          (this.state.stateUpdated) ?
+            (
+              <div className="App container">
+                <div className="row">
+
+                  <div className="AgeChart col-6">
+                    <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
+                  </div>
+
+                  <div className="IncomeChart col-6">
+                    <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
+                  </div>
+            
+                  <div className="GenderChart col-6">
+                      <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
+                  </div>
+
+                  <div className="RegionChart col-6">
+                    <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+                  </div>
+           
+                  <div className="EducationChart col-6">
+                    <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
+                  </div>
+            
+                  <div className="RaceChart col-6">
+                    <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
+                  </div>
+
+                </div>
               </div>
-            <div className="RegionChart col-6">
-              <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
-            </div>
-          <div className="EducationChart col-6">
-            <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
-          </div>
-        <div className="RaceChart col-6">
-          <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
-        </div>
-        
-        </div>
-      </div>
+            )
+            :
+            (<p>Whoops LOL</p>)
+      }
+    </div>
     );
   }
 }
