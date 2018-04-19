@@ -13,11 +13,9 @@ class App extends Component {
       undeVoters: [],
 
       chartDataAge:{},
-      ageArrs: {
-        yes: [1, 2, 3, 4, 5, 6, 7],
-        no: [1, 2, 3, 4, 5, 6, 7],
-        undecided: [1, 2, 3, 4, 5, 6, 7]
-        },
+      ageYes: [1, 2, 3, 4, 5, 6, 7],
+      ageNo: [1, 2, 3, 4, 5, 6, 7],
+      ageUnde: [1, 2, 3, 4, 5, 6, 7],
 
       chartDataIncome:{},
       incomeArrs: {
@@ -66,15 +64,20 @@ class App extends Component {
     API.checkBill(this.state.bill_id)
       .then(res => {
         this.setState({ 
-          yesVoters: res.data[0]["votes_yes"],
-          noVoters: res.data[0]["votes_no"],
-          undeVoters: res.data[0]["votes_undecided"] 
+          yesVoters: res.data[0].votes_yes,
+          noVoters: res.data[0].votes_no,
+          undeVoters: res.data[0].votes_undecided 
         });
-        console.log(this.state.yesVoters)
-        console.log(this.state.noVoters)
-        console.log(this.state.undeVoters)
-
-        this.getYesVoters();
+        // console.log(this.state.yesVoters)
+        // console.log(this.state.noVoters)
+        // console.log(this.state.undeVoters)
+        if (this.state.yesVoters.length > 0) {
+          this.getYesVoters();
+        }else if (this.state.noVoters.length > 0) {
+          this.getNoVoters();
+        }else if (this.state.undeVoters.length > 0) {
+          this.getUndeVoters();
+        }
       })
   }
 
@@ -141,7 +144,8 @@ class App extends Component {
         .then(res => {
           let user = res.data[0];
           console.log(res);
-          if (user) {
+          if (res.data[0]) {
+            console.log(res.data[0]);
   // _____________________ AGE ___________________________
             switch(user.age) {
               case "1":
@@ -322,24 +326,38 @@ class App extends Component {
               yesReg.pns.push(user.userId);
               break;
             };
+          
+            console.log("setState for ageYes array.");
+            this.setState({ 
+              ageYes: [ 
+                yesAge.One.length, 
+                yesAge.Two.length, 
+                yesAge.Three.length,
+                yesAge.Four.length,
+                yesAge.Five.length,
+                yesAge.Six.length,
+                yesAge.pns.length
+              ]
+            })
           };
         })
     }
   // _____________________ TESTS _________________________
-    console.log("age");
-    console.log(yesAge);
-    console.log("income");
-    console.log(yesInc);
-    console.log("gender");
-    console.log(yesGen);
-    console.log("education");
-    console.log(yesEdu);
-    console.log("race");
-    console.log(yesRa);
-    console.log("region");
-    console.log(yesReg);
-
-    this.getNoVoters();
+    // console.log("age");
+    // console.log(yesAge);
+    // console.log("income");
+    // console.log(yesInc);
+    // console.log("gender");
+    // console.log(yesGen);
+    // console.log("education");
+    // console.log(yesEdu);
+    // console.log("race");
+    // console.log(yesRa);
+    // console.log("region");
+    // console.log(yesReg);
+    // console.log(yesAge.One);
+    // console.log(yesAge.One.length);
+    // console.log(this.state.ageYes);
   };
 
   getNoVoters() {
@@ -405,7 +423,7 @@ class App extends Component {
         .then(res => {
           let user = res.data[0];
           console.log(res);
-          if (user) {
+          if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
               case "1":
@@ -586,24 +604,38 @@ class App extends Component {
               noReg.pns.push(user.userId);
               break;
             };
+            console.log("setState for ageNo array.")
+            this.setState({ 
+              ageNo: [ 
+                noAge.One.length,
+                noAge.Two.length, 
+                noAge.Three.length,
+                noAge.Four.length,
+                noAge.Five.length,
+                noAge.Six.length,
+                noAge.pns.length
+              ]
+            })
           };
         })
     }
   // _____________________ TESTS _________________________
-    console.log("age");
-    console.log(noAge);
-    console.log("income");
-    console.log(noInc);
-    console.log("gender");
-    console.log(noGen);
-    console.log("education");
-    console.log(noEdu);
-    console.log("race");
-    console.log(noRa);
-    console.log("region");
-    console.log(noReg);
+    // console.log("age");
+    // console.log(noAge);
+    // console.log("income");
+    // console.log(noInc);
+    // console.log("gender");
+    // console.log(noGen);
+    // console.log("education");
+    // console.log(noEdu);
+    // console.log("race");
+    // console.log(noRa);
+    // console.log("region");
+    // console.log(noReg);
+    // console.log(noAge.One);
+    // console.log(noAge.One.length);
+    // console.log(this.state.ageNo);
 
-    this.getUndeVoters();
   };
 
   getUndeVoters() {
@@ -669,7 +701,7 @@ class App extends Component {
         .then(res => {
           let user = res.data[0];
           console.log(res);
-          if (user) {
+          if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
               case "1":
@@ -850,22 +882,38 @@ class App extends Component {
               undeReg.pns.push(user.userId);
               break;
             };
+
+            console.log("setState for ageUnde array.")
+            this.setState({ 
+              ageUnde: [ 
+                undeAge.One.length,
+                undeAge.Two.length, 
+                undeAge.Three.length,
+                undeAge.Four.length,
+                undeAge.Five.length,
+                undeAge.Six.length,
+                undeAge.pns.length
+              ]
+            })
           };
         })
     }
   // _____________________ TESTS _________________________
-    console.log("age");
-    console.log(undeAge);
-    console.log("income");
-    console.log(undeInc);
-    console.log("gender");
-    console.log(undeGen);
-    console.log("education");
-    console.log(undeEdu);
-    console.log("race");
-    console.log(undeRa);
-    console.log("region");
-    console.log(undeReg);
+    // console.log("age");
+    // console.log(undeAge);
+    // console.log("income");
+    // console.log(undeInc);
+    // console.log("gender");
+    // console.log(undeGen);
+    // console.log("education");
+    // console.log(undeEdu);
+    // console.log("race");
+    // console.log(undeRa);
+    // console.log("region");
+    // console.log(undeReg);
+    console.log(undeAge.One);
+    console.log(undeAge.One.length);
+    console.log(this.state.ageUnde);
   }
 
 
@@ -893,15 +941,7 @@ class App extends Component {
         datasets:[
           {
             label:'Yes',
-            data:[
-              94,
-              45,
-              60,
-              19,
-              62,
-              2,
-              5
-            ],
+            data: this.state.ageYes,
 
            
             backgroundColor:[
@@ -917,15 +957,7 @@ class App extends Component {
 
           {
             label:'No',
-            data:[
-              18,
-              13,
-              7,
-              5,
-              23,
-              9,
-              5
-            ],
+            data: this.state.ageNo,
             backgroundColor:[
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
@@ -939,15 +971,7 @@ class App extends Component {
 
            {
             label:'Undecided',
-            data:[
-              44,
-              15,
-              10,
-              19,
-              12,
-              92,
-              5
-            ],
+            data: this.state.ageUnde,
             backgroundColor:[
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
