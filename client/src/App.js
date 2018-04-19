@@ -20,7 +20,11 @@ class App extends Component {
     super(props);
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = { isLoggedIn: false, userId: "", userName: "", userExist: false };
+    this.state = { 
+      isLoggedIn: false,
+      userId: "", 
+      userName: "", 
+      userExist: false };
   }
 
   componentDidMount() {
@@ -73,7 +77,6 @@ class App extends Component {
       .then(res => {
         console.log(res.data);
         if (res.data[0]) {
-          console.log("Helllooooo")
           window.sessionStorage.setItem("userExist", true);
           if (this.state){
             this.setState({ userExist: true });            
@@ -104,17 +107,26 @@ class App extends Component {
                 : <DemoForm 
                   userId={this.state.userId} 
                   userName={this.state.userName}
-                  exists={this.state.userExist}
+                  userExist={this.state.userExist}
                   getUser={this.getUser} /> 
               ] : <Welcome />
             }
           />
-          <Route exact path="/demoform" component={DemoForm} />
           <Route exact path="/about" component={About} />
           <Route exact path="/region" component={Region} />
           <Route exact path="/bills" component={Bills} />
+          <Route exact path="/demoform" 
+            render={(props) => (
+              <DemoForm 
+                userId={this.state.userId} 
+                userExist={this.state.userExist} {...props} />
+              )} 
+          />
           <Route path="/billdetail/:bill_id" 
-          render={(props) => (<BillDetail userId={this.state.userId} {...props} />)} 
+            render={(props) => (
+              <BillDetail 
+                userId={this.state.userId} {...props} />
+              )} 
           />
           <Route path="/stats/:bill_id" component={Stats} />
 

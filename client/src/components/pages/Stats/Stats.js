@@ -215,10 +215,6 @@ class App extends Component {
               yesInc.Six.push(user.userId);
               break;
 
-              case "7":
-              yesInc.Seven.push(user.userId);
-              break;
-
               case "pns" || "":
               yesInc.pns.push(user.userId);
               break;
@@ -373,7 +369,6 @@ class App extends Component {
                 yesInc.Four.length,
                 yesInc.Five.length,
                 yesInc.Six.length,
-                yesInc.Seven.length,
                 yesInc.pns.length
               ],
               genYes: [ 
@@ -1222,7 +1217,7 @@ class App extends Component {
         labels: [
           '<$9,524', 
           '<$38,699', 
-          '<-$82,499', 
+          '<$82,499', 
           '<$157,499', 
           '<$199,999', 
           '<$499,999', 
@@ -1352,6 +1347,7 @@ class App extends Component {
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
+              'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)'
             ]
           },
@@ -1366,6 +1362,7 @@ class App extends Component {
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
+              'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)'
             ]
           },
@@ -1374,6 +1371,7 @@ class App extends Component {
             label:'Undecided',
             data: this.state.eduUnde,
             backgroundColor:[
+              'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
@@ -1413,6 +1411,7 @@ class App extends Component {
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)',
+              'rgba(0, 123, 255, 1)',
               'rgba(0, 123, 255, 1)'
             ]
           },
@@ -1427,6 +1426,7 @@ class App extends Component {
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)',
+              'rgba(251, 34, 89, 1)',
               'rgba(251, 34, 89, 1)'
             ]
           },
@@ -1435,6 +1435,7 @@ class App extends Component {
             label:'Undecided',
             data: this.state.raUnde,
             backgroundColor:[
+              'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
               'rgba(255, 240, 200, 1)',
