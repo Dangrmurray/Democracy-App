@@ -454,7 +454,6 @@ class App extends Component {
       Four: [],
       Five: [],
       Six: [],
-      Seven: [],
       pns: []
     };
     let noGen = {
@@ -498,7 +497,7 @@ class App extends Component {
       API.getUser(this.state.noVoters[i])
         .then(res => {
           let user = res.data[0];
-          // console.log(res);
+          console.log(res);
           if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
@@ -557,10 +556,6 @@ class App extends Component {
 
               case "6":
               noInc.Six.push(user.userId);
-              break;
-
-              case "7":
-              noInc.Seven.push(user.userId);
               break;
 
               case "pns" || "":
@@ -716,7 +711,6 @@ class App extends Component {
                 noInc.Four.length,
                 noInc.Five.length,
                 noInc.Six.length,
-                noInc.Seven.length,
                 noInc.pns.length
               ],
               genNo: [ 
@@ -907,10 +901,6 @@ class App extends Component {
               undeInc.Six.push(user.userId);
               break;
 
-              case "7":
-              undeInc.Seven.push(user.userId);
-              break;
-
               case "pns" || "":
               undeInc.pns.push(user.userId);
               break;
@@ -1065,7 +1055,6 @@ class App extends Component {
                 undeInc.Four.length,
                 undeInc.Five.length,
                 undeInc.Six.length,
-                undeInc.Seven.length,
                 undeInc.pns.length
               ],
               genUnde: [ 
