@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './LoginControl.css';
 import { GoogleAPI, GoogleLogin, GoogleLogout } from "react-google-oauth";
 
@@ -13,11 +12,10 @@ const LoginControl = (props) => (
         fetch_basic_profile="true" >
           <div>
           { props.isLoggedIn ?
-            <Link to="/">
               <GoogleLogout 
                 onLogoutSuccess={props.handleLogoutClick} 
-            	/>
-            </Link>
+            	>
+              </GoogleLogout>
             : 
               <GoogleLogin 
   	          	onLoginSuccess={props.handleLoginClick} 

@@ -66,7 +66,7 @@ export default {
   },
 
   updateUser: function(id, changes) {
-    return axios.get("/api/user/" + id, changes)
+    return axios.put("/api/user/" + id, changes)
       .then(function(response){
         return response;
     })
