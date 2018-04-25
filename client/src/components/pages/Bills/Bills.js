@@ -92,7 +92,7 @@ class Bills extends Component {
 				API.pullBills()
 					.then(res => {
 						let bills = res.data;
-						console.log(bills);
+						// console.log(bills);
 						this.setState(
 							{ bills }
 						);
@@ -105,17 +105,6 @@ class Bills extends Component {
 			.catch(err => console.log(err));
 	};
 
-// <<<<<<<<<<<NEEDS TO FIND BILL AND EDIT>>>>>>>>>>>>>>>>
-	// saveBills = (bills) => {
-	// 	console.log("saving bill");
-	// 	API.saveBills({
-	// 		title:this.state.bills.title
-	// 	})
- //        .then(res => console.log("saved article"))
- //        .catch(err => console.log(err));
- //  };
-// <<<<<<<<<<<<<>>>>>>>>>>>>>><<<<<<<<<<<<<>>>>>>>>>
-
 		render() {
 			return (
 				<Wrapper>
@@ -123,9 +112,9 @@ class Bills extends Component {
               <h1 className="panel-title mx-auto">FIND CONGRESSIONAL BILLS</h1>
           </div>    
 			<div className="row">
-				{this.state.bills.map(bill => (
+				{this.state.bills.map((bill, i) => (
 					<BillBlock
-						key={bill.bill_id}
+						key={i}
 						title={bill.name}
 						bill_id={bill.bill_id}
 						short_summary={bill.summary_short}

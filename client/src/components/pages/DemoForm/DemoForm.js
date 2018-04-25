@@ -68,9 +68,9 @@ class DemoForm extends Component {
 				<div className="row">
 					<div className="col-6 form-panel"> 
 					<form>
-								<div class="form-group">
-									<label for="inputState">Select Your Age Range</label>
-									<select onChange={this.handleChange} name="age" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Age Range</label>
+									<select onChange={this.handleChange} name="age" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">16 - 22</option>
 										<option value="2">22 - 34</option>
@@ -81,9 +81,9 @@ class DemoForm extends Component {
 									</select>
 								</div>
 					
-								<div class="form-group">
-									<label for="inputState">Select Your Education Level</label>
-									<select onChange={this.handleChange} name="education" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Education Level</label>
+									<select onChange={this.handleChange} name="education" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">Some High School</option>
 										<option value="2">High School Graduate or GED</option>
@@ -97,9 +97,9 @@ class DemoForm extends Component {
 					
 					
 					
-								<div class="form-group">
-									<label for="inputState">Select Your Ethnicity</label>
-									<select onChange={this.handleChange} name="race" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Ethnicity</label>
+									<select onChange={this.handleChange} name="race" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">American Indian or Alaska Native</option>
 										<option value="2">Asian</option>
@@ -112,9 +112,9 @@ class DemoForm extends Component {
 								</div>
 					
 					
-								<div class="form-group">
-									<label for="inputState">Select Your Gender</label>
-									<select onChange={this.handleChange} name="gender" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Gender</label>
+									<select onChange={this.handleChange} name="gender" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">Male</option>
 										<option value="2">Female</option>
@@ -124,9 +124,9 @@ class DemoForm extends Component {
 								</div>
 					
 					
-								<div class="form-group">
-									<label for="inputState">Select Your Income Range</label>
-									<select onChange={this.handleChange} name="income" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Income Range</label>
+									<select onChange={this.handleChange} name="income" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">Under $9,525</option>
 										<option value="2">$9,525 - $38,699</option>
@@ -140,9 +140,9 @@ class DemoForm extends Component {
 					
 								
 					
-								<div class="form-group">
-									<label for="inputState">Select Your Region</label>
-									<select onChange={this.handleChange} name="region" id="inputState" class="form-control">
+								<div className="form-group">
+									<label htmlFor="inputState">Select Your Region</label>
+									<select onChange={this.handleChange} name="region" id="inputState" className="form-control">
 										<option value="pns">Prefer Not to Say</option>
 										<option value="1">Western</option>
 										<option value="2">Mid-Western</option>

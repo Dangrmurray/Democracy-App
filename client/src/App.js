@@ -34,11 +34,11 @@ class App extends Component {
    if (JSON.parse(loginBool) === true) {
       this.setState({ isLoggedIn: true });
       this.handleLoginClick();
-      console.log("logging in!");
+      // console.log("logging in!");
     }else {
       this.setState({ isLoggedIn: false });
       this.handleLogoutClick();
-      console.log(window.sessionStorage.getItem("loggedIn"));
+      // console.log(window.sessionStorage.getItem("loggedIn"));
     };
     if (JSON.parse(userBool) === true) {
       this.setState({ userExist: true });
@@ -49,7 +49,7 @@ class App extends Component {
 // <<<<<handle change in state, state controls which button is displayed>>>>>
   handleLoginClick(response) {
     if(response) {
-      console.log("finding user, ID: " + response.getId());
+      // console.log("finding user, ID: " + response.getId());
       window.sessionStorage.setItem("loggedIn", true);
       window.sessionStorage.setItem("user", response.getId());
       this.setState({ isLoggedIn: true, userId: response.getId(), userName: response.w3.ig });
@@ -62,7 +62,7 @@ class App extends Component {
     this.setState({ isLoggedIn: false, userExist: false, userId: "", userName: "" });
     window.sessionStorage.setItem("loggedIn", false);
     window.sessionStorage.setItem("userExist", false);
-    console.log("logging user out");
+    // console.log("logging user out");
   }
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   getUser(id) {
@@ -75,7 +75,7 @@ class App extends Component {
 
     API.getUser(userId)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data[0]) {
           window.sessionStorage.setItem("userExist", true);
           if (this.state){
@@ -119,13 +119,16 @@ class App extends Component {
             render={(props) => (
               <DemoForm 
                 userId={this.state.userId} 
-                userExist={this.state.userExist} {...props} />
+                userExist={this.state.userExist} 
+                {...props} />
               )} 
           />
           <Route path="/billdetail/:bill_id" 
             render={(props) => (
               <BillDetail 
-                userId={this.state.userId} {...props} />
+                userId={this.state.userId} 
+                isLoggedIn={this.state.isLoggedIn}
+                {...props} />
               )} 
           />
           <Route path="/stats/:bill_id" component={Stats} />

@@ -19,10 +19,12 @@ class BillDetail extends Component {
 	    this.voteUndecided = this.voteUndecided.bind(this);
 
 		this.state = {
+			isLoggedIn: this.props.isLoggedIn,
 			bill_id: this.props.match.params.bill_id,
 			bill: [],
 			userId: window.sessionStorage.getItem("user"),
-			voted: false
+			voted: false,
+			loaded: false
 		};
     }
 
@@ -38,6 +40,7 @@ class BillDetail extends Component {
 				}else if (this.state.bill.votes_undecided.includes(this.state.userId)) {
 					this.setState({ voted: true })	
 				}
+				this.setState({ loaded: true });
 			})
 	}
 
@@ -101,36 +104,41 @@ class BillDetail extends Component {
 					gov_track={this.state.bill.govtrack_url}
 					dot_gov={this.state.bill.congressdotgov_url}
 				/>
-				
-				<Vote
-					voted={this.state.voted}
-					voteYes={this.voteYes}
-					voteNo={this.voteNo}
-					voteUndecided={this.voteUndecided}
-				>
-					{
-		                (this.state.bill.votes_yes || 
-		                this.state.bill.votes_no ||
-		               	this.state.bill.votes_undecided) ?
-		                	[
-			                	((this.state.bill.votes_yes.length 
-			                	+ this.state.bill.votes_no.length 
-			                	+ this.state.bill.votes_undecided.length > 0)) ?
-									(<Chart
-										bill_id={this.state.bill_id}
-										votes_yes={this.state.bill.votes_yes}
-										votes_no={this.state.bill.votes_no}
-										votes_undecided={this.state.bill.votes_undecided}
-										location="Votes"
-										legendPosition="top"
-									/>)
-								:
-									(<p>No votes yet :(</p>)
-							]
-		                : 
-		                	(<p>Something's wrong with our chart :(</p>)
-	                }
-                </Vote>			
+				{
+					(this.state.loaded) ?
+					(<Vote
+						isLoggedIn={this.state.isLoggedIn}
+						voted={this.state.voted}
+						voteYes={this.voteYes}
+						voteNo={this.voteNo}
+						voteUndecided={this.voteUndecided}
+						>
+						{
+			                (this.state.bill.votes_yes || 
+			                this.state.bill.votes_no ||
+			               	this.state.bill.votes_undecided) ?
+			                	[
+				                	((this.state.bill.votes_yes.length 
+				                	+ this.state.bill.votes_no.length 
+				                	+ this.state.bill.votes_undecided.length > 0)) ?
+										(<Chart
+											bill_id={this.state.bill_id}
+											votes_yes={this.state.bill.votes_yes}
+											votes_no={this.state.bill.votes_no}
+											votes_undecided={this.state.bill.votes_undecided}
+											location="Votes"
+											legendPosition="top"
+										/>)
+									:
+										(<h5>No Votes Yet</h5>)
+								]
+			                : 
+			                	(<h5>Something's wrong with our chart :(</h5>)
+		                }
+	                </Vote>)
+	                :	
+	                (<h5>Loading...</h5>)
+				}	
 			</div>
 		)
 	}

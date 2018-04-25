@@ -6,30 +6,28 @@ class Vote extends React.Component {
   constructor(props){
     super(props);
     this.state = {   
-      isLoggedIn: false
-    } 
+      isLoggedIn: this.props.isLoggedIn
+    }
   }
   
-  componentWillMount(){
+  componentDidMount(){
     let loggedIn = JSON.parse(window.sessionStorage.getItem("loggedIn"));
     
-    if (JSON.parse(loggedIn) === true) {
+    if (loggedIn) {
       this.setState({ isLoggedIn: true });
-    }else {
-      this.setState({ isLoggedIn: false });
-    };
-
+    }
+    // console.log(this.props)
   }
 
   render() {
 
       return (
        
-        <div className="col-6 mx-auto voteBlock">
+        <div className="col-md-6 mx-auto voteBlock">
             {
             (!this.state.isLoggedIn) ? 
               <div className=" loggedOut">
-                <h5>Login To Vote</h5>
+                <h4>Login To Vote</h4>
               </div>
             : [
                 (!this.props.voted) 
@@ -40,7 +38,7 @@ class Vote extends React.Component {
                   <button onClick={this.props.voteUndecided} className="btn btn-secondary btn-maybe">UNDECIDED</button>
                 </div>)
                   : (<div>
-                      <p> Thanks for voting! </p>
+                      <h4>Thanks for voting!</h4>
                     </div>)
               ]
             }
