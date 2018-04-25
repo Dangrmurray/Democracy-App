@@ -12,8 +12,8 @@ module.exports = {
 
 	// Add new user to db
 	create: function(req, res) {
-		console.log('Create User');
-		console.log(req.body);
+		// console.log('Create User');
+		// console.log(req.body);
 		db.User
 			.create(req.body)
 			.then(dbModel => res.json(dbModel))
@@ -22,8 +22,8 @@ module.exports = {
 
 	// Find individual user by ID
 	findById: function(req, res) {
-		console.log("Find User by User-Id");
-		console.log("userId: " + req.params.id);
+		// console.log("Find User by User-Id");
+		// console.log("userId: " + req.params.id);
 		db.User
 			.find({ "userId": req.params.id })
 			.then(dbModel => res.json(dbModel))
@@ -32,8 +32,8 @@ module.exports = {
 
 	// update user - not sure when this will be used
 	update: function(req, res) {
-		console.log("Updating User");
-		console.log(req.body);
+		// console.log("Updating User");
+		// console.log(req.body);
 		db.User
 			.findOneAndUpdate({ "userId": req.params.id }, req.body)
 			.then(dbModel => res.json(dbModel))
@@ -42,7 +42,7 @@ module.exports = {
 
 	// Delete user - won't be doing this
 	remove: function(req, res) {
-		console.log("Delete User");
+		// console.log("Delete User");
 		db.User
 			.create(req.body)
 			.then(dbModel => res.json(dbModel))

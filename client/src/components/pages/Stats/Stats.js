@@ -494,11 +494,11 @@ class App extends Component {
 
     for (let i = 0; i < this.state.noVoters.length; i++) {
       // console.log("calling API");
-      console.log(this.state.noVoters[i]);
+      // console.log(this.state.noVoters[i]);
       API.getUser(this.state.noVoters[i])
         .then(res => {
           let user = res.data[0];
-          console.log(res);
+          // console.log(res);
           if (res.data[0]) {
   // _____________________ AGE ___________________________
             switch(user.age) {
