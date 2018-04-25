@@ -494,6 +494,7 @@ class App extends Component {
 
     for (let i = 0; i < this.state.noVoters.length; i++) {
       // console.log("calling API");
+      console.log(this.state.noVoters[i]);
       API.getUser(this.state.noVoters[i])
         .then(res => {
           let user = res.data[0];
@@ -1502,42 +1503,51 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        {
-          (this.state.stateUpdated) ?
-            (
               <div className="App container">
                 <div className="row">
+                  <div className="col-md-12">
+                  {
+                    (this.state.stateUpdated) ?
+                      (
+                        <div>
+                        <div className="row">
+                          <div className="AgeChart col-6">
+                            <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
+                          </div>
 
-                  <div className="AgeChart col-6">
-                    <Chart chartData={this.state.chartDataAge} location="Age" legendPosition="bottom"/>
-                  </div>
+                          <div className="IncomeChart col-6">
+                            <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
+                          </div>
+                        </div>
 
-                  <div className="IncomeChart col-6">
-                    <Chart chartData={this.state.chartDataIncome} location="Income" legendPosition="bottom"/>
-                  </div>
-            
-                  <div className="GenderChart col-6">
-                      <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
-                  </div>
+                        <div className="row">
+                          <div className="GenderChart col-6">
+                              <Chart chartData={this.state.chartDataGender} location="Gender" legendPosition="bottom"/>
+                          </div>
 
-                  <div className="RegionChart col-6">
-                    <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+                          <div className="RegionChart col-6">
+                            <Chart chartData={this.state.chartDataRegion} location="Region" legendPosition="bottom"/>
+                          </div>
+                        </div>
+                        
+                        <div className="row">
+                          <div className="EducationChart col-6">
+                            <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
+                          </div>
+                    
+                          <div className="RaceChart col-6">
+                            <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
+                          </div>
+                        </div>
+                        </div>
+                    )
+                    :
+                    (<h4>Loading...</h4>)
+                  }
                   </div>
-           
-                  <div className="EducationChart col-6">
-                    <Chart chartData={this.state.chartDataEducation} location="Education" legendPosition="bottom"/>
-                  </div>
-            
-                  <div className="RaceChart col-6">
-                    <Chart chartData={this.state.chartDataRace} location="Race" legendPosition="bottom"/>
-                  </div>
-
                 </div>
               </div>
-            )
-            :
-            (<p>Whoops LOL</p>)
-      }
+
     </div>
     );
   }
