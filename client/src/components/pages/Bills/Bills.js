@@ -61,12 +61,12 @@ class Bills extends Component {
 										latest_major_action_date: currentBill.latest_major_action_date
 									})
 									.then(res => {
-										console.log("Saving Unique Bill.")
-										console.log(getSummary(currentBill.summary_short, currentBill.summary))
+										// console.log("Saving Unique Bill.")
+										// console.log(getSummary(currentBill.summary_short, currentBill.summary))
 									})
 									.catch(err => console.log(err))
 								}else {
-									console.log("Repeat...");
+									// console.log("Repeat...");
 								}						
 							})
 					};
